@@ -379,7 +379,7 @@ export default function DependencyGraphPage() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (dropdownRef.current && e.target instanceof Element && !dropdownRef.current.contains(e.target)) {
         setShowVersionDropdown(false);
       }
     };
