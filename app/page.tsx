@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -7,32 +8,62 @@ import { Github, Linkedin, Mail, Globe, Award, GraduationCap, FileText } from 'l
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16 max-w-5xl">
-        {/* Hero Section */}
-        <section className="mb-20 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Johannes Schulz
-          </h1>
-          <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
-            Machine Learning Engineer, Computer Scientist, Mathematician
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Specializing in probabilistic modeling, statistical inference, and data-driven decision making.
-            Transforming complex mathematical concepts into practical machine learning solutions.
-          </p>
-          <div className="flex gap-4 justify-center mb-8">
-            <Button asChild size="lg">
-              <Link href="/projects">View My Projects</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/contact">Get in Touch</Link>
-            </Button>
-          </div>
+      {/* Hero Section with Full Width Background */}
+      <section className="relative pb-12 overflow-hidden">
+        {/* Background Image - Full Width */}
+        <div className="absolute inset-0 w-full">
+          <Image
+            src="/home-page.JPG"
+            alt="Background"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
 
-          {/* Quick Links */}
-          <div className="flex gap-4 justify-center flex-wrap">
+        {/* Container for Content */}
+        <div className="container mx-auto px-4 py-16 max-w-5xl relative">
+
+          <div className="flex flex-col">
+            {/* Profile Picture - Above Title */}
+            <div className="mb-8 flex justify-center relative z-10">
+              <div className="relative w-52 h-52 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
+                <Image
+                  src="/professional-picture.png"
+                  alt="Johannes Schulz"
+                  fill
+                  className="object-cover object-[center_20%]"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Content - Centered */}
+            <div className="text-center relative z-10">
+              <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                Johannes Schulz
+              </h1>
+              <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
+                Software Engineer & Applied AI Developer
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+                Building production software systems with a foundation in mathematics and computer science.
+                I develop scalable applications, AI-powered tools, and infrastructure solutions that solve
+                real-world problems with rigorous engineering principles.
+              </p>
+              <div className="flex gap-4 justify-center mb-8">
+                <Button asChild size="lg">
+                  <Link href="/projects">View My Projects</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href="/contact">Get in Touch</Link>
+                </Button>
+              </div>
+
+              {/* Quick Links */}
+              <div className="flex gap-4 justify-center flex-wrap">
             <a
-              href="https://github.com/johannesschulz"
+              href="https://github.com/JohannesSchulz97"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
@@ -57,15 +88,6 @@ export default function HomePage() {
               <span>Email</span>
             </a>
             <a
-              href="https://www.fiverr.com/johannesschulz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-            >
-              <Globe className="w-5 h-5" />
-              <span>Fiverr</span>
-            </a>
-            <a
               href="https://preply.com/en/tutor/johannesschulz"
               target="_blank"
               rel="noopener noreferrer"
@@ -74,17 +96,9 @@ export default function HomePage() {
               <Globe className="w-5 h-5" />
               <span>Preply</span>
             </a>
-            <a
-              href="https://www.kaggle.com/johannesschulz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-            >
-              <Globe className="w-5 h-5" />
-              <span>Kaggle</span>
-            </a>
+              </div>
+            </div>
           </div>
-        </section>
 
         {/* About Section */}
         <section className="mb-16">
@@ -97,21 +111,22 @@ export default function HomePage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                I'm a Machine Learning Engineer with a strong foundation in probabilistic modeling,
-                statistical inference, and data-driven decision making. Currently based in Homburg,
-                Saarland, Germany, I combine deep mathematical understanding with practical engineering skills
-                to solve complex real-world problems.
+                I'm a Software Engineer with a strong foundation in mathematics, computer science, and machine learning.
+                I specialize in building production-grade applications, AI-powered systems, and developer tools
+                that solve complex problems with clean, maintainable code.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                My expertise spans across machine learning, deep learning, and statistical modeling.
-                I'm passionate about transforming theoretical concepts into actionable solutions that drive
-                meaningful impact. When I'm not coding or researching, I enjoy teaching mathematics online
-                and helping others develop their analytical skills.
+                My work spans full-stack development, AI orchestration platforms, and clinical ML pipelines.
+                I've delivered centralized AI development infrastructure with Coder, processing patient data in
+                production workflows, and building real-time collaboration platforms with sub-10ms latency.
+                From TypeScript and Python to edge computing and LLM integration, I apply rigorous engineering
+                and mathematical thinking to every project.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Analytical and curious by nature, I thrive on challenging problems that require innovative
-                thinking and rigorous methodology. I'm always eager to collaborate on interesting projects
-                and explore new frontiers in machine learning and artificial intelligence.
+                I focus on systems that deliver measurable impact: reducing costs by 70%, cutting deployment
+                times by 8x, and accelerating productivity by 30%+. Whether it's infrastructure automation,
+                real-time systems, or AI-powered tools, I combine theoretical understanding with practical
+                engineering to build solutions that scale.
               </p>
             </CardContent>
           </Card>
@@ -123,13 +138,13 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="border-2 hover:border-primary/50 transition-colors">
               <CardHeader>
-                <GraduationCap className="w-10 h-10 mb-2 text-primary" />
-                <CardTitle className="text-lg">MSc in Machine Learning</CardTitle>
+                <Award className="w-10 h-10 mb-2 text-primary" />
+                <CardTitle className="text-lg">AI-Assisted Development Infrastructure</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Master of Science in Machine Learning from the prestigious University of Tübingen,
-                  one of Europe's leading institutions for AI research.
+                  Built centralized Claude Code infrastructure with Coder on Hetzner, enabling distributed
+                  team collaboration with automated budget optimization and 70% cost reduction.
                 </p>
               </CardContent>
             </Card>
@@ -137,25 +152,25 @@ export default function HomePage() {
             <Card className="border-2 hover:border-primary/50 transition-colors">
               <CardHeader>
                 <Award className="w-10 h-10 mb-2 text-primary" />
-                <CardTitle className="text-lg">Max Planck Research</CardTitle>
+                <CardTitle className="text-lg">Production ML Deployments</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Conducted cutting-edge research at the Max Planck Institute for Intelligent Systems,
-                  contributing to advances in machine learning and AI.
+                  Deployed biomechanical analysis pipeline processing 40+ daily patient assessments
+                  in clinical workflow with 99.9%+ uptime and GDPR compliance.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="border-2 hover:border-primary/50 transition-colors">
               <CardHeader>
-                <FileText className="w-10 h-10 mb-2 text-primary" />
-                <CardTitle className="text-lg">Published Research</CardTitle>
+                <Award className="w-10 h-10 mb-2 text-primary" />
+                <CardTitle className="text-lg">Real-Time AI Collaboration</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Published peer-reviewed paper on community detection algorithms, advancing the field
-                  of network analysis and graph theory.
+                  Built Kanban platform with 8+ AI assistants and WebSocket sync achieving
+                  &lt;10ms latency, reducing PR review time by 50%+.
                 </p>
               </CardContent>
             </Card>
@@ -171,21 +186,21 @@ export default function HomePage() {
             <CardContent>
               <div className="flex flex-wrap gap-2">
                 <Badge variant="secondary">Python</Badge>
+                <Badge variant="secondary">TypeScript</Badge>
+                <Badge variant="secondary">Software Engineering</Badge>
+                <Badge variant="secondary">Full-Stack Development</Badge>
+                <Badge variant="secondary">Edge Computing</Badge>
+                <Badge variant="secondary">Cloudflare Workers</Badge>
+                <Badge variant="secondary">Zero Trust Security</Badge>
+                <Badge variant="secondary">Real-Time Systems</Badge>
+                <Badge variant="secondary">WebSocket</Badge>
+                <Badge variant="secondary">AI Orchestration</Badge>
+                <Badge variant="secondary">LLM Integration</Badge>
+                <Badge variant="secondary">CI/CD</Badge>
+                <Badge variant="secondary">Next.js</Badge>
+                <Badge variant="secondary">React</Badge>
                 <Badge variant="secondary">Machine Learning</Badge>
-                <Badge variant="secondary">Data Science</Badge>
-                <Badge variant="secondary">Deep Learning</Badge>
-                <Badge variant="secondary">Statistical Inference</Badge>
-                <Badge variant="secondary">Probabilistic Modeling</Badge>
-                <Badge variant="secondary">PyTorch</Badge>
-                <Badge variant="secondary">TensorFlow</Badge>
-                <Badge variant="secondary">Scikit-learn</Badge>
-                <Badge variant="secondary">NumPy</Badge>
-                <Badge variant="secondary">Pandas</Badge>
-                <Badge variant="secondary">Mathematics</Badge>
-                <Badge variant="secondary">Statistics</Badge>
-                <Badge variant="secondary">Computer Science</Badge>
-                <Badge variant="secondary">Data Analysis</Badge>
-                <Badge variant="secondary">Research</Badge>
+                <Badge variant="secondary">DevOps</Badge>
               </div>
             </CardContent>
           </Card>
@@ -212,7 +227,8 @@ export default function HomePage() {
             </CardContent>
           </Card>
         </section>
-      </div>
+        </div>
+      </section>
     </div>
   )
 }

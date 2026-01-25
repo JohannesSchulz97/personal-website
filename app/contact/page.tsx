@@ -1,10 +1,24 @@
+import Image from "next/image";
 import { Mail, MapPin, ExternalLink, Code, Briefcase, GraduationCap, Trophy, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
+    <div className="min-h-screen bg-background">
+      <section className="relative pb-12 overflow-hidden">
+        {/* Background Image - Full Width */}
+        <div className="absolute inset-0 w-full">
+          <Image
+            src="/contact-page.JPG"
+            alt="Background"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+        </div>
+
+        <div className="container mx-auto px-4 py-12 max-w-4xl relative z-10">
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
@@ -31,10 +45,6 @@ export default function ContactPage() {
               schulz.johannes97@gmail.com
             </a>
           </div>
-          <div className="flex items-center gap-3">
-            <MapPin className="h-5 w-5 text-primary" />
-            <span className="text-foreground">Homburg, Saarland, Germany</span>
-          </div>
         </CardContent>
       </Card>
 
@@ -45,24 +55,6 @@ export default function ContactPage() {
           <CardDescription>Connect with me on various platforms</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4 sm:grid-cols-2">
-          {/* Fiverr */}
-          <Button
-            variant="outline"
-            className="h-auto flex-col items-start p-4 hover:bg-accent"
-            asChild
-          >
-            <a href="https://www.fiverr.com" target="_blank" rel="noopener noreferrer">
-              <div className="flex items-center gap-2 mb-2">
-                <Briefcase className="h-5 w-5" />
-                <span className="font-semibold">Fiverr</span>
-                <ExternalLink className="h-4 w-4 ml-auto" />
-              </div>
-              <span className="text-sm text-muted-foreground text-left">
-                Freelance machine learning services
-              </span>
-            </a>
-          </Button>
-
           {/* Preply */}
           <Button
             variant="outline"
@@ -77,24 +69,6 @@ export default function ContactPage() {
               </div>
               <span className="text-sm text-muted-foreground text-left">
                 Mathematics tutoring and teaching
-              </span>
-            </a>
-          </Button>
-
-          {/* Kaggle */}
-          <Button
-            variant="outline"
-            className="h-auto flex-col items-start p-4 hover:bg-accent"
-            asChild
-          >
-            <a href="https://www.kaggle.com" target="_blank" rel="noopener noreferrer">
-              <div className="flex items-center gap-2 mb-2">
-                <Trophy className="h-5 w-5" />
-                <span className="font-semibold">Kaggle</span>
-                <ExternalLink className="h-4 w-4 ml-auto" />
-              </div>
-              <span className="text-sm text-muted-foreground text-left">
-                Data science competitions and projects
               </span>
             </a>
           </Button>
@@ -147,6 +121,8 @@ export default function ContactPage() {
           </p>
         </CardContent>
       </Card>
+        </div>
+      </section>
     </div>
   );
 }
