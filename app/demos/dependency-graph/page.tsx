@@ -233,7 +233,7 @@ export default function DependencyGraphPage() {
   const [editNodeColor, setEditNodeColor] = useState('#3b82f6');
   const [connectionSource, setConnectionSource] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(0.8);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isPanning, setIsPanning] = useState(false);
   const [panStart, setPanStart] = useState({ x: 0, y: 0 });
@@ -827,10 +827,18 @@ export default function DependencyGraphPage() {
   const upstreamNodes = highlightedNode ? getUpstreamNodes(highlightedNode) : new Set<string>();
 
   return (
-    <div className="w-full h-screen bg-background p-4 flex flex-col overflow-hidden">
-      <div className="w-full bg-card rounded-lg shadow-lg p-6 flex flex-col h-full overflow-hidden border border-border">
-        <div className="mb-4 flex-shrink-0">
-          <h2 className="text-2xl font-bold text-foreground mb-2">Biomechanical Analysis - Node Dependency Graph</h2>
+    <div className="w-full h-screen bg-card p-6 flex flex-col overflow-hidden">
+      <div className="mb-4 flex-shrink-0">
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="text-2xl font-bold text-foreground">Biomechanical Analysis</h2>
+          <button
+            onClick={() => window.history.back()}
+            className="p-2 hover:bg-muted rounded-lg transition-colors"
+            title="Close demo"
+          >
+            <X className="w-5 h-5 text-muted-foreground hover:text-foreground" />
+          </button>
+        </div>
 
           <div className="flex items-start gap-2 text-sm text-muted-foreground bg-blue-50 dark:bg-blue-950/30 p-3 rounded mb-3">
             <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
@@ -962,7 +970,7 @@ export default function DependencyGraphPage() {
           )}
         </div>
 
-        <div className="relative flex-1 min-h-0">
+        <div className="relative flex-1 min-h-0 flex flex-col">
           {showDescriptionModal && (
             <div
               className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -1314,7 +1322,7 @@ export default function DependencyGraphPage() {
 
           <svg
             ref={svgRef}
-            className="w-full h-full border border-border rounded bg-card"
+            className="w-full flex-1 border border-border rounded bg-card"
             style={{ cursor: isPanning ? 'grabbing' : 'grab' }}
             onMouseMove={handleSvgMouseMove}
             onMouseUp={handleSvgMouseUp}
@@ -1750,11 +1758,9 @@ export default function DependencyGraphPage() {
               })()}
             </g>
           </svg>
-        </div>
 
-        <div className="mt-4 h-36 flex-shrink-0">
-          {selectedNode ? (
-            <div className="p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800 h-full overflow-auto">
+          {selectedNode && (
+            <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800 flex-shrink-0">
               <div className="mb-2">
                 <h3 className="font-semibold text-foreground">
                   {nodes.find(n => n.id === selectedNode)?.label.replace('\n', ' ')}
@@ -1789,13 +1795,8 @@ export default function DependencyGraphPage() {
                 </div>
               </div>
             </div>
-          ) : (
-            <div className="p-4 bg-muted rounded-lg border border-border h-full flex items-center justify-center text-muted-foreground text-sm">
-              Click on a node to see its details
-            </div>
           )}
         </div>
-      </div>
     </div>
   );
 }

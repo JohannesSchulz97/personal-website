@@ -269,7 +269,7 @@ export default function ProjectsPage() {
             {/* Demo Preview */}
             <div
               className="border-2 rounded-lg overflow-hidden bg-gradient-to-br from-blue-500/10 to-purple-500/10 hover:from-blue-500/20 hover:to-purple-500/20 transition-all cursor-pointer group relative h-[300px] flex items-center justify-center"
-              onClick={() => setOpenDemo('dependency-graph')}
+              onClick={() => window.location.href = '/demos/dependency-graph'}
             >
               <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
               <div className="text-center z-10">
