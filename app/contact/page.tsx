@@ -5,8 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <section className="relative pb-12 overflow-hidden">
+    <div className="bg-background">
+      <section className="relative py-16 overflow-hidden min-h-screen">
         {/* Background Image - Full Width */}
         <div className="absolute inset-0 w-full">
           <Image
@@ -24,7 +24,7 @@ export default function ContactPage() {
         <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           I'm always open to discussing new projects, collaboration opportunities,
-          or just having a chat about machine learning, mathematics, and data science.
+          or technical challenges in software engineering, AI systems, and system architecture.
           Feel free to reach out through any of the channels below!
         </p>
       </div>
@@ -39,10 +39,10 @@ export default function ContactPage() {
           <div className="flex items-center gap-3">
             <Mail className="h-5 w-5 text-primary" />
             <a
-              href="mailto:schulz.johannes97@gmail.com"
+              href="mailto:contact@johannesschulz.dev"
               className="text-foreground hover:text-primary transition-colors"
             >
-              schulz.johannes97@gmail.com
+              contact@johannesschulz.dev
             </a>
           </div>
         </CardContent>
@@ -55,31 +55,13 @@ export default function ContactPage() {
           <CardDescription>Connect with me on various platforms</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4 sm:grid-cols-2">
-          {/* Preply */}
-          <Button
-            variant="outline"
-            className="h-auto flex-col items-start p-4 hover:bg-accent"
-            asChild
-          >
-            <a href="https://www.preply.com" target="_blank" rel="noopener noreferrer">
-              <div className="flex items-center gap-2 mb-2">
-                <GraduationCap className="h-5 w-5" />
-                <span className="font-semibold">Preply</span>
-                <ExternalLink className="h-4 w-4 ml-auto" />
-              </div>
-              <span className="text-sm text-muted-foreground text-left">
-                Mathematics tutoring and teaching
-              </span>
-            </a>
-          </Button>
-
           {/* GitHub */}
           <Button
             variant="outline"
             className="h-auto flex-col items-start p-4 hover:bg-accent"
             asChild
           >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/JohannesSchulz97" target="_blank" rel="noopener noreferrer">
               <div className="flex items-center gap-2 mb-2">
                 <Code className="h-5 w-5" />
                 <span className="font-semibold">GitHub</span>
@@ -94,10 +76,10 @@ export default function ContactPage() {
           {/* LinkedIn */}
           <Button
             variant="outline"
-            className="h-auto flex-col items-start p-4 hover:bg-accent sm:col-span-2"
+            className="h-auto flex-col items-start p-4 hover:bg-accent"
             asChild
           >
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/johannes-schulz-6b0396311/" target="_blank" rel="noopener noreferrer">
               <div className="flex items-center gap-2 mb-2">
                 <Linkedin className="h-5 w-5" />
                 <span className="font-semibold">LinkedIn</span>
@@ -108,6 +90,24 @@ export default function ContactPage() {
               </span>
             </a>
           </Button>
+
+          {/* Preply */}
+          <Button
+            variant="outline"
+            className="h-auto flex-col items-start p-4 hover:bg-accent sm:col-span-2"
+            asChild
+          >
+            <a href="https://preply.com/en/tutor/3870616" target="_blank" rel="noopener noreferrer">
+              <div className="flex items-center gap-2 mb-2">
+                <GraduationCap className="h-5 w-5" />
+                <span className="font-semibold">Preply</span>
+                <ExternalLink className="h-4 w-4 ml-auto" />
+              </div>
+              <span className="text-sm text-muted-foreground text-left">
+                Mathematics and computer science tutoring
+              </span>
+            </a>
+          </Button>
         </CardContent>
       </Card>
 
@@ -115,9 +115,8 @@ export default function ContactPage() {
       <Card>
         <CardContent className="pt-6">
           <p className="text-sm text-muted-foreground text-center">
-            <strong>Currently available</strong> for freelance machine learning projects,
-            mathematics tutoring, and collaboration opportunities in data science and AI.
-            I typically respond to emails within 24-48 hours.
+            <strong>Currently available</strong> for software engineering projects, system architecture consulting,
+            and AI integration opportunities. I typically respond to emails within 24-48 hours.
           </p>
         </CardContent>
       </Card>

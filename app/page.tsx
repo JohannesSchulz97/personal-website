@@ -72,7 +72,7 @@ export default function HomePage() {
               <span>GitHub</span>
             </a>
             <a
-              href="https://linkedin.com/in/johannesschulz"
+              href="https://www.linkedin.com/in/johannes-schulz-6b0396311/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
@@ -81,14 +81,14 @@ export default function HomePage() {
               <span>LinkedIn</span>
             </a>
             <a
-              href="mailto:schulz.johannes97@gmail.com"
+              href="mailto:contact@johannesschulz.dev"
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
             >
               <Mail className="w-5 h-5" />
               <span>Email</span>
             </a>
             <a
-              href="https://preply.com/en/tutor/johannesschulz"
+              href="https://preply.com/en/tutor/3870616"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
@@ -165,12 +165,12 @@ export default function HomePage() {
             <Card className="border-2 hover:border-primary/50 transition-colors">
               <CardHeader>
                 <Award className="w-10 h-10 mb-2 text-primary" />
-                <CardTitle className="text-lg">Real-Time AI Collaboration</CardTitle>
+                <CardTitle className="text-lg">Multi-Modal Veterinary AI</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Built Kanban platform with 8+ AI assistants and WebSocket sync achieving
-                  &lt;10ms latency, reducing PR review time by 50%+.
+                  Built production RAG system with image-based disease detection across 8+ GB of medical textbooks,
+                  reducing diagnostic research time from 30+ minutes to under 3 minutes with 100% citation traceability.
                 </p>
               </CardContent>
             </Card>
@@ -208,20 +208,21 @@ export default function HomePage() {
 
         {/* CTA Section */}
         <section className="text-center">
-          <Card className="bg-primary/5 border-primary/20">
+          <Card>
             <CardContent className="pt-6">
               <h2 className="text-2xl font-bold mb-4">Let's Work Together</h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                I'm currently available for freelance machine learning projects and consulting.
-                Whether you need help with data analysis, model development, or mathematical problem-solving,
-                I'd love to hear from you.
+                I'm available for software engineering projects and consulting across full-stack development,
+                system architecture, AI integration, and infrastructure automation. Whether you need production
+                applications built, ML systems deployed, or technical guidance on complex problems, I'd love to
+                hear from you.
               </p>
               <div className="flex gap-4 justify-center">
                 <Button asChild size="lg">
                   <Link href="/contact">Contact Me</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <a href="mailto:schulz.johannes97@gmail.com">Send Email</a>
+                  <a href="mailto:contact@johannesschulz.dev">Send Email</a>
                 </Button>
               </div>
             </CardContent>
