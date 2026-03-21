@@ -27,6 +27,8 @@ export default function ProjectsPage() {
             fill
             className="object-cover opacity-20"
             priority
+            quality={50}
+            sizes="100vw"
           />
         </div>
 
@@ -43,136 +45,111 @@ export default function ProjectsPage() {
 
       {/* Projects Grid */}
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-        {/* Project 1: TOB Claude Enablement */}
+        {/* Project 1: CAPS */}
         <Card className="flex flex-col">
           <CardHeader>
-            <CardTitle>TOB Claude Enablement</CardTitle>
+            <CardTitle>CAPS (Claude Automated Programming System)</CardTitle>
             <CardDescription>
-              Organization-wide AI assistant configuration infrastructure enabling standardized development
-              workflows across distributed teams with automated budget management
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex-1 flex flex-col space-y-4">
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Bash</Badge>
-              <Badge variant="secondary">Claude Code</Badge>
-              <Badge variant="secondary">YAML</Badge>
-              <Badge variant="secondary">Git Automation</Badge>
-              <Badge variant="secondary">DevOps</Badge>
-            </div>
-
-            <div className="text-sm text-muted-foreground space-y-2">
-              <p className="font-semibold">Challenge:</p>
-              <p>Development organization needed centralized AI-assisted development infrastructure with standardized workflows and budget management across distributed team.</p>
-
-              <p className="font-semibold mt-3">Solution:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Deployed Claude Code workspaces via Coder on Hetzner infrastructure for centralized development</li>
-                <li>Four-tier CLAUDE.md configuration hierarchy for standardized AI assistant behavior</li>
-                <li>Cross-repository template synchronization system with bidirectional sync</li>
-                <li>Automated token budget tracking and optimization</li>
-                <li>TIDE workflow (Think → Implement → Deploy → Evaluate) integration</li>
-              </ul>
-
-              <p className="font-semibold mt-3">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>✓ Centralized AI-assisted development infrastructure for distributed team</li>
-                <li>✓ Reduced token costs by 70% with budget optimization</li>
-                <li>✓ Cut developer onboarding time from days to hours</li>
-                <li>✓ Achieved 90%+ consistency in AI output quality</li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Project 2: TIDE Development Platform */}
-        <Card className="flex flex-col">
-          <CardHeader>
-            <CardTitle>TIDE Development Platform</CardTitle>
-            <CardDescription>
-              Internal developer platform with automated deployment pipelines, Zero Trust security,
-              and AI-powered autonomous development workflows
+              Self-improving AI development system orchestrating complete scrum cycles from conversation to production,
+              eliminating scope creep through frozen specifications and autonomous multi-agent builds
             </CardDescription>
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
               <Badge variant="secondary">Cloudflare Workers</Badge>
-              <Badge variant="secondary">Edge Computing</Badge>
-              <Badge variant="secondary">Zero Trust</Badge>
-              <Badge variant="secondary">CI/CD</Badge>
-              <Badge variant="secondary">TypeScript</Badge>
+              <Badge variant="secondary">React Server Components</Badge>
+              <Badge variant="secondary">Multi-Agent Systems</Badge>
+              <Badge variant="secondary">Git Worktrees</Badge>
+              <Badge variant="secondary">Scrum Automation</Badge>
             </div>
 
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Challenge:</p>
-              <p>Need to deploy Claude-powered applications across development, staging, and production environments with zero-downtime guarantees and enterprise security requirements.</p>
+              <p>AI-assisted development produces "vibe coding" — unstructured workflows causing scope creep and technical debt. Teams need disciplined scrum cycles with AI orchestration.</p>
 
-              <p className="font-semibold mt-3">Solution:</p>
+              <p className="font-semibold mt-3">Scrum Cycle Automation:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Three-environment deployment pipeline (development/preview/production)</li>
-                <li>Auto-Claude pipeline for autonomous feature builds with QA review gates</li>
-                <li>Zero Trust security architecture with Cloudflare Access</li>
-                <li>Automated SSL/TLS certificate management</li>
-                <li>Edge-native deployment on Cloudflare infrastructure</li>
+                <li>/design → Socratic questioning produces frozen PRD preventing mid-sprint scope changes</li>
+                <li>/breakdown → PRD atomizes into INVEST-compliant GitHub Issues automatically</li>
+                <li>/build → Multi-agent system (PLANNER → CODER → QA → FIXER → MERGE) ships features autonomously</li>
+                <li>/retro → End-of-sprint retrospective creating issues in upstream CAPS repository, not current project</li>
+              </ul>
+
+              <p className="font-semibold mt-3">Self-Improving System Architecture:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Every project's /retro identifies CAPS workflow friction and creates upstream template issues</li>
+                <li>/update command pulls improvements from upstream — runs automatically at session start</li>
+                <li>Creates feedback loop: user experience → upstream fixes → all projects benefit automatically</li>
+                <li>Encoded domain knowledge prevents AI hallucinations (RedwoodSDK, D1 patterns, git workflows)</li>
+              </ul>
+
+              <p className="font-semibold mt-3">Production Stack:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Cloudflare Workers edge deployment with React 19 Server Components</li>
+                <li>Multi-environment pipeline with 70% coverage gates and Zero Trust security</li>
               </ul>
 
               <p className="font-semibold mt-3">Results:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>✓ Maintained 99.9%+ uptime across production environments</li>
-                <li>✓ Reduced deployment time from hours to minutes (8x improvement)</li>
-                <li>✓ Zero security incidents with Zero Trust architecture</li>
-                <li>✓ Eliminated manual SSL certificate management overhead</li>
+                <li>✓ Eliminated scope creep through frozen PRD enforcement</li>
+                <li>✓ System improves itself: every project makes CAPS better for all users</li>
+                <li>✓ Parallel autonomous builds with isolated git worktree execution</li>
               </ul>
             </div>
           </CardContent>
         </Card>
 
-        {/* Project 3: Vibe Kanban */}
+        {/* Project 2: TOB Vibe Kanban */}
         <Card className="flex flex-col">
           <CardHeader>
-            <CardTitle>Vibe Kanban</CardTitle>
+            <CardTitle>TOB Vibe Kanban: Enterprise Multi-Agent Orchestration Platform</CardTitle>
             <CardDescription>
-              Real-time collaboration platform integrating multiple AI assistants with GitHub workflows
-              and high-performance WebSocket synchronization
+              Advanced dual-fork architecture enabling autonomous AI agent orchestration at scale through
+              sophisticated patch management, seamless GitHub integration, and cross-platform distribution
             </CardDescription>
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">WebSocket</Badge>
-              <Badge variant="secondary">Real-time Sync</Badge>
-              <Badge variant="secondary">Next.js</Badge>
+              <Badge variant="secondary">Rust</Badge>
               <Badge variant="secondary">TypeScript</Badge>
-              <Badge variant="secondary">GitHub Integration</Badge>
+              <Badge variant="secondary">Fork Engineering</Badge>
+              <Badge variant="secondary">Agent Orchestration</Badge>
+              <Badge variant="secondary">Cross-Platform</Badge>
             </div>
 
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Challenge:</p>
-              <p>Development teams needed real-time collaboration platform integrating 8+ specialized AI assistants with GitHub PR workflows and instant synchronization across distributed teams.</p>
+              <p>Enterprise required unified AI orchestration platform merging VibeKanban's workflow engine with Claude MPM's advanced agent capabilities while preserving upstream compatibility across both evolving codebases.</p>
 
-              <p className="font-semibold mt-3">Solution:</p>
+              <p className="font-semibold mt-3">Dual Fork Architecture:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>WebSocket-based real-time synchronization with bounded history management</li>
-                <li>Multi-agent executor supporting 8+ AI assistants (code review, docs, testing, deployment)</li>
-                <li>GitHub PR review automation with AI-powered narrative generation</li>
-                <li>High-performance backend achieving sub-10ms latency</li>
-                <li>Cross-platform distribution via npx with automatic binary downloads</li>
+                <li>Engineered headless mode for Claude MPM enabling fully autonomous multi-agent execution</li>
+                <li>Built custom executor integration bridging VibeKanban and MPM through command override architecture</li>
+                <li>Implemented stgit-based patch management maintaining clean separation of enterprise customizations from upstream</li>
+                <li>GitHub organization integration with one-click repository cloning and project initialization</li>
+              </ul>
+
+              <p className="font-semibold mt-3">Enterprise Distribution:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Production NPM package with optimized binaries across 6 platform targets (Linux, macOS, Windows)</li>
+                <li>Fully automated CI/CD pipeline with pre-release validation and multi-architecture builds</li>
+                <li>Zero-configuration deployment via npx with intelligent binary caching and platform detection</li>
               </ul>
 
               <p className="font-semibold mt-3">Results:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>✓ Reduced PR review time by 50%+ with AI-assisted reviews</li>
-                <li>✓ Achieved &lt;10ms WebSocket latency for real-time collaboration</li>
-                <li>✓ Increased team productivity by 30%+ with unified workflow</li>
-                <li>✓ Supported 6 platform targets with single npx command</li>
+                <li>✓ Successfully maintained dual forks with zero upstream merge conflicts via stgit methodology</li>
+                <li>✓ Enabled enterprise-scale headless agent orchestration across distributed development teams</li>
+                <li>✓ Achieved single-command organizational rollout eliminating manual installation overhead</li>
               </ul>
             </div>
           </CardContent>
         </Card>
 
-        {/* Project 4: Struktur Analyse */}
+        {/* Project 3: Biomechanical Structure Analysis */}
         <Card className="flex flex-col">
           <CardHeader>
-            <CardTitle>Struktur Analyse</CardTitle>
+            <CardTitle>Biomechanical Structure Analysis</CardTitle>
             <CardDescription>
               Production-grade biomechanical posture analysis pipeline deployed to clinical workflow,
               analyzing patient posture with privacy-preserving computer vision
@@ -222,7 +199,7 @@ export default function ProjectsPage() {
           </CardContent>
         </Card>
 
-        {/* Project 5: LLM Pipeline Orchestration System */}
+        {/* Project 4: LLM Pipeline Orchestration System */}
         <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>LLM Pipeline Orchestration System</CardTitle>
@@ -281,52 +258,10 @@ export default function ProjectsPage() {
           </CardContent>
         </Card>
 
-        {/* Project 6: CAPS */}
+        {/* Project 5: Multi-Modal Veterinary AI Assistant */}
         <Card className="flex flex-col">
           <CardHeader>
-            <CardTitle>CAPS (Claude Automated Programming System)</CardTitle>
-            <CardDescription>
-              Organization-wide AI assistant infrastructure supporting 200+ concurrent agent workspaces
-              with token budget management across distributed development teams
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex-1 flex flex-col space-y-4">
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Bash</Badge>
-              <Badge variant="secondary">Claude Code</Badge>
-              <Badge variant="secondary">DevOps</Badge>
-              <Badge variant="secondary">Git Automation</Badge>
-              <Badge variant="secondary">YAML</Badge>
-            </div>
-
-            <div className="text-sm text-muted-foreground space-y-2">
-              <p className="font-semibold">Challenge:</p>
-              <p>Development organization needed to coordinate AI-assisted development across 200+ concurrent workspaces while managing merge conflicts and ensuring code quality consistency.</p>
-
-              <p className="font-semibold mt-3">Solution - Key Capabilities:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Four-level CLAUDE.md configuration hierarchy for organization-wide AI assistant standardization</li>
-                <li>TIDE workflow (Think → Implement → Deploy → Evaluate) with autonomous builds</li>
-                <li>AI-powered merge conflict resolution for parallel development workflows</li>
-                <li>Cross-repository template synchronization keeping 200+ workspaces aligned</li>
-                <li>Token budget management system optimizing AI usage across development teams</li>
-              </ul>
-
-              <p className="font-semibold mt-3">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>✓ Reduced merge conflict resolution time by 70%+ with AI automation</li>
-                <li>✓ Synchronized 200+ repositories with zero manual intervention</li>
-                <li>✓ Reduced developer wait time by 60%+ with autonomous builds</li>
-                <li>✓ Maintained consistent code quality across all projects</li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Project 7: VetBot */}
-        <Card className="flex flex-col">
-          <CardHeader>
-            <CardTitle>VetBot: Multi-Modal Veterinary AI Assistant</CardTitle>
+            <CardTitle>Multi-Modal Veterinary AI Assistant</CardTitle>
             <CardDescription>
               Production-grade RAG system with multi-modal analysis capabilities, processing GBs of veterinary
               textbooks and patient case histories for personalized diagnostic support
@@ -370,7 +305,7 @@ export default function ProjectsPage() {
             <div className="flex flex-wrap gap-2 mt-auto">
               <Button variant="outline" size="sm" asChild>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/JohannesSchulz97/VetBot"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -378,37 +313,17 @@ export default function ProjectsPage() {
                   GitHub
                 </a>
               </Button>
-              <Button variant="outline" size="sm" asChild>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Youtube className="h-4 w-4 mr-2" />
-                  Demo
-                </a>
-              </Button>
-              <Button variant="outline" size="sm" asChild>
-                <a
-                  href="https://example.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FileText className="h-4 w-4 mr-2" />
-                  Article
-                </a>
-              </Button>
             </div>
           </CardContent>
         </Card>
 
-        {/* Project 8: Web Scraping & Review Analytics Suite */}
+        {/* Project 6: Production Web Scraping Infrastructure */}
         <Card className="flex flex-col">
           <CardHeader>
-            <CardTitle>Web Scraping & Review Analytics Suite</CardTitle>
+            <CardTitle>Production Web Scraping Infrastructure</CardTitle>
             <CardDescription>
-              Production-grade web scraping infrastructure for automated data extraction and sentiment analysis,
-              deployed to Palantir Foundry with scheduled pipelines
+              Enterprise-grade data extraction pipelines for multiple clients: medical literature structuring (5000+ documents)
+              and automated review monitoring, deployed to Palantir Foundry with scheduled orchestration
             </CardDescription>
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
@@ -417,29 +332,37 @@ export default function ProjectsPage() {
               <Badge variant="secondary">BeautifulSoup</Badge>
               <Badge variant="secondary">Python</Badge>
               <Badge variant="secondary">Palantir Foundry</Badge>
-              <Badge variant="secondary">Sentiment Analysis</Badge>
+              <Badge variant="secondary">ETL Pipelines</Badge>
             </div>
-            <div className="text-sm text-muted-foreground space-y-1">
-              <p>Key Capabilities:</p>
+
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p className="font-semibold">Challenge:</p>
+              <p>Multiple clients needed production-grade web scraping: large-scale medical literature extraction for ML datasets, and automated review monitoring for competitive intelligence.</p>
+
+              <p className="font-semibold mt-3">Medical Knowledge Extraction:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Multi-source review scraping: Trustpilot and ProvenExpert with automated regular updates</li>
-                <li>Deployed to Palantir Foundry code repository with scheduled pipeline orchestration</li>
-                <li>Sentiment analysis and competitive intelligence for business insights</li>
-                <li>Merck Veterinary Manual scraper: 5000+ structured articles for ML/NLP training datasets</li>
-                <li>Robust error handling, rate limiting, and anti-detection mechanisms for production reliability</li>
+                <li>Scraped and structured 5000+ articles from Merck Veterinary Manual for ML training datasets</li>
+                <li>Automated ETL pipeline converting HTML to clean JSON with scheduled execution</li>
               </ul>
-            </div>
-            <div className="flex gap-2 mt-auto">
-              <Button variant="outline" size="sm" asChild>
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="h-4 w-4 mr-2" />
-                  GitHub
-                </a>
-              </Button>
+
+              <p className="font-semibold mt-3">Review Monitoring System:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Multi-source scraping: Trustpilot and ProvenExpert with daily automated updates</li>
+                <li>Deployed to Palantir Foundry with scheduled orchestration for competitive intelligence</li>
+              </ul>
+
+              <p className="font-semibold mt-3">Technical Infrastructure:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Playwright headless browser automation handling JavaScript-heavy sites</li>
+                <li>Anti-detection: Rotating user agents, rate limiting, and intelligent retry logic</li>
+              </ul>
+
+              <p className="font-semibold mt-3">Results:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>✓ Processed 5000+ medical articles into structured ML datasets</li>
+                <li>✓ Automated daily monitoring eliminating 10+ hours/week of manual work</li>
+                <li>✓ Maintained 99%+ uptime with zero detection/blocking incidents</li>
+              </ul>
             </div>
           </CardContent>
         </Card>

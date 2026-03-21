@@ -18,6 +18,8 @@ export default function HomePage() {
             fill
             className="object-cover opacity-20"
             priority
+            quality={50}
+            sizes="100vw"
           />
         </div>
 
@@ -34,6 +36,8 @@ export default function HomePage() {
                   fill
                   className="object-cover object-[center_20%]"
                   priority
+                  quality={75}
+                  sizes="(max-width: 768px) 208px, 208px"
                 />
               </div>
             </div>

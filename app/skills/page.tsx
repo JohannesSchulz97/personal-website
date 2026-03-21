@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Brain, Globe, Cloud, Zap, Database } from "lucide-react";
+import { Code, Brain, Globe, Cloud, Zap, Database, GraduationCap } from "lucide-react";
 
 export default function SkillsPage() {
   return (
@@ -15,6 +15,8 @@ export default function SkillsPage() {
             fill
             className="object-cover opacity-20"
             priority
+            quality={50}
+            sizes="100vw"
           />
         </div>
 
@@ -287,6 +289,33 @@ export default function SkillsPage() {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Mathematics & Teaching */}
+        <Card className="md:col-span-2 lg:col-span-3">
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <GraduationCap className="h-5 w-5" />
+              <CardTitle>Mathematics & Teaching</CardTitle>
+            </div>
+            <CardDescription>10+ years of university and private instruction</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              <p className="text-sm text-muted-foreground">
+                Over a decade of teaching experience in universities and private tutoring across computer science,
+                mathematics, and machine learning. Strong foundation in mathematical reasoning applied to software
+                engineering, algorithm design, and AI system development.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <Badge>Computer Science</Badge>
+                <Badge>Mathematics</Badge>
+                <Badge>Machine Learning</Badge>
+                <Badge variant="secondary">University Instruction</Badge>
+                <Badge variant="secondary">Private Tutoring</Badge>
               </div>
             </div>
           </CardContent>

@@ -15,6 +15,8 @@ export default function ContactPage() {
             fill
             className="object-cover opacity-20"
             priority
+            quality={50}
+            sizes="100vw"
           />
         </div>
 
