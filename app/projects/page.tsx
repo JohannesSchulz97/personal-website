@@ -56,9 +56,11 @@ export default function ProjectsPage() {
       </div>
 
       {/* Projects Grid */}
-      <div className="columns-1 md:columns-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Left Column */}
+        <div className="space-y-8">
         {/* Project 0: Foundry Migration */}
-        <Card className="flex flex-col break-inside-avoid mb-8">
+        <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>Enterprise Platform Migration: 99.8% Cost Reduction</CardTitle>
             <CardDescription>
@@ -150,7 +152,7 @@ export default function ProjectsPage() {
         </Card>
 
         {/* Project 1: Self-Hosted Production Infrastructure */}
-        <Card className="flex flex-col break-inside-avoid mb-8">
+        <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>Self-Hosted Production Infrastructure</CardTitle>
             <CardDescription>
@@ -237,9 +239,12 @@ export default function ProjectsPage() {
             )}
           </CardContent>
         </Card>
+        </div>
 
+        {/* Right Column */}
+        <div className="space-y-8">
         {/* Project 2: CAPS */}
-        <Card className="flex flex-col break-inside-avoid mb-8">
+        <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>CAPS (Claude Automated Programming System)</CardTitle>
             <CardDescription>
@@ -311,6 +316,7 @@ export default function ProjectsPage() {
             )}
           </CardContent>
         </Card>
+        </div>
 
         {/* Show More Projects Button */}
         {!showAllProjects && (
@@ -330,8 +336,10 @@ export default function ProjectsPage() {
         {/* Additional Projects - Hidden by default */}
         {showAllProjects && (
           <>
+            {/* Additional Left Column */}
+            <div className="space-y-8">
         {/* Project 3: Customer Support Automation */}
-        <Card className="flex flex-col break-inside-avoid mb-8">
+        <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>AI-Powered Customer Support Automation with Multi-Agent System</CardTitle>
             <CardDescription>
@@ -421,7 +429,7 @@ export default function ProjectsPage() {
         </Card>
 
         {/* Project 4: Dual-Runtime LLM Pipeline Framework */}
-        <Card className="flex flex-col break-inside-avoid mb-8">
+        <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>Dual-Runtime LLM Pipeline Framework</CardTitle>
             <CardDescription>
@@ -510,7 +518,7 @@ export default function ProjectsPage() {
         </Card>
 
         {/* Project 5: TOB Vibe Kanban */}
-        <Card className="flex flex-col break-inside-avoid mb-8">
+        <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>TOB Vibe Kanban: Enterprise Multi-Agent Orchestration Platform</CardTitle>
             <CardDescription>
@@ -577,7 +585,7 @@ export default function ProjectsPage() {
         </Card>
 
         {/* Project 6: Biomechanical Structure Analysis */}
-        <Card className="flex flex-col break-inside-avoid mb-8">
+        <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>Biomechanical Structure Analysis</CardTitle>
             <CardDescription>
@@ -647,9 +655,12 @@ export default function ProjectsPage() {
             </div>
           </CardContent>
         </Card>
+            </div>
 
+            {/* Additional Right Column */}
+            <div className="space-y-8">
         {/* Project 7: LLM Pipeline Orchestration System */}
-        <Card className="flex flex-col break-inside-avoid mb-8">
+        <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>LLM Pipeline Orchestration System</CardTitle>
             <CardDescription>
@@ -724,7 +735,7 @@ export default function ProjectsPage() {
         </Card>
 
         {/* Project 8: Multi-Modal Veterinary AI Assistant */}
-        <Card className="flex flex-col break-inside-avoid mb-8">
+        <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>Multi-Modal Veterinary AI Assistant</CardTitle>
             <CardDescription>
@@ -800,7 +811,7 @@ export default function ProjectsPage() {
         </Card>
 
         {/* Project 9: Production Web Scraping Infrastructure */}
-        <Card className="flex flex-col break-inside-avoid mb-8">
+        <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>Production Web Scraping Infrastructure</CardTitle>
             <CardDescription>
@@ -868,6 +879,7 @@ export default function ProjectsPage() {
             )}
           </CardContent>
         </Card>
+            </div>
 
             {/* Show Fewer Projects Button */}
             <div className="col-span-full flex justify-center my-8">
