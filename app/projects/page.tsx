@@ -316,28 +316,7 @@ export default function ProjectsPage() {
             )}
           </CardContent>
         </Card>
-        </div>
 
-        {/* Show More Projects Button */}
-        {!showAllProjects && (
-          <div className="col-span-full flex justify-center my-8">
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => setShowAllProjects(true)}
-              className="min-w-[200px]"
-            >
-              <ChevronDown className="h-4 w-4 mr-2" />
-              Show More Projects (7)
-            </Button>
-          </div>
-        )}
-
-        {/* Additional Projects - Hidden by default */}
-        {showAllProjects && (
-          <>
-            {/* Additional Left Column */}
-            <div className="space-y-8">
         {/* Project 3: Customer Support Automation */}
         <Card className="flex flex-col">
           <CardHeader>
@@ -427,7 +406,28 @@ export default function ProjectsPage() {
             )}
           </CardContent>
         </Card>
+        </div>
 
+        {/* Show More Projects Button */}
+        {!showAllProjects && (
+          <div className="col-span-full flex justify-center my-8">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => setShowAllProjects(true)}
+              className="min-w-[200px]"
+            >
+              <ChevronDown className="h-4 w-4 mr-2" />
+              Show More Projects (6)
+            </Button>
+          </div>
+        )}
+
+        {/* Additional Projects - Hidden by default */}
+        {showAllProjects && (
+          <>
+            {/* Additional Left Column */}
+            <div className="space-y-8">
         {/* Project 4: Dual-Runtime LLM Pipeline Framework */}
         <Card className="flex flex-col">
           <CardHeader>
