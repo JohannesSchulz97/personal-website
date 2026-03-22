@@ -243,31 +243,32 @@ export default function ProjectsPage() {
 
         {/* Right Column */}
         <div className="space-y-8">
-        {/* Project 2: CAPS */}
+        {/* Project 6: Biomechanical Structure Analysis */}
         <Card className="flex flex-col">
           <CardHeader>
-            <CardTitle>CAPS (Claude Automated Programming System)</CardTitle>
+            <CardTitle>Biomechanical Structure Analysis</CardTitle>
             <CardDescription>
-              Self-improving AI development system orchestrating complete scrum cycles from conversation to production,
-              eliminating scope creep through frozen specifications and autonomous multi-agent builds
+              Production-grade biomechanical posture analysis pipeline deployed to clinical workflow,
+              analyzing patient posture with privacy-preserving computer vision
             </CardDescription>
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Cloudflare Workers</Badge>
-              <Badge variant="secondary">React Server Components</Badge>
-              <Badge variant="secondary">Multi-Agent Systems</Badge>
-              <Badge variant="secondary">Git Worktrees</Badge>
-              <Badge variant="secondary">Scrum Automation</Badge>
+              <Badge variant="secondary">Python</Badge>
+              <Badge variant="secondary">MediaPipe</Badge>
+              <Badge variant="secondary">BiRefNet</Badge>
+              <Badge variant="secondary">Gemini LLM</Badge>
+              <Badge variant="secondary">Palantir Foundry</Badge>
             </div>
 
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>✓ Eliminated scope creep through frozen PRD enforcement</li>
-                <li>✓ System improves itself: every project makes CAPS better for all users</li>
-                <li>✓ Parallel autonomous builds with isolated git worktree execution</li>
+                <li>✓ Deployed to production clinical workflow processing 40+ patient assessments daily</li>
+                <li>✓ Reduced biomechanical assessment time from 30 minutes to 5 minutes (80%+ reduction)</li>
+                <li>✓ Achieved 90%+ accuracy in posture deviation detection</li>
+                <li>✓ 100% GDPR compliance with privacy-preserving blur layers</li>
               </ul>
             </div>
 
@@ -275,10 +276,10 @@ export default function ProjectsPage() {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => toggleProject(2)}
+              onClick={() => toggleProject(6)}
               className="w-full"
             >
-              {expandedProjects.has(2) ? (
+              {expandedProjects.has(6) ? (
                 <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
               ) : (
                 <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
@@ -286,34 +287,31 @@ export default function ProjectsPage() {
             </Button>
 
             {/* Collapsible Details */}
-            {expandedProjects.has(2) && (
+            {expandedProjects.has(6) && (
               <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
-                <p className="font-semibold">Challenge:</p>
-                <p>AI-assisted development produces "vibe coding" — unstructured workflows causing scope creep and technical debt. Teams need disciplined scrum cycles with AI orchestration.</p>
-
-                <p className="font-semibold mt-3">Scrum Cycle Automation:</p>
+                <p className="font-semibold">Key Capabilities:</p>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>/design → Socratic questioning produces frozen PRD preventing mid-sprint scope changes</li>
-                  <li>/breakdown → PRD atomizes into INVEST-compliant GitHub Issues automatically</li>
-                  <li>/build → Multi-agent system (PLANNER → CODER → QA → FIXER → MERGE) ships features autonomously</li>
-                  <li>/retro → End-of-sprint retrospective creating issues in upstream CAPS repository, not current project</li>
-                </ul>
-
-                <p className="font-semibold mt-3">Self-Improving System Architecture:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Every project's /retro identifies CAPS workflow friction and creates upstream template issues</li>
-                  <li>/update command pulls improvements from upstream — runs automatically at session start</li>
-                  <li>Creates feedback loop: user experience → upstream fixes → all projects benefit automatically</li>
-                  <li>Encoded domain knowledge prevents AI hallucinations (RedwoodSDK, D1 patterns, git workflows)</li>
-                </ul>
-
-                <p className="font-semibold mt-3">Production Stack:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Cloudflare Workers edge deployment with React 19 Server Components</li>
-                  <li>Multi-environment pipeline with 70% coverage gates and Zero Trust security</li>
+                  <li>Multi-stage computer vision pipeline combining MediaPipe pose estimation, BiRefNet segmentation, and Gemini LLM analysis</li>
+                  <li>Bottom-up kinetic chain analysis (Ankle → Knee → Hip → Pelvis → Thorax → Cervical)</li>
+                  <li>Privacy-preserving features with background blur and face blur</li>
+                  <li>Deployed to production clinical workflow on Palantir Foundry</li>
+                  <li>German-language output for end users with detailed biomechanical feedback</li>
                 </ul>
               </div>
             )}
+
+            {/* Demo Preview - Always Visible */}
+            <div
+              className="border-2 rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 hover:from-emerald-500/20 hover:to-cyan-500/20 transition-all cursor-pointer group relative h-[300px] flex items-center justify-center"
+              onClick={() => setOpenDemo('structure-viewer')}
+            >
+              <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+              <div className="text-center z-10">
+                <Play className="h-16 w-16 mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" />
+                <p className="text-lg font-semibold">Click to View Interactive Demo</p>
+                <p className="text-sm text-muted-foreground mt-2">Biomechanical analysis pipeline</p>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -410,7 +408,7 @@ export default function ProjectsPage() {
 
         {/* Show More Projects Button */}
         {!showAllProjects && (
-          <div className="col-span-full flex justify-center my-8">
+          <div className="col-span-full flex justify-center mt-8">
             <Button
               variant="outline"
               size="lg"
@@ -584,7 +582,7 @@ export default function ProjectsPage() {
           </CardContent>
         </Card>
 
-        {/* Project 6: Biomechanical Structure Analysis */}
+        {/* Project 2: CAPS */}
         <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>Biomechanical Structure Analysis</CardTitle>
