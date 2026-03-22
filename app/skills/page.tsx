@@ -100,7 +100,17 @@ export default function SkillsPage() {
                 <div className="flex flex-wrap gap-2">
                   <Badge>Node.js</Badge>
                   <Badge>FastAPI</Badge>
+                  <Badge>n8n</Badge>
                   <Badge variant="outline">REST APIs</Badge>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold mb-2 text-sm">APIs & Integration</h4>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>Slack API</Badge>
+                  <Badge>Palantir Foundry</Badge>
+                  <Badge variant="outline">FluentSupport</Badge>
                 </div>
               </div>
 
@@ -143,7 +153,9 @@ export default function SkillsPage() {
                   <Badge>Claude API</Badge>
                   <Badge>LangChain</Badge>
                   <Badge>Gemini API</Badge>
+                  <Badge>Multi-Agent Systems</Badge>
                   <Badge variant="outline">RAG Systems</Badge>
+                  <Badge variant="outline">Vector Search</Badge>
                 </div>
               </div>
 
@@ -192,8 +204,9 @@ export default function SkillsPage() {
               <div>
                 <h4 className="font-semibold mb-2 text-sm">Monitoring & Security</h4>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">Zero Trust</Badge>
+                  <Badge variant="secondary">Cloudflare Zero Trust</Badge>
                   <Badge variant="outline">SSL/TLS</Badge>
+                  <Badge variant="outline">Auth0</Badge>
                 </div>
               </div>
             </div>
