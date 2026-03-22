@@ -410,7 +410,7 @@ export default function ProjectsPage() {
 
         {/* Show More Projects Button */}
         {!showAllProjects && (
-          <div className="col-span-full flex justify-center mt-8">
+          <div className="col-span-full flex justify-center">
             <Button
               variant="outline"
               size="lg"
