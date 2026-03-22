@@ -302,14 +302,16 @@ export default function ProjectsPage() {
 
             {/* Demo Preview - Always Visible */}
             <div
-              className="border-2 rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 hover:from-emerald-500/20 hover:to-cyan-500/20 transition-all cursor-pointer group relative h-[300px] flex items-center justify-center"
+              className="border rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all cursor-pointer group relative h-[120px] flex items-center justify-center"
               onClick={() => setOpenDemo('structure-viewer')}
             >
-              <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-              <div className="text-center z-10">
-                <Play className="h-16 w-16 mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" />
-                <p className="text-lg font-semibold">Click to View Interactive Demo</p>
-                <p className="text-sm text-muted-foreground mt-2">Biomechanical analysis pipeline</p>
+              <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+              <div className="flex items-center gap-3 z-10">
+                <Play className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
+                <div className="text-left">
+                  <p className="text-sm font-semibold">View Interactive Demo</p>
+                  <p className="text-xs text-muted-foreground">Biomechanical analysis pipeline</p>
+                </div>
               </div>
             </div>
           </CardContent>
@@ -641,14 +643,16 @@ export default function ProjectsPage() {
 
             {/* Demo Preview - Always Visible */}
             <div
-              className="border-2 rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/10 to-cyan-500/10 hover:from-emerald-500/20 hover:to-cyan-500/20 transition-all cursor-pointer group relative h-[300px] flex items-center justify-center"
+              className="border rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all cursor-pointer group relative h-[120px] flex items-center justify-center"
               onClick={() => setOpenDemo('structure-viewer')}
             >
-              <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-              <div className="text-center z-10">
-                <Play className="h-16 w-16 mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" />
-                <p className="text-lg font-semibold">Click to View Interactive Demo</p>
-                <p className="text-sm text-muted-foreground mt-2">Biomechanical analysis pipeline</p>
+              <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+              <div className="flex items-center gap-3 z-10">
+                <Play className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
+                <div className="text-left">
+                  <p className="text-sm font-semibold">View Interactive Demo</p>
+                  <p className="text-xs text-muted-foreground">Biomechanical analysis pipeline</p>
+                </div>
               </div>
             </div>
           </CardContent>
@@ -719,14 +723,16 @@ export default function ProjectsPage() {
 
             {/* Demo Preview - Always Visible */}
             <div
-              className="border-2 rounded-lg overflow-hidden bg-gradient-to-br from-blue-500/10 to-purple-500/10 hover:from-blue-500/20 hover:to-purple-500/20 transition-all cursor-pointer group relative h-[300px] flex items-center justify-center"
+              className="border rounded-lg overflow-hidden bg-gradient-to-br from-blue-500/5 to-purple-500/5 hover:from-blue-500/10 hover:to-purple-500/10 transition-all cursor-pointer group relative h-[120px] flex items-center justify-center"
               onClick={() => window.location.href = '/demos/dependency-graph'}
             >
-              <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-              <div className="text-center z-10">
-                <Play className="h-16 w-16 mx-auto mb-4 text-primary group-hover:scale-110 transition-transform" />
-                <p className="text-lg font-semibold">Click to View Interactive Demo</p>
-                <p className="text-sm text-muted-foreground mt-2">LLM pipeline orchestration interface</p>
+              <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+              <div className="flex items-center gap-3 z-10">
+                <Play className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
+                <div className="text-left">
+                  <p className="text-sm font-semibold">View Interactive Demo</p>
+                  <p className="text-xs text-muted-foreground">LLM pipeline orchestration interface</p>
+                </div>
               </div>
             </div>
           </CardContent>
