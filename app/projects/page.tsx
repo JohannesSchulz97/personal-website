@@ -239,6 +239,246 @@ export default function ProjectsPage() {
             )}
           </CardContent>
         </Card>
+
+        {/* Additional Left Column Projects - Hidden by default */}
+        {showAllProjects && (
+          <>
+        {/* Project 4: Dual-Runtime LLM Pipeline Framework */}
+        <Card className="flex flex-col">
+          <CardHeader>
+            <CardTitle>Dual-Runtime LLM Pipeline Framework</CardTitle>
+            <CardDescription>
+              Standalone Python pip package for deterministic multi-step LLM pipelines running both in-process for low latency
+              and on LangGraph Standalone Server for visual debugging and MCP endpoint exposure — same code, zero duplication, different runtimes
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex-1 flex flex-col space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary">Python</Badge>
+              <Badge variant="secondary">LangGraph</Badge>
+              <Badge variant="secondary">LangChain</Badge>
+              <Badge variant="secondary">LangSmith Studio</Badge>
+              <Badge variant="secondary">MCP Protocol</Badge>
+              <Badge variant="secondary">FastAPI</Badge>
+              <Badge variant="secondary">Architecture Design</Badge>
+            </div>
+
+            {/* Results - Always Visible */}
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p className="font-semibold">Results:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>✓ 2 production pipelines extracted with zero Oracle imports</li>
+                <li>✓ LangSmith Studio visual debugging: prompt iteration from minutes to seconds</li>
+                <li>✓ Auto-MCP endpoint enabling n8n integration without custom per-pipeline work</li>
+                <li>✓ Composable capability protocol pattern validated and documented for all future pipelines</li>
+                <li>✓ 6 research reference documents produced — independently referenceable by team</li>
+              </ul>
+            </div>
+
+            {/* Expand/Collapse Button */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => toggleProject(4)}
+              className="w-full"
+            >
+              {expandedProjects.has(4) ? (
+                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
+              ) : (
+                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
+              )}
+            </Button>
+
+            {/* Collapsible Details */}
+            {expandedProjects.has(4) && (
+              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
+                <p className="font-semibold">Challenge:</p>
+                <p>Custom LLM pipelines (ticket analysis, podcast generation) were tightly coupled to Oracle platform internals — could only run in-process. No visual debugging (Studio requires LangGraph Standalone Server), no external access for n8n workflows, no resource isolation for batch jobs competing with interactive chat traffic.</p>
+
+                <p className="font-semibold mt-3">Architecture Innovation — Composable Capability Protocols:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Pipelines define capability protocols (LLMCapability, TicketDataCapability, TTSCapability, RetrievalCapability)</li>
+                  <li>DirectPipelineContext: direct service injection for in-process Oracle execution (low latency)</li>
+                  <li>HttpPipelineContext: environment variables + Oracle API calls over HTTP for LangGraph Server</li>
+                  <li>Same pip package, same code version — runtime injection determines context implementation</li>
+                  <li>Zero Oracle imports in pipeline code — pure functions interacting through capability protocols</li>
+                </ul>
+
+                <p className="font-semibold mt-3">Dual Deployment Strategy:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>LangGraph Standalone Server (langgraph.tob.sh): LangSmith Studio debugging, auto-MCP endpoint at /mcp, independent scaling</li>
+                  <li>Oracle in-process: DirectPipelineContext for low-latency text-callable execution from chat agents</li>
+                  <li>n8n workflows consume pipelines via MCP protocol — zero custom integration work per pipeline</li>
+                  <li>3-container Docker Compose: langgraph-api, PostgreSQL (checkpoints), Redis (streaming)</li>
+                </ul>
+
+                <p className="font-semibold mt-3">Research-Driven Architecture:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>5 targeted deep-research investigations before implementation: LangChain ecosystem, SurfSense architecture, n8n integration, LangGraph Platform, production adoption patterns</li>
+                  <li>LangFlow→LangGraph bridge eliminated (GitHub issues #9216, #4090 closed as "not planned" — data models incompatible)</li>
+                  <li>Pipeline boundary rule established: LangGraph for multi-step reasoning with state, n8n for system integration and simple prompt chains</li>
+                  <li>Consumer-first interface design: sketched ideal pipeline node code before defining protocols</li>
+                </ul>
+
+                <p className="font-semibold mt-3">Production Pipelines:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>ticket_analyse: 3 nodes — fetch tickets from Foundry → retrieve structural analyses via RAG → generate German feedback</li>
+                  <li>podcaster: 2 nodes — generate transcript via LLM → concurrent TTS segments → FFmpeg merge</li>
+                  <li>LangGraph Assistants pattern: Configuration dataclass per pipeline with tunable fields for non-coder customization</li>
+                  <li>Standardized 6-file structure: graph.py, state.py, nodes.py, configuration.py, prompts.py, __init__.py</li>
+                </ul>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Project 5: TOB Vibe Kanban */}
+        <Card className="flex flex-col">
+          <CardHeader>
+            <CardTitle>TOB Vibe Kanban: Enterprise Multi-Agent Orchestration Platform</CardTitle>
+            <CardDescription>
+              Advanced dual-fork architecture enabling autonomous AI agent orchestration at scale through
+              sophisticated patch management, seamless GitHub integration, and cross-platform distribution
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex-1 flex flex-col space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary">Rust</Badge>
+              <Badge variant="secondary">TypeScript</Badge>
+              <Badge variant="secondary">Fork Engineering</Badge>
+              <Badge variant="secondary">Agent Orchestration</Badge>
+              <Badge variant="secondary">Cross-Platform</Badge>
+            </div>
+
+            {/* Results - Always Visible */}
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p className="font-semibold">Results:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>✓ Successfully maintained dual forks with zero upstream merge conflicts via stgit methodology</li>
+                <li>✓ Enabled enterprise-scale headless agent orchestration across distributed development teams</li>
+                <li>✓ Achieved single-command organizational rollout eliminating manual installation overhead</li>
+              </ul>
+            </div>
+
+            {/* Expand/Collapse Button */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => toggleProject(5)}
+              className="w-full"
+            >
+              {expandedProjects.has(5) ? (
+                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
+              ) : (
+                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
+              )}
+            </Button>
+
+            {/* Collapsible Details */}
+            {expandedProjects.has(5) && (
+              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
+                <p className="font-semibold">Challenge:</p>
+                <p>Enterprise required unified AI orchestration platform merging VibeKanban's workflow engine with Claude MPM's advanced agent capabilities while preserving upstream compatibility across both evolving codebases.</p>
+
+                <p className="font-semibold mt-3">Dual Fork Architecture:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Engineered headless mode for Claude MPM enabling fully autonomous multi-agent execution</li>
+                  <li>Built custom executor integration bridging VibeKanban and MPM through command override architecture</li>
+                  <li>Implemented stgit-based patch management maintaining clean separation of enterprise customizations from upstream</li>
+                  <li>GitHub organization integration with one-click repository cloning and project initialization</li>
+                </ul>
+
+                <p className="font-semibold mt-3">Enterprise Distribution:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Production NPM package with optimized binaries across 6 platform targets (Linux, macOS, Windows)</li>
+                  <li>Fully automated CI/CD pipeline with pre-release validation and multi-architecture builds</li>
+                  <li>Zero-configuration deployment via npx with intelligent binary caching and platform detection</li>
+                </ul>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Project 2: CAPS */}
+        <Card className="flex flex-col">
+          <CardHeader>
+            <CardTitle>CAPS: AI-Powered Customer Support System</CardTitle>
+            <CardDescription>
+              Production multi-agent customer support system handling 80+ daily tickets across 5 inboxes with intelligent routing,
+              automated responses, and human escalation — saving 15+ hours/week
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex-1 flex flex-col space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary">Python</Badge>
+              <Badge variant="secondary">n8n</Badge>
+              <Badge variant="secondary">LangChain</Badge>
+              <Badge variant="secondary">GPT-4</Badge>
+              <Badge variant="secondary">PostgreSQL</Badge>
+              <Badge variant="secondary">Slack API</Badge>
+            </div>
+
+            {/* Results - Always Visible */}
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p className="font-semibold">Results:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>✓ Handles 80+ daily tickets across 5 separate inboxes (WhatsApp, Email, Instagram, YouTube, Slack)</li>
+                <li>✓ Achieved 70% automation rate with human escalation for complex cases</li>
+                <li>✓ Saved 15+ hours/week of manual ticket routing and response drafting</li>
+                <li>✓ Sub-2-minute average response time (from 30+ minutes manual)</li>
+                <li>✓ Zero incorrect escalations due to AI guardrails and safety checks</li>
+              </ul>
+            </div>
+
+            {/* Expand/Collapse Button */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => toggleProject(2)}
+              className="w-full"
+            >
+              {expandedProjects.has(2) ? (
+                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
+              ) : (
+                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
+              )}
+            </Button>
+
+            {/* Collapsible Details */}
+            {expandedProjects.has(2) && (
+              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
+                <p className="font-semibold">Challenge:</p>
+                <p>Customer support team overwhelmed managing 80+ daily tickets across 5 separate platforms — manual routing, response drafting, and context switching consumed 15+ hours/week. Needed intelligent automation with human oversight for quality control.</p>
+
+                <p className="font-semibold mt-3">Multi-Agent Architecture:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Ticket Agent (GPT-4 Turbo): Intelligent classification, automated response drafting, escalation decisions</li>
+                  <li>Draft Agent (GPT-4): High-quality response generation with company tone and domain knowledge</li>
+                  <li>Invoice Agent: Automated invoice fetching from accounting system via API</li>
+                  <li>Unified agent queue system: Slack integration with live-updating pinned messages for human oversight</li>
+                </ul>
+
+                <p className="font-semibold mt-3">Platform Integration:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Built on n8n workflow automation with 40+ reference guides via blocking hook system</li>
+                  <li>Multi-inbox support: WhatsApp, Email (IMAP), Instagram DMs, YouTube comments, internal Slack channels</li>
+                  <li>PostgreSQL knowledge base: RAG retrieval for context-aware responses</li>
+                  <li>Slack escalation workflow: Human review interface with approve/edit/reject controls</li>
+                </ul>
+
+                <p className="font-semibold mt-3">Safety & Quality Controls:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>AI guardrails: Confidence scoring, sensitive topic detection, auto-escalation rules</li>
+                  <li>Live-updating agent queues: Pinned Slack messages + DM lists continuously rebuilt as tickets arrive</li>
+                  <li>Invoice PDF automation: Billing agent fetches invoices from Bexio, uploads to Slack thread</li>
+                  <li>Voice reply support: Audio transcription enables mobile-first agent workflows</li>
+                </ul>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+          </>
+        )}
         </div>
 
         {/* Right Column */}
@@ -406,261 +646,10 @@ export default function ProjectsPage() {
             )}
           </CardContent>
         </Card>
-        </div>
 
-        {/* Show More Projects Button */}
-        {!showAllProjects && (
-          <div className="col-span-full flex justify-center">
-            <Button
-              variant="outline"
-              size="lg"
-              onClick={() => setShowAllProjects(true)}
-              className="min-w-[200px]"
-            >
-              <ChevronDown className="h-4 w-4 mr-2" />
-              Show More Projects (6)
-            </Button>
-          </div>
-        )}
-
-        {/* Additional Projects - Hidden by default */}
+        {/* Additional Right Column Projects - Hidden by default */}
         {showAllProjects && (
           <>
-            {/* Additional Left Column */}
-            <div className="space-y-8">
-        {/* Project 4: Dual-Runtime LLM Pipeline Framework */}
-        <Card className="flex flex-col">
-          <CardHeader>
-            <CardTitle>Dual-Runtime LLM Pipeline Framework</CardTitle>
-            <CardDescription>
-              Standalone Python pip package for deterministic multi-step LLM pipelines running both in-process for low latency
-              and on LangGraph Standalone Server for visual debugging and MCP endpoint exposure — same code, zero duplication, different runtimes
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex-1 flex flex-col space-y-4">
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Python</Badge>
-              <Badge variant="secondary">LangGraph</Badge>
-              <Badge variant="secondary">LangChain</Badge>
-              <Badge variant="secondary">LangSmith Studio</Badge>
-              <Badge variant="secondary">MCP Protocol</Badge>
-              <Badge variant="secondary">FastAPI</Badge>
-              <Badge variant="secondary">Architecture Design</Badge>
-            </div>
-
-            {/* Results - Always Visible */}
-            <div className="text-sm text-muted-foreground space-y-2">
-              <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>✓ 2 production pipelines extracted with zero Oracle imports</li>
-                <li>✓ LangSmith Studio visual debugging: prompt iteration from minutes to seconds</li>
-                <li>✓ Auto-MCP endpoint enabling n8n integration without custom per-pipeline work</li>
-                <li>✓ Composable capability protocol pattern validated and documented for all future pipelines</li>
-                <li>✓ 6 research reference documents produced — independently referenceable by team</li>
-              </ul>
-            </div>
-
-            {/* Expand/Collapse Button */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => toggleProject(4)}
-              className="w-full"
-            >
-              {expandedProjects.has(4) ? (
-                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
-              ) : (
-                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
-              )}
-            </Button>
-
-            {/* Collapsible Details */}
-            {expandedProjects.has(4) && (
-              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
-                <p className="font-semibold">Challenge:</p>
-                <p>Custom LLM pipelines (ticket analysis, podcast generation) were tightly coupled to Oracle platform internals — could only run in-process. No visual debugging (Studio requires LangGraph Standalone Server), no external access for n8n workflows, no resource isolation for batch jobs competing with interactive chat traffic.</p>
-
-                <p className="font-semibold mt-3">Architecture Innovation — Composable Capability Protocols:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Pipelines define capability protocols (LLMCapability, TicketDataCapability, TTSCapability, RetrievalCapability)</li>
-                  <li>DirectPipelineContext: direct service injection for in-process Oracle execution (low latency)</li>
-                  <li>HttpPipelineContext: environment variables + Oracle API calls over HTTP for LangGraph Server</li>
-                  <li>Same pip package, same code version — runtime injection determines context implementation</li>
-                  <li>Zero Oracle imports in pipeline code — pure functions interacting through capability protocols</li>
-                </ul>
-
-                <p className="font-semibold mt-3">Dual Deployment Strategy:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>LangGraph Standalone Server (langgraph.tob.sh): LangSmith Studio debugging, auto-MCP endpoint at /mcp, independent scaling</li>
-                  <li>Oracle in-process: DirectPipelineContext for low-latency text-callable execution from chat agents</li>
-                  <li>n8n workflows consume pipelines via MCP protocol — zero custom integration work per pipeline</li>
-                  <li>3-container Docker Compose: langgraph-api, PostgreSQL (checkpoints), Redis (streaming)</li>
-                </ul>
-
-                <p className="font-semibold mt-3">Research-Driven Architecture:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>5 targeted deep-research investigations before implementation: LangChain ecosystem, SurfSense architecture, n8n integration, LangGraph Platform, production adoption patterns</li>
-                  <li>LangFlow→LangGraph bridge eliminated (GitHub issues #9216, #4090 closed as "not planned" — data models incompatible)</li>
-                  <li>Pipeline boundary rule established: LangGraph for multi-step reasoning with state, n8n for system integration and simple prompt chains</li>
-                  <li>Consumer-first interface design: sketched ideal pipeline node code before defining protocols</li>
-                </ul>
-
-                <p className="font-semibold mt-3">Production Pipelines:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>ticket_analyse: 3 nodes — fetch tickets from Foundry → retrieve structural analyses via RAG → generate German feedback</li>
-                  <li>podcaster: 2 nodes — generate transcript via LLM → concurrent TTS segments → FFmpeg merge</li>
-                  <li>LangGraph Assistants pattern: Configuration dataclass per pipeline with tunable fields for non-coder customization</li>
-                  <li>Standardized 6-file structure: graph.py, state.py, nodes.py, configuration.py, prompts.py, __init__.py</li>
-                </ul>
-              </div>
-            )}
-          </CardContent>
-        </Card>
-
-        {/* Project 5: TOB Vibe Kanban */}
-        <Card className="flex flex-col">
-          <CardHeader>
-            <CardTitle>TOB Vibe Kanban: Enterprise Multi-Agent Orchestration Platform</CardTitle>
-            <CardDescription>
-              Advanced dual-fork architecture enabling autonomous AI agent orchestration at scale through
-              sophisticated patch management, seamless GitHub integration, and cross-platform distribution
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex-1 flex flex-col space-y-4">
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Rust</Badge>
-              <Badge variant="secondary">TypeScript</Badge>
-              <Badge variant="secondary">Fork Engineering</Badge>
-              <Badge variant="secondary">Agent Orchestration</Badge>
-              <Badge variant="secondary">Cross-Platform</Badge>
-            </div>
-
-            {/* Results - Always Visible */}
-            <div className="text-sm text-muted-foreground space-y-2">
-              <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>✓ Successfully maintained dual forks with zero upstream merge conflicts via stgit methodology</li>
-                <li>✓ Enabled enterprise-scale headless agent orchestration across distributed development teams</li>
-                <li>✓ Achieved single-command organizational rollout eliminating manual installation overhead</li>
-              </ul>
-            </div>
-
-            {/* Expand/Collapse Button */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => toggleProject(5)}
-              className="w-full"
-            >
-              {expandedProjects.has(5) ? (
-                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
-              ) : (
-                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
-              )}
-            </Button>
-
-            {/* Collapsible Details */}
-            {expandedProjects.has(5) && (
-              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
-                <p className="font-semibold">Challenge:</p>
-                <p>Enterprise required unified AI orchestration platform merging VibeKanban's workflow engine with Claude MPM's advanced agent capabilities while preserving upstream compatibility across both evolving codebases.</p>
-
-                <p className="font-semibold mt-3">Dual Fork Architecture:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Engineered headless mode for Claude MPM enabling fully autonomous multi-agent execution</li>
-                  <li>Built custom executor integration bridging VibeKanban and MPM through command override architecture</li>
-                  <li>Implemented stgit-based patch management maintaining clean separation of enterprise customizations from upstream</li>
-                  <li>GitHub organization integration with one-click repository cloning and project initialization</li>
-                </ul>
-
-                <p className="font-semibold mt-3">Enterprise Distribution:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Production NPM package with optimized binaries across 6 platform targets (Linux, macOS, Windows)</li>
-                  <li>Fully automated CI/CD pipeline with pre-release validation and multi-architecture builds</li>
-                  <li>Zero-configuration deployment via npx with intelligent binary caching and platform detection</li>
-                </ul>
-              </div>
-            )}
-          </CardContent>
-        </Card>
-
-        {/* Project 2: CAPS */}
-        <Card className="flex flex-col">
-          <CardHeader>
-            <CardTitle>Biomechanical Structure Analysis</CardTitle>
-            <CardDescription>
-              Production-grade biomechanical posture analysis pipeline deployed to clinical workflow,
-              analyzing patient posture with privacy-preserving computer vision
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex-1 flex flex-col space-y-4">
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Python</Badge>
-              <Badge variant="secondary">MediaPipe</Badge>
-              <Badge variant="secondary">BiRefNet</Badge>
-              <Badge variant="secondary">Gemini LLM</Badge>
-              <Badge variant="secondary">Palantir Foundry</Badge>
-            </div>
-
-            {/* Results - Always Visible */}
-            <div className="text-sm text-muted-foreground space-y-2">
-              <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>✓ Deployed to production clinical workflow processing 40+ patient assessments daily</li>
-                <li>✓ Reduced biomechanical assessment time from 30 minutes to 5 minutes (80%+ reduction)</li>
-                <li>✓ Achieved 90%+ accuracy in posture deviation detection</li>
-                <li>✓ 100% GDPR compliance with privacy-preserving blur layers</li>
-              </ul>
-            </div>
-
-            {/* Expand/Collapse Button */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => toggleProject(6)}
-              className="w-full"
-            >
-              {expandedProjects.has(6) ? (
-                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
-              ) : (
-                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
-              )}
-            </Button>
-
-            {/* Collapsible Details */}
-            {expandedProjects.has(6) && (
-              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
-                <p className="font-semibold">Key Capabilities:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Multi-stage computer vision pipeline combining MediaPipe pose estimation, BiRefNet segmentation, and Gemini LLM analysis</li>
-                  <li>Bottom-up kinetic chain analysis (Ankle → Knee → Hip → Pelvis → Thorax → Cervical)</li>
-                  <li>Privacy-preserving features with background blur and face blur</li>
-                  <li>Deployed to production clinical workflow on Palantir Foundry</li>
-                  <li>German-language output for end users with detailed biomechanical feedback</li>
-                </ul>
-              </div>
-            )}
-
-            {/* Demo Preview - Always Visible */}
-            <div
-              className="border rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all cursor-pointer group relative h-[120px] flex items-center justify-center"
-              onClick={() => setOpenDemo('structure-viewer')}
-            >
-              <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-              <div className="flex items-center gap-3 z-10">
-                <Play className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
-                <div className="text-left">
-                  <p className="text-sm font-semibold">View Interactive Demo</p>
-                  <p className="text-xs text-muted-foreground">Biomechanical analysis pipeline</p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-            </div>
-
-            {/* Additional Right Column */}
-            <div className="space-y-8">
         {/* Project 7: LLM Pipeline Orchestration System */}
         <Card className="flex flex-col">
           <CardHeader>
@@ -883,21 +872,38 @@ export default function ProjectsPage() {
             )}
           </CardContent>
         </Card>
-            </div>
-
-            {/* Show Fewer Projects Button */}
-            <div className="col-span-full flex justify-center my-8">
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => setShowAllProjects(false)}
-                className="min-w-[200px]"
-              >
-                <ChevronUp className="h-4 w-4 mr-2" />
-                Show Fewer Projects
-              </Button>
-            </div>
           </>
+        )}
+        </div>
+
+        {/* Show More Projects Button */}
+        {!showAllProjects && (
+          <div className="col-span-full flex justify-center">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => setShowAllProjects(true)}
+              className="min-w-[200px]"
+            >
+              <ChevronDown className="h-4 w-4 mr-2" />
+              Show More Projects (6)
+            </Button>
+          </div>
+        )}
+
+        {/* Show Fewer Projects Button */}
+        {showAllProjects && (
+          <div className="col-span-full flex justify-center">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => setShowAllProjects(false)}
+              className="min-w-[200px]"
+            >
+              <ChevronUp className="h-4 w-4 mr-2" />
+              Show Fewer Projects
+            </Button>
+          </div>
         )}
       </div>
 
