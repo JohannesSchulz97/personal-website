@@ -11,17 +11,10 @@ export default function HomePage() {
       {/* Hero Section with Full Width Background */}
       <section className="relative pb-12 overflow-hidden">
         {/* Background Image - Full Width */}
-        <div className="absolute inset-0 w-full">
-          <Image
-            src="/home-page.JPG"
-            alt="Background"
-            fill
-            className="object-cover opacity-20"
-            priority
-            quality={50}
-            sizes="100vw"
-          />
-        </div>
+        <div
+          className="absolute inset-0 w-full bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/home-page.JPG')" }}
+        />
 
         {/* Container for Content */}
         <div className="container mx-auto px-4 py-16 max-w-5xl relative">

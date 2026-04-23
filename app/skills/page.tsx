@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Brain, Globe, Cloud, Zap, Database, GraduationCap } from "lucide-react";
@@ -8,17 +7,10 @@ export default function SkillsPage() {
     <div className="min-h-screen bg-background">
       <section className="relative pb-12 overflow-hidden">
         {/* Background Image - Full Width */}
-        <div className="absolute inset-0 w-full">
-          <Image
-            src="/P1000026.JPG"
-            alt="Background"
-            fill
-            className="object-cover opacity-20"
-            priority
-            quality={50}
-            sizes="100vw"
-          />
-        </div>
+        <div
+          className="absolute inset-0 w-full bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/P1000026.JPG')" }}
+        />
 
         <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
       <div className="mb-12">

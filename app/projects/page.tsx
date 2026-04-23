@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Github, ExternalLink, Youtube, FileText, Play, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -32,17 +31,10 @@ export default function ProjectsPage() {
     <div className="min-h-screen bg-background">
       <section className="relative pb-12 overflow-hidden">
         {/* Background Image - Full Width */}
-        <div className="absolute inset-0 w-full">
-          <Image
-            src="/P1000017.JPG"
-            alt="Background"
-            fill
-            className="object-cover opacity-20"
-            priority
-            quality={50}
-            sizes="100vw"
-          />
-        </div>
+        <div
+          className="absolute inset-0 w-full bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/P1000017.JPG')" }}
+        />
 
         <div className="container mx-auto px-4 py-12 max-w-7xl relative z-10">
       {/* Header Section */}
@@ -240,6 +232,77 @@ export default function ProjectsPage() {
           </CardContent>
         </Card>
 
+        {/* Project 2: TOB Agents */}
+        <Card className="flex flex-col">
+          <CardHeader>
+            <CardTitle>TOB Agents: Multi-Agent Developer Platform</CardTitle>
+            <CardDescription>
+              19 dedicated Slack agents for distributed engineering team across Germany and Georgia,
+              each with persistent vector memory, GitHub activity context, and timezone-aware scheduled check-ins
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex-1 flex flex-col space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary">OpenClaw</Badge>
+              <Badge variant="secondary">GPT-5.4 (Codex)</Badge>
+              <Badge variant="secondary">QMD Vector Memory</Badge>
+              <Badge variant="secondary">GitHub Search API</Badge>
+              <Badge variant="secondary">Bash</Badge>
+              <Badge variant="secondary">GNU Stow</Badge>
+            </div>
+
+            {/* Results - Always Visible */}
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p className="font-semibold">Results:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>✓ 19 autonomous dev agents with persistent memory across Germany and Georgia teams</li>
+                <li>✓ Manager agent auto-detects bottlenecks and reports team status</li>
+                <li>✓ Single-command provisioning for new agent deployment</li>
+                <li>✓ GitHub activity context integration for code-aware assistance</li>
+                <li>✓ Timezone-aware scheduled check-ins for distributed coordination</li>
+              </ul>
+            </div>
+
+            {/* Expand/Collapse Button */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => toggleProject(2)}
+              className="w-full"
+            >
+              {expandedProjects.has(2) ? (
+                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
+              ) : (
+                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
+              )}
+            </Button>
+
+            {/* Collapsible Details */}
+            {expandedProjects.has(2) && (
+              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
+                <p className="font-semibold">Challenge:</p>
+                <p>Distributed engineering team across Germany and Georgia needed autonomous AI assistance for each developer with persistent context, code awareness, and coordinated team oversight.</p>
+
+                <p className="font-semibold mt-3">Multi-Agent Architecture:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>19 dedicated Slack agents built on OpenClaw framework, each serving individual developer</li>
+                  <li>Persistent QMD vector memory: Agents recall past conversations, decisions, and project context</li>
+                  <li>GitHub Search API integration: Code-aware responses based on repository activity</li>
+                  <li>Manager agent: Monitors all dev agents, detects bottlenecks, reports aggregated team status</li>
+                </ul>
+
+                <p className="font-semibold mt-3">Developer Experience:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Single-command provisioning: New agent deployment via GNU Stow configuration management</li>
+                  <li>Timezone-aware check-ins: Scheduled status updates respecting Germany/Georgia time differences</li>
+                  <li>GPT-5.4 (Codex) backend: Advanced code generation and debugging capabilities</li>
+                  <li>Slack-native interface: Zero context switching, agents live where developers communicate</li>
+                </ul>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
         {/* Additional Left Column Projects - Hidden by default */}
         {showAllProjects && (
           <>
@@ -399,7 +462,7 @@ export default function ProjectsPage() {
           </CardContent>
         </Card>
 
-        {/* Project 2: CAPS */}
+        {/* Project 10: CAPS */}
         <Card className="flex flex-col">
           <CardHeader>
             <CardTitle>CAPS: AI-Powered Customer Support System</CardTitle>
@@ -434,10 +497,10 @@ export default function ProjectsPage() {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => toggleProject(2)}
+              onClick={() => toggleProject(10)}
               className="w-full"
             >
-              {expandedProjects.has(2) ? (
+              {expandedProjects.has(10) ? (
                 <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
               ) : (
                 <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
@@ -445,7 +508,7 @@ export default function ProjectsPage() {
             </Button>
 
             {/* Collapsible Details */}
-            {expandedProjects.has(2) && (
+            {expandedProjects.has(10) && (
               <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
                 <p className="font-semibold">Challenge:</p>
                 <p>Customer support team overwhelmed managing 80+ daily tickets across 5 separate platforms — manual routing, response drafting, and context switching consumed 15+ hours/week. Needed intelligent automation with human oversight for quality control.</p>
@@ -872,6 +935,83 @@ export default function ProjectsPage() {
             )}
           </CardContent>
         </Card>
+
+        {/* Project 11: Screw Manufacturing Optimization */}
+        <Card className="flex flex-col">
+          <CardHeader>
+            <CardTitle>Screw Manufacturing Optimization</CardTitle>
+            <CardDescription>
+              Binary classification system predicting defective screws from production data for large-scale
+              industrial manufacturer (SPAX), processing 4 years of MES records with feature engineering and imbalanced learning
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex-1 flex flex-col space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary">Python</Badge>
+              <Badge variant="secondary">scikit-learn</Badge>
+              <Badge variant="secondary">pandas</Badge>
+              <Badge variant="secondary">XGBoost</Badge>
+              <Badge variant="secondary">RandomForest</Badge>
+              <Badge variant="secondary">Jupyter</Badge>
+            </div>
+
+            {/* Results - Always Visible */}
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p className="font-semibold">Results:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>✓ Processed 4 years of production data for defect prediction</li>
+                <li>✓ Reduced 418 one-hot-encoded features via importance scoring</li>
+                <li>✓ Handled 90/10 class imbalance with undersampling strategy</li>
+                <li>✓ Feature importance enabled root cause analysis of defects</li>
+              </ul>
+            </div>
+
+            {/* Expand/Collapse Button */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => toggleProject(11)}
+              className="w-full"
+            >
+              {expandedProjects.has(11) ? (
+                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
+              ) : (
+                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
+              )}
+            </Button>
+
+            {/* Collapsible Details */}
+            {expandedProjects.has(11) && (
+              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
+                <p className="font-semibold">Challenge:</p>
+                <p>Large-scale industrial manufacturer (SPAX) needed automated defect prediction from MES production records and dimensional measurement data to reduce quality control costs and identify root causes of production defects.</p>
+
+                <p className="font-semibold mt-3">Data Engineering:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Processed 4 years of production data: MES records + automated dimensional measurements</li>
+                  <li>Feature engineering from screw material numbers: diameter, material type, surface finish</li>
+                  <li>Reduced 418 one-hot-encoded features via RandomForest importance scoring</li>
+                  <li>Scipy sparse matrices for memory-efficient handling of high-dimensional data</li>
+                </ul>
+
+                <p className="font-semibold mt-3">Machine Learning Pipeline:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Binary classification: Pass/fail prediction from production parameters</li>
+                  <li>Handled 90/10 class imbalance with random undersampling technique</li>
+                  <li>Grid search hyperparameter optimization over Random Forest parameters</li>
+                  <li>XGBoost and RandomForest comparison for best model selection</li>
+                </ul>
+
+                <p className="font-semibold mt-3">Production Impact:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Feature importance analysis: Identified key production parameters causing defects</li>
+                  <li>Root cause analysis: Enabled targeted process improvements</li>
+                  <li>Deployed for quality control optimization at industrial scale</li>
+                </ul>
+              </div>
+            )}
+          </CardContent>
+        </Card>
           </>
         )}
         </div>
@@ -886,7 +1026,7 @@ export default function ProjectsPage() {
               className="min-w-[200px]"
             >
               <ChevronDown className="h-4 w-4 mr-2" />
-              Show More Projects (6)
+              Show More Projects (7)
             </Button>
           </div>
         )}
