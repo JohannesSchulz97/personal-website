@@ -12,10 +12,27 @@ export default function SubmitTestimonialPage() {
   const [hoveredRating, setHoveredRating] = useState(0);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    // Form will be handled by Netlify
-    // This is just for UI feedback
-    setSubmitted(true);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Failed to submit. Please try again.');
+      }
+    } catch (error) {
+      alert('Failed to submit. Please try again.');
+    }
   };
 
   if (submitted) {
@@ -68,19 +85,17 @@ export default function SubmitTestimonialPage() {
             </CardHeader>
             <CardContent>
               <form
-                name="testimonials"
+                action="https://formspree.io/f/mgodnlwq"
                 method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
                 className="space-y-6"
               >
-                {/* Hidden fields for Netlify */}
-                <input type="hidden" name="form-name" value="testimonials" />
+                {/* Hidden fields */}
                 <input type="hidden" name="rating" value={rating} />
+                <input type="hidden" name="_subject" value="New Testimonial Submission" />
                 <p className="hidden">
                   <Label>
-                    Don't fill this out if you're human: <Input name="bot-field" />
+                    Don't fill this out if you're human: <Input name="_gotcha" />
                   </Label>
                 </p>
 

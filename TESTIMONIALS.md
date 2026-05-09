@@ -2,7 +2,7 @@
 
 ## Overview
 
-Static testimonials system with Netlify Forms for client submissions and manual approval workflow.
+Static testimonials system with Formspree for submissions and manual approval workflow.
 
 ## How It Works
 
@@ -16,7 +16,7 @@ Static testimonials system with Netlify Forms for client submissions and manual 
    - Projects (list all projects worked on together)
    - Rating (1-5 stars)
    - Testimonial text
-3. Netlify captures submission → email notification sent to you
+3. Formspree captures submission → email notification sent to you
 4. You manually approve and add to site
 
 ### Manual Approval Process
@@ -51,20 +51,25 @@ git push
 
 4. Site rebuilds automatically with new testimonial
 
-## Netlify Setup
+## Formspree Setup
 
-### First-Time Setup
+### Configuration
 
-1. Deploy site to Netlify
-2. Netlify auto-detects forms (`data-netlify="true"`)
-3. Go to Netlify Dashboard → Site → Forms
-4. Enable form notifications → enter your email
+Form endpoint: `https://formspree.io/f/mgodnlwq`
 
 ### Form Management
 
-- View all submissions: Netlify Dashboard → Forms
-- Free tier: 100 submissions/month
-- Spam filtering: Automatic (Akismet)
+- View submissions: https://formspree.io/forms
+- Email notifications: Automatic to schulz.johannes97@gmail.com
+- Free tier: 50 submissions/month
+- Spam filtering: Built-in honeypot (`_gotcha` field)
+
+### Changing Email
+
+To update notification email:
+1. Go to Formspree dashboard
+2. Select "Testimonials" form
+3. Settings → Email notifications
 
 ## Display
 
@@ -81,17 +86,8 @@ git push
 - **Expandable details** - show/hide project info
 - **Responsive** - works on all devices
 
-## Alternative: Formspree
+## Upgrading Formspree Plan
 
-If not using Netlify, switch to Formspree:
-
-1. Sign up at formspree.io
-2. Update form in `app/submit-testimonial/page.tsx`:
-```tsx
-<form
-  action="https://formspree.io/f/YOUR_FORM_ID"
-  method="POST"
->
-```
-3. Remove `data-netlify="true"` attribute
-4. Same approval workflow applies
+Free tier limits (50/month) hit? Upgrade at formspree.io:
+- Basic: $10/mo (1000 submissions)
+- Pro: $40/mo (10,000 submissions)
