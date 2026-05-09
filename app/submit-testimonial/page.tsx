@@ -80,7 +80,7 @@ export default function SubmitTestimonialPage() {
             <CardHeader>
               <CardTitle>Your Testimonial</CardTitle>
               <CardDescription>
-                All fields are required. Your testimonial will be reviewed before being published.
+                Fields marked with * are required. Your testimonial will be reviewed before being published.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -172,6 +172,21 @@ export default function SubmitTestimonialPage() {
                   />
                   <p className="text-xs text-muted-foreground">
                     List all projects we worked on together
+                  </p>
+                </div>
+
+                {/* Completion Date */}
+                <div className="space-y-2">
+                  <Label htmlFor="completionDate">Completion Date *</Label>
+                  <Input
+                    id="completionDate"
+                    name="completionDate"
+                    placeholder="May 2026"
+                    defaultValue={new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                    required
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    Month and year when project was completed (editable)
                   </p>
                 </div>
 
