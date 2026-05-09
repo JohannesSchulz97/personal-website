@@ -154,7 +154,7 @@ export default function TestimonialsPage() {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Johannes Schulz",
-            jobTitle: "ML Engineer & Computer Scientist",
+            jobTitle: "AI Systems Engineer",
             review: testimonials.map((t) => ({
               "@type": "Review",
               author: {

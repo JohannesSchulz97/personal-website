@@ -41,12 +41,12 @@ export default function HomePage() {
                 Johannes Schulz
               </h1>
               <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
-                Software Engineer & Applied AI Developer
+                AI Systems Engineer
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-                Building production software systems with a foundation in mathematics and computer science.
-                I develop scalable applications, AI-powered tools, and infrastructure solutions that solve
-                real-world problems with rigorous engineering principles.
+                AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure,
+                and multi-service orchestration. I build clean, minimal, and highly optimized systems with
+                a focus on long-term maintainability and measurable impact.
               </p>
               <div className="flex gap-4 justify-center mb-8">
                 <Button asChild size="lg">
@@ -98,7 +98,7 @@ export default function HomePage() {
           </div>
 
         {/* About Section */}
-        <section className="mb-16">
+        <section className="mt-16 mb-16">
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -108,22 +108,18 @@ export default function HomePage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                I'm a Software Engineer with a strong foundation in mathematics, computer science, and machine learning.
-                I specialize in building production-grade applications, AI-powered systems, and developer tools
-                that solve complex problems with clean, maintainable code.
+                I build clean, minimal, and highly optimized systems — no clutter, no unnecessary abstraction.
+                My work spans enterprise platform migrations, production ML pipelines, self-hosted infrastructure,
+                and AI orchestration, always with a focus on elegant architectural solutions, long-term
+                maintainability, and eliminating technical debt before it accumulates.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                My work spans full-stack development, AI orchestration platforms, and clinical ML pipelines.
-                I've delivered centralized AI development infrastructure with Coder, processing patient data in
-                production workflows, and building real-time collaboration platforms with sub-10ms latency.
-                From TypeScript and Python to edge computing and LLM integration, I apply rigorous engineering
-                and mathematical thinking to every project.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                I focus on systems that deliver measurable impact: reducing costs by 70%, cutting deployment
-                times by 8x, and accelerating productivity by 30%+. Whether it's infrastructure automation,
-                real-time systems, or AI-powered tools, I combine theoretical understanding with practical
-                engineering to build solutions that scale.
+                I have delivered a 99.8% cost reduction (€1.2M/year savings) through enterprise platform
+                migration, built computer vision pipelines serving 40+ daily clinical assessments at 90%+
+                accuracy, and architected multi-agent platforms for distributed engineering teams. From
+                reverse-engineering Palantir Foundry to deploying 10-service production stacks, I deliver
+                systems that scale and drive measurable business impact. I hold an MSc in Machine Learning
+                from the University of Tübingen.
               </p>
             </CardContent>
           </Card>
@@ -172,35 +168,6 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
-        </section>
-
-        {/* Skills Section */}
-        <section className="mb-16">
-          <Card>
-            <CardHeader>
-              <CardTitle>Core Competencies</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">Python</Badge>
-                <Badge variant="secondary">TypeScript</Badge>
-                <Badge variant="secondary">Software Engineering</Badge>
-                <Badge variant="secondary">Full-Stack Development</Badge>
-                <Badge variant="secondary">Edge Computing</Badge>
-                <Badge variant="secondary">Cloudflare Workers</Badge>
-                <Badge variant="secondary">Zero Trust Security</Badge>
-                <Badge variant="secondary">Real-Time Systems</Badge>
-                <Badge variant="secondary">WebSocket</Badge>
-                <Badge variant="secondary">AI Orchestration</Badge>
-                <Badge variant="secondary">LLM Integration</Badge>
-                <Badge variant="secondary">CI/CD</Badge>
-                <Badge variant="secondary">Next.js</Badge>
-                <Badge variant="secondary">React</Badge>
-                <Badge variant="secondary">Machine Learning</Badge>
-                <Badge variant="secondary">DevOps</Badge>
-              </div>
-            </CardContent>
-          </Card>
         </section>
 
         {/* CTA Section */}
