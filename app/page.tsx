@@ -8,14 +8,8 @@ import { Github, Linkedin, Mail, Globe, Award, GraduationCap, FileText } from 'l
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section with Full Width Background */}
-      <section className="relative pb-12 overflow-hidden">
-        {/* Background Image - Full Width */}
-        <div
-          className="absolute inset-0 w-full bg-cover bg-center opacity-20"
-          style={{ backgroundImage: "url('/home-page.JPG')" }}
-        />
-
+      {/* Hero Section */}
+      <section className="relative pb-12">
         {/* Container for Content */}
         <div className="container mx-auto px-4 py-16 max-w-5xl relative">
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ConditionalNavbar from "@/components/layout/conditional-navbar";
+import CursorSpotlight from "@/components/cursor-spotlight";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
+        <CursorSpotlight />
         <ConditionalNavbar />
         {children}
       </body>

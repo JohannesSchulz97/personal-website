@@ -57,13 +57,8 @@ export default function SubmitTestimonialPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background relative">
-      {/* Background Image - Full Width */}
-      <div
-        className="absolute inset-0 w-full bg-cover bg-center opacity-20 pointer-events-none"
-        style={{ backgroundImage: "url('/P1000017.JPG')" }}
-      />
-      <section className="relative pb-12">
+    <div className="min-h-screen bg-background">
+      <section className="pb-12">
 
         <div className="container mx-auto px-4 py-12 max-w-3xl relative z-10">
           {/* Header Section */}
