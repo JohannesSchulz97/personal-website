@@ -6,7 +6,21 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 import Link from "next/link";
-import testimonials from "@/data/testimonials.json";
+import testimonialsData from "@/data/testimonials.json";
+
+interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  company: string;
+  rating: number;
+  testimonial: string;
+  project: string;
+  completionDate: string;
+  linkedIn: string | null;
+}
+
+const testimonials = testimonialsData as Testimonial[];
 
 export default function TestimonialsPage() {
   const [expandedTestimonials, setExpandedTestimonials] = useState<Set<number>>(new Set());
