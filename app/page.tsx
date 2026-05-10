@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Github, Linkedin, Mail, Globe, Award } from 'lucide-react';
 import ProjectsSection from '@/components/sections/projects';
+import SkillsSection from '@/components/sections/skills';
+import TestimonialsSection from '@/components/sections/testimonials';
 import ContactSection from '@/components/sections/contact';
 
 export default function HomePage() {
@@ -113,6 +115,12 @@ export default function HomePage() {
 
       {/* Projects */}
       <ProjectsSection />
+
+      {/* Skills */}
+      <SkillsSection />
+
+      {/* Testimonials */}
+      <TestimonialsSection />
 
       {/* Contact */}
       <ContactSection />
