@@ -1,18 +1,17 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Brain, Globe, Cloud, Zap, Database, GraduationCap } from "lucide-react";
+import SectionHeading from "@/components/section-heading";
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-16">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold mb-4">Technical Skills</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Focused on building production systems with strong foundations in mathematics, computer science, and AI.
-            Specialized in full-stack development, machine learning infrastructure, and scalable cloud applications.
-          </p>
-        </div>
+    <section id="skills" className="py-24">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <SectionHeading number="02">Skills & Experience</SectionHeading>
+        <p className="text-slate mb-12 max-w-3xl">
+          Focused on building production systems with strong foundations in mathematics, computer science, and AI.
+          Specialized in full-stack development, machine learning infrastructure, and scalable cloud applications.
+        </p>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {/* Programming Languages */}

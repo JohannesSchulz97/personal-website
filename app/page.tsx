@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Github, Linkedin, Mail, Globe, Award } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import SectionHeading from '@/components/section-heading';
 import ProjectsSection from '@/components/sections/projects';
 import SkillsSection from '@/components/sections/skills';
 import TestimonialsSection from '@/components/sections/testimonials';
@@ -11,105 +11,81 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section id="hero" className="relative pb-12">
-        <div className="container mx-auto px-4 py-16 max-w-5xl relative">
-          <div className="flex flex-col">
-            {/* Profile Picture */}
-            <div className="mb-8 flex justify-center relative z-10">
-              <div className="relative w-52 h-52 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
-                <Image
-                  src="/professional-picture.png"
-                  alt="Johannes Schulz"
-                  fill
-                  className="object-cover object-[center_20%]"
-                  priority
-                  quality={75}
-                  sizes="(max-width: 768px) 208px, 208px"
-                />
-              </div>
-            </div>
+      <section id="hero" className="min-h-screen flex flex-col justify-center py-0">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h1 className="font-mono text-teal mb-6 text-base md:text-lg">Hi, my name is</h1>
+          <h2 className="text-5xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes Schulz.</h2>
+          <h3 className="text-4xl md:text-6xl font-bold text-slate mb-8">I build AI systems that scale.</h3>
+          <p className="text-slate max-w-lg mb-12 leading-relaxed">
+            AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure,
+            and multi-service orchestration. I build clean, minimal, and highly optimized systems with
+            a focus on long-term maintainability and measurable impact.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="border-2 border-teal bg-transparent hover:bg-teal/10 text-teal text-base px-8 py-6 rounded font-mono"
+          >
+            <a href="mailto:contact@johannesschulz.dev">Get In Touch</a>
+          </Button>
+        </div>
+      </section>
 
-            {/* Hero Content */}
-            <div className="text-center relative z-10">
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                Johannes Schulz
-              </h1>
-              <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
-                AI Systems Engineer
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-                AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure,
-                and multi-service orchestration. I build clean, minimal, and highly optimized systems with
-                a focus on long-term maintainability and measurable impact.
+      {/* About Section */}
+      <section id="about" className="py-24">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <SectionHeading number="01">About Me</SectionHeading>
+
+          <div className="grid md:grid-cols-5 gap-12">
+            {/* Text content */}
+            <div className="md:col-span-3 space-y-4 text-slate">
+              <p className="leading-relaxed">
+                I build clean, minimal, and highly optimized systems — no clutter, no unnecessary abstraction.
+                My work spans enterprise platform migrations, production ML pipelines, self-hosted infrastructure,
+                and AI orchestration, always with a focus on elegant architectural solutions.
+              </p>
+              <p className="leading-relaxed">
+                I have delivered a 99.8% cost reduction (€1.2M/year savings) through enterprise platform
+                migration, built computer vision pipelines serving 40+ daily clinical assessments at 90%+
+                accuracy, and architected multi-agent platforms for distributed engineering teams.
+              </p>
+              <p className="leading-relaxed">
+                From reverse-engineering Palantir Foundry to deploying 10-service production stacks, I deliver
+                systems that scale and drive measurable business impact. I hold an MSc in Machine Learning
+                from the University of Tübingen.
               </p>
 
-              {/* Quick Links */}
-              <div className="flex gap-4 justify-center flex-wrap">
-                <a
-                  href="https://github.com/JohannesSchulz97"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-                >
-                  <Github className="w-5 h-5" />
-                  <span>GitHub</span>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/johannes-schulz-6b0396311/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-                >
-                  <Linkedin className="w-5 h-5" />
-                  <span>LinkedIn</span>
-                </a>
-                <a
-                  href="mailto:contact@johannesschulz.dev"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-                >
-                  <Mail className="w-5 h-5" />
-                  <span>Email</span>
-                </a>
-                <a
-                  href="https://preply.com/en/tutor/3870616"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
-                >
-                  <Globe className="w-5 h-5" />
-                  <span>Preply</span>
-                </a>
+              <p className="leading-relaxed">Here are some technologies I work with:</p>
+
+              <ul className="grid grid-cols-2 gap-2 text-sm font-mono mt-4">
+                {['Python', 'TypeScript', 'Next.js', 'FastAPI', 'Claude API', 'PostgreSQL', 'Docker', 'Cloudflare'].map((tech) => (
+                  <li key={tech} className="flex items-center gap-2">
+                    <span className="text-teal">▹</span>
+                    <span>{tech}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Profile picture */}
+            <div className="md:col-span-2 relative group">
+              <div className="relative max-w-xs mx-auto">
+                <div className="relative rounded overflow-hidden">
+                  <Image
+                    src="/professional-picture.png"
+                    alt="Johannes Schulz"
+                    width={300}
+                    height={300}
+                    className="rounded grayscale mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal transition-all duration-300 object-cover object-[center_20%]"
+                    priority
+                    quality={75}
+                  />
+                  <div className="absolute inset-0 bg-teal/30 group-hover:bg-transparent transition-all duration-300 rounded"></div>
+                </div>
+                <div className="absolute -inset-0 border-2 border-teal rounded translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
               </div>
             </div>
           </div>
-
-          {/* About Section */}
-          <section id="about" className="mt-16 mb-16">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Award className="w-6 h-6" />
-                  About Me
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  I build clean, minimal, and highly optimized systems — no clutter, no unnecessary abstraction.
-                  My work spans enterprise platform migrations, production ML pipelines, self-hosted infrastructure,
-                  and AI orchestration, always with a focus on elegant architectural solutions, long-term
-                  maintainability, and eliminating technical debt before it accumulates.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  I have delivered a 99.8% cost reduction (€1.2M/year savings) through enterprise platform
-                  migration, built computer vision pipelines serving 40+ daily clinical assessments at 90%+
-                  accuracy, and architected multi-agent platforms for distributed engineering teams. From
-                  reverse-engineering Palantir Foundry to deploying 10-service production stacks, I deliver
-                  systems that scale and drive measurable business impact. I hold an MSc in Machine Learning
-                  from the University of Tübingen.
-                </p>
-              </CardContent>
-            </Card>
-          </section>
         </div>
       </section>
 
@@ -118,9 +94,6 @@ export default function HomePage() {
 
       {/* Skills */}
       <SkillsSection />
-
-      {/* Testimonials */}
-      <TestimonialsSection />
 
       {/* Contact */}
       <ContactSection />

@@ -24,24 +24,70 @@
     --radius: 0.5rem;
   }
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Brittany's navy backgrounds */
+    --background: 209 100% 11%;  /* #0a192f navy */
+    --foreground: 219 28% 88%;   /* #ccd6f6 lightest-slate */
+    --card: 213 39% 15%;         /* #112240 light-navy */
+    --card-foreground: 219 28% 88%;
+    --primary: 167 100% 70%;     /* #64ffda teal */
+    --primary-foreground: 209 100% 11%;
+    --secondary: 213 39% 15%;
+    --secondary-foreground: 219 28% 88%;
+    --muted: 213 39% 21%;        /* #233554 lightest-navy */
+    --muted-foreground: 219 14% 71%; /* #a8b2d1 light-slate */
+    --accent: 167 100% 70%;      /* #64ffda teal */
+    --accent-foreground: 209 100% 11%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --destructive-foreground: 219 28% 88%;
+    --border: 213 39% 21%;
+    --input: 213 39% 21%;
+    --ring: 167 100% 70%;        /* #64ffda teal */
   }
   * { @apply border-border; }
-  body { @apply bg-background text-foreground; }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 18px;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar - Brittany's style */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #495670 #0a192f;
+  }
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a192f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #495670;
+    border: 3px solid #0a192f;
+    border-radius: 10px;
+  }
+
+  /* Focus styles - teal outline */
+  :focus {
+    outline: 2px dashed #64ffda;
+    outline-offset: 3px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+    outline-offset: 0;
+  }
+  :focus-visible {
+    outline: 2px dashed #64ffda;
+    outline-offset: 3px;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: #233554;
+    color: #ccd6f6;
+  }
 }
