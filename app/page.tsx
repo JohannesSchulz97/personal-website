@@ -1,15 +1,49 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/section-heading';
 import ProjectsSection from '@/components/sections/projects';
 import ContactSection from '@/components/sections/contact';
 import { Github, Linkedin, GraduationCap } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function HomePage() {
+  const [activeSection, setActiveSection] = useState('about');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['about', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      // Check if scrolled to bottom
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 10;
+
+      if (isAtBottom) {
+        setActiveSection('contact');
+        return;
+      }
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section with Background */}
-      <section className="relative min-h-screen flex flex-col justify-center py-0 overflow-hidden">
+      <section id="hero-section" className="relative min-h-screen flex flex-col justify-center py-0 overflow-hidden select-none">
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -21,7 +55,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-navy/40"></div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-5xl relative z-10">
+        <div className="container mx-auto px-4 max-w-5xl relative z-10 translate-x-[22.5%]">
           <h1 className="font-mono text-teal mb-6 text-base md:text-lg">Hi, my name is</h1>
           <h2 className="text-5xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes Schulz.</h2>
           <h3 className="text-4xl md:text-6xl font-bold text-slate-lighter mb-8">I build AI systems that scale.</h3>
@@ -37,7 +71,7 @@ export default function HomePage() {
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
           {/* Left Column - Fixed */}
-          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 lg:-translate-x-[10%]">
             <div>
               <h1 className="text-4xl font-bold tracking-tight text-slate-lighter sm:text-5xl">
                 Johannes Schulz
@@ -53,24 +87,24 @@ export default function HomePage() {
                 <ul className="mt-16 w-max">
                   <li>
                     <a className="group flex items-center py-3" href="#about">
-                      <span className="nav-indicator mr-4 h-px w-8 bg-slate-dark transition-all group-hover:w-16 group-hover:bg-slate-lighter group-focus-visible:w-16 group-focus-visible:bg-slate-lighter motion-reduce:transition-none"></span>
-                      <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate group-hover:text-slate-lighter group-focus-visible:text-slate-lighter">
+                      <span className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-lighter group-focus-visible:w-16 group-focus-visible:bg-slate-lighter motion-reduce:transition-none ${activeSection === 'about' ? 'w-16 bg-slate-lighter' : 'w-8 bg-slate-dark'}`}></span>
+                      <span className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-slate-lighter group-focus-visible:text-slate-lighter ${activeSection === 'about' ? 'text-slate-lighter' : 'text-slate'}`}>
                         About
                       </span>
                     </a>
                   </li>
                   <li>
                     <a className="group flex items-center py-3" href="#projects">
-                      <span className="nav-indicator mr-4 h-px w-8 bg-slate-dark transition-all group-hover:w-16 group-hover:bg-slate-lighter group-focus-visible:w-16 group-focus-visible:bg-slate-lighter motion-reduce:transition-none"></span>
-                      <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate group-hover:text-slate-lighter group-focus-visible:text-slate-lighter">
+                      <span className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-lighter group-focus-visible:w-16 group-focus-visible:bg-slate-lighter motion-reduce:transition-none ${activeSection === 'projects' ? 'w-16 bg-slate-lighter' : 'w-8 bg-slate-dark'}`}></span>
+                      <span className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-slate-lighter group-focus-visible:text-slate-lighter ${activeSection === 'projects' ? 'text-slate-lighter' : 'text-slate'}`}>
                         Projects
                       </span>
                     </a>
                   </li>
                   <li>
                     <a className="group flex items-center py-3" href="#contact">
-                      <span className="nav-indicator mr-4 h-px w-8 bg-slate-dark transition-all group-hover:w-16 group-hover:bg-slate-lighter group-focus-visible:w-16 group-focus-visible:bg-slate-lighter motion-reduce:transition-none"></span>
-                      <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate group-hover:text-slate-lighter group-focus-visible:text-slate-lighter">
+                      <span className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-lighter group-focus-visible:w-16 group-focus-visible:bg-slate-lighter motion-reduce:transition-none ${activeSection === 'contact' ? 'w-16 bg-slate-lighter' : 'w-8 bg-slate-dark'}`}></span>
+                      <span className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-slate-lighter group-focus-visible:text-slate-lighter ${activeSection === 'contact' ? 'text-slate-lighter' : 'text-slate'}`}>
                         Contact
                       </span>
                     </a>

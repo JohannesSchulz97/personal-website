@@ -223,6 +223,9 @@ export default function ProjectsSection() {
           </CardContent>
         </Card>
 
+        {/* Additional Left Column Projects - Hidden by default */}
+        {showAllProjects && (
+          <>
         {/* Project 2: TOB Agents */}
         <Card className="flex flex-col">
           <CardHeader>
@@ -293,9 +296,6 @@ export default function ProjectsSection() {
           </CardContent>
         </Card>
 
-        {/* Additional Left Column Projects - Hidden by default */}
-        {showAllProjects && (
-          <>
         {/* Project 4: Dual-Runtime LLM Pipeline Framework */}
         <Card className="flex flex-col">
           <CardHeader>
@@ -1029,16 +1029,6 @@ export default function ProjectsSection() {
           </div>
         )}
       </div>
-
-        {/* Footer Note */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground">
-            Interested in collaborating or learning more about these projects?{" "}
-            <a href="/contact" className="text-primary hover:underline">
-              Get in touch
-            </a>
-          </p>
-        </div>
 
       {/* Demo Modals */}
       <Dialog open={openDemo === 'dependency-graph'} onOpenChange={(open) => !open && setOpenDemo(null)}>
