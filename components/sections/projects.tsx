@@ -55,13 +55,11 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Python</Badge>
-              <Badge variant="secondary">Playwright</Badge>
-              <Badge variant="secondary">PostgreSQL</Badge>
-              <Badge variant="secondary">Docker</Badge>
-              <Badge variant="secondary">Dagster</Badge>
-              <Badge variant="secondary">Cloudflare Zero Trust</Badge>
-              <Badge variant="secondary">Reverse Engineering</Badge>
+              <Badge variant="outline">Playwright</Badge>
+              <Badge variant="outline">PostgreSQL</Badge>
+              <Badge variant="outline">Docker</Badge>
+              <Badge variant="outline">Dagster</Badge>
+              <Badge variant="outline">Cloudflare Zero Trust</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -147,13 +145,12 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Docker</Badge>
-              <Badge variant="secondary">GitHub Actions</Badge>
-              <Badge variant="secondary">Watchtower</Badge>
-              <Badge variant="secondary">PostgreSQL</Badge>
-              <Badge variant="secondary">Nginx</Badge>
-              <Badge variant="secondary">BorgBackup</Badge>
-              <Badge variant="secondary">DevOps</Badge>
+              <Badge variant="outline">Docker</Badge>
+              <Badge variant="outline">GitHub Actions</Badge>
+              <Badge variant="outline">Watchtower</Badge>
+              <Badge variant="outline">PostgreSQL</Badge>
+              <Badge variant="outline">Nginx</Badge>
+              <Badge variant="outline">BorgBackup</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -236,12 +233,11 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">OpenClaw</Badge>
-              <Badge variant="secondary">GPT-5.4 (Codex)</Badge>
-              <Badge variant="secondary">QMD Vector Memory</Badge>
-              <Badge variant="secondary">GitHub Search API</Badge>
-              <Badge variant="secondary">Bash</Badge>
-              <Badge variant="secondary">GNU Stow</Badge>
+              <Badge variant="outline">OpenClaw</Badge>
+              <Badge variant="outline">OpenAI Codex</Badge>
+              <Badge variant="outline">QMD Vector Memory</Badge>
+              <Badge variant="outline">GitHub API</Badge>
+              <Badge variant="outline">GNU Stow</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -310,13 +306,11 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Python</Badge>
-              <Badge variant="secondary">LangGraph</Badge>
-              <Badge variant="secondary">LangChain</Badge>
-              <Badge variant="secondary">LangSmith Studio</Badge>
-              <Badge variant="secondary">MCP Protocol</Badge>
-              <Badge variant="secondary">FastAPI</Badge>
-              <Badge variant="secondary">Architecture Design</Badge>
+              <Badge variant="outline">LangGraph</Badge>
+              <Badge variant="outline">LangChain</Badge>
+              <Badge variant="outline">LangSmith</Badge>
+              <Badge variant="outline">MCP</Badge>
+              <Badge variant="outline">FastAPI</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -399,11 +393,9 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Rust</Badge>
-              <Badge variant="secondary">TypeScript</Badge>
-              <Badge variant="secondary">Fork Engineering</Badge>
-              <Badge variant="secondary">Agent Orchestration</Badge>
-              <Badge variant="secondary">Cross-Platform</Badge>
+              <Badge variant="outline">Rust</Badge>
+              <Badge variant="outline">React Native</Badge>
+              <Badge variant="outline">Expo</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -466,12 +458,11 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Python</Badge>
-              <Badge variant="secondary">n8n</Badge>
-              <Badge variant="secondary">LangChain</Badge>
-              <Badge variant="secondary">GPT-4</Badge>
-              <Badge variant="secondary">PostgreSQL</Badge>
-              <Badge variant="secondary">Slack API</Badge>
+              <Badge variant="outline">n8n</Badge>
+              <Badge variant="outline">LangChain</Badge>
+              <Badge variant="outline">OpenAI API</Badge>
+              <Badge variant="outline">PostgreSQL</Badge>
+              <Badge variant="outline">Slack API</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -550,11 +541,10 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Python</Badge>
-              <Badge variant="secondary">MediaPipe</Badge>
-              <Badge variant="secondary">BiRefNet</Badge>
-              <Badge variant="secondary">Gemini LLM</Badge>
-              <Badge variant="secondary">Palantir Foundry</Badge>
+              <Badge variant="outline">MediaPipe</Badge>
+              <Badge variant="outline">BiRefNet</Badge>
+              <Badge variant="outline">Gemini API</Badge>
+              <Badge variant="outline">Palantir Foundry</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -624,13 +614,12 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">n8n</Badge>
-              <Badge variant="secondary">Multi-Agent AI</Badge>
-              <Badge variant="secondary">Gemini 2.0</Badge>
-              <Badge variant="secondary">Palantir Foundry</Badge>
-              <Badge variant="secondary">LangChain</Badge>
-              <Badge variant="secondary">RAG/Vector Search</Badge>
-              <Badge variant="secondary">Slack</Badge>
+              <Badge variant="outline">n8n</Badge>
+              <Badge variant="outline">Gemini API</Badge>
+              <Badge variant="outline">Palantir Foundry</Badge>
+              <Badge variant="outline">LangChain</Badge>
+              <Badge variant="outline">ChromaDB</Badge>
+              <Badge variant="outline">Slack API</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -717,11 +706,11 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Next.js</Badge>
-              <Badge variant="secondary">React</Badge>
-              <Badge variant="secondary">TypeScript</Badge>
-              <Badge variant="secondary">LLM Orchestration</Badge>
-              <Badge variant="secondary">DAG Architecture</Badge>
+              <Badge variant="outline">Next.js</Badge>
+              <Badge variant="outline">React</Badge>
+              <Badge variant="outline">TypeScript</Badge>
+              <Badge variant="outline">LLM Orchestration</Badge>
+              <Badge variant="outline">DAG Architecture</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -794,11 +783,11 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">LangChain</Badge>
-              <Badge variant="secondary">Google AI</Badge>
-              <Badge variant="secondary">ChromaDB</Badge>
-              <Badge variant="secondary">Multi-Modal RAG</Badge>
-              <Badge variant="secondary">Computer Vision</Badge>
+              <Badge variant="outline">LangChain</Badge>
+              <Badge variant="outline">Google AI</Badge>
+              <Badge variant="outline">ChromaDB</Badge>
+              <Badge variant="outline">Multi-Modal RAG</Badge>
+              <Badge variant="outline">Computer Vision</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -870,11 +859,11 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Playwright</Badge>
-              <Badge variant="secondary">BeautifulSoup</Badge>
-              <Badge variant="secondary">Python</Badge>
-              <Badge variant="secondary">Palantir Foundry</Badge>
-              <Badge variant="secondary">ETL Pipelines</Badge>
+              <Badge variant="outline">Playwright</Badge>
+              <Badge variant="outline">BeautifulSoup</Badge>
+              <Badge variant="outline">Python</Badge>
+              <Badge variant="outline">Palantir Foundry</Badge>
+              <Badge variant="outline">ETL Pipelines</Badge>
             </div>
 
             {/* Results - Always Visible */}
@@ -940,12 +929,12 @@ export default function ProjectsSection() {
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Python</Badge>
-              <Badge variant="secondary">scikit-learn</Badge>
-              <Badge variant="secondary">pandas</Badge>
-              <Badge variant="secondary">XGBoost</Badge>
-              <Badge variant="secondary">RandomForest</Badge>
-              <Badge variant="secondary">Jupyter</Badge>
+              <Badge variant="outline">Python</Badge>
+              <Badge variant="outline">scikit-learn</Badge>
+              <Badge variant="outline">pandas</Badge>
+              <Badge variant="outline">XGBoost</Badge>
+              <Badge variant="outline">RandomForest</Badge>
+              <Badge variant="outline">Jupyter</Badge>
             </div>
 
             {/* Results - Always Visible */}

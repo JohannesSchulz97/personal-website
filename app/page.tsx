@@ -91,9 +91,6 @@ export default function HomePage() {
       {/* Projects */}
       <ProjectsSection />
 
-      {/* Skills */}
-      <SkillsSection />
-
       {/* Contact */}
       <ContactSection />
     </div>

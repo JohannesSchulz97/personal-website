@@ -6,7 +6,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-24">
       <div className="container mx-auto px-4 max-w-2xl text-center">
-        <SectionHeading number="04" className="justify-center">Get In Touch</SectionHeading>
+        <SectionHeading number="03" className="justify-center">Get In Touch</SectionHeading>
         <p className="text-slate mb-12 max-w-xl mx-auto leading-relaxed">
           I'm currently available for software engineering projects, system architecture consulting,
           and AI integration opportunities. Whether you have a project in mind or just want to chat
