@@ -4,53 +4,25 @@ import SectionHeading from "@/components/section-heading";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24">
-      <div className="container mx-auto px-4 max-w-2xl text-center">
-        <SectionHeading number="03" className="justify-center">Get In Touch</SectionHeading>
-        <p className="text-slate mb-12 max-w-xl mx-auto leading-relaxed">
-          I'm currently available for software engineering projects, system architecture consulting,
-          and AI integration opportunities. Whether you have a project in mind or just want to chat
-          about tech, my inbox is always open.
-        </p>
-
-        <Button
-          asChild
-          size="lg"
-          className="border-2 border-teal bg-transparent hover:bg-teal/10 text-teal text-base px-8 py-6 rounded font-mono mb-12"
-        >
-          <a href="mailto:contact@johannesschulz.dev">Say Hello</a>
-        </Button>
-
-        <div className="flex justify-center gap-8 text-slate-light">
-          <a
-            href="https://github.com/JohannesSchulz97"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-teal transition-colors"
-            aria-label="GitHub"
-          >
-            <Github className="w-6 h-6" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/johannes-schulz-6b0396311/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-teal transition-colors"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a
-            href="https://preply.com/en/tutor/3870616"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-teal transition-colors"
-            aria-label="Preply"
-          >
-            <GraduationCap className="w-6 h-6" />
-          </a>
-        </div>
+    <section id="contact" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-lighter lg:sr-only">
+          Contact
+        </h2>
       </div>
+      <p className="text-slate mb-8 max-w-xl leading-relaxed">
+        I'm currently available for software engineering projects, system architecture consulting,
+        and AI integration opportunities. Whether you have a project in mind or just want to chat
+        about tech, my inbox is always open.
+      </p>
+
+      <Button
+        asChild
+        size="lg"
+        className="border-2 border-teal bg-transparent hover:bg-teal/10 text-teal text-base px-8 py-6 rounded font-mono mb-12"
+      >
+        <a href="mailto:contact@johannesschulz.dev">Say Hello</a>
+      </Button>
     </section>
   );
 }

@@ -10,6 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import SectionHeading from "@/components/section-heading";
 import { useState } from "react";
 
 export default function ProjectsSection() {
@@ -28,20 +29,20 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-16">
-      <div className="container mx-auto px-4 max-w-7xl">
-      {/* Header Section */}
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">Projects</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          A showcase of my work in machine learning, data science, and software development.
-          From biomechanical analysis tools to veterinary AI assistants, these projects
-          demonstrate my passion for building innovative solutions.
-        </p>
+    <section id="projects" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-lighter lg:sr-only">
+          Projects
+        </h2>
       </div>
+      <p className="text-slate mb-12 leading-relaxed">
+        A selection of my work spanning enterprise platform migrations, AI systems,
+        and production infrastructure — from reverse-engineering Palantir Foundry to
+        building self-hosted platforms and computer vision pipelines.
+      </p>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 gap-8">
         {/* Left Column */}
         <div className="space-y-8">
         {/* Project 0: Foundry Migration */}
@@ -1037,7 +1038,6 @@ export default function ProjectsSection() {
               Get in touch
             </a>
           </p>
-        </div>
         </div>
 
       {/* Demo Modals */}
