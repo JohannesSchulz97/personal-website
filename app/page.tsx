@@ -8,6 +8,32 @@ import { Github, Linkedin, GraduationCap } from 'lucide-react';
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
+      {/* Hero Section with Background */}
+      <section className="relative min-h-screen flex flex-col justify-center py-0 overflow-hidden">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: 'url(/contemplative.jpg)',
+            backgroundSize: '120%',
+            backgroundPosition: 'left top',
+          }}
+        >
+          <div className="absolute inset-0 bg-navy/40"></div>
+        </div>
+
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
+          <h1 className="font-mono text-teal mb-6 text-base md:text-lg">Hi, my name is</h1>
+          <h2 className="text-5xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes Schulz.</h2>
+          <h3 className="text-4xl md:text-6xl font-bold text-slate-lighter mb-8">I build AI systems that scale.</h3>
+          <p className="text-slate-lighter max-w-lg mb-12 leading-relaxed">
+            AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure,
+            and multi-service orchestration. I build clean, minimal, and highly optimized systems with
+            a focus on long-term maintainability and measurable impact.
+          </p>
+        </div>
+      </section>
+
+      {/* Two-Column Layout */}
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
           {/* Left Column - Fixed */}
