@@ -11,8 +11,21 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex flex-col justify-center py-0">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section id="hero" className="relative min-h-screen flex flex-col justify-center py-0 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/landscape.jpg"
+            alt="Mountain landscape"
+            fill
+            className="object-cover"
+            priority
+            quality={90}
+          />
+          <div className="absolute inset-0 bg-navy/85"></div>
+        </div>
+
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <h1 className="font-mono text-teal mb-6 text-base md:text-lg">Hi, my name is</h1>
           <h2 className="text-5xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes Schulz.</h2>
           <h3 className="text-4xl md:text-6xl font-bold text-slate mb-8">I build AI systems that scale.</h3>
@@ -72,11 +85,11 @@ export default function HomePage() {
               <div className="relative max-w-xs mx-auto">
                 <div className="relative rounded overflow-hidden">
                   <Image
-                    src="/professional-picture.png"
+                    src="/monkeys-chilling.jpg"
                     alt="Johannes Schulz"
                     width={300}
                     height={300}
-                    className="rounded transition-all duration-300 object-cover object-[center_20%]"
+                    className="rounded transition-all duration-300 object-cover"
                     priority
                     quality={75}
                   />
