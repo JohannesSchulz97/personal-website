@@ -531,79 +531,6 @@ export default function ProjectsSection() {
 
         {/* Right Column */}
         <div className="space-y-8">
-        {/* Project 6: Biomechanical Structure Analysis */}
-        <Card className="flex flex-col">
-          <CardHeader>
-            <CardTitle>Biomechanical Structure Analysis</CardTitle>
-            <CardDescription>
-              Production-grade biomechanical posture analysis pipeline deployed to clinical workflow,
-              analyzing patient posture with privacy-preserving computer vision
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex-1 flex flex-col space-y-4">
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="outline">MediaPipe</Badge>
-              <Badge variant="outline">BiRefNet</Badge>
-              <Badge variant="outline">Gemini API</Badge>
-              <Badge variant="outline">Palantir Foundry</Badge>
-            </div>
-
-            {/* Results - Always Visible */}
-            <div className="text-sm text-muted-foreground space-y-2">
-              <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
-                <li>✓ Deployed to production clinical workflow processing 40+ patient assessments daily</li>
-                <li>✓ Reduced biomechanical assessment time from 30 minutes to 5 minutes (80%+ reduction)</li>
-                <li>✓ Achieved 90%+ accuracy in posture deviation detection</li>
-                <li>✓ 100% GDPR compliance with privacy-preserving blur layers</li>
-              </ul>
-            </div>
-
-            {/* Expand/Collapse Button */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => toggleProject(6)}
-              className="w-full"
-            >
-              {expandedProjects.has(6) ? (
-                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
-              ) : (
-                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
-              )}
-            </Button>
-
-            {/* Collapsible Details */}
-            {expandedProjects.has(6) && (
-              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
-                <p className="font-semibold">Key Capabilities:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Multi-stage computer vision pipeline combining MediaPipe pose estimation, BiRefNet segmentation, and Gemini LLM analysis</li>
-                  <li>Bottom-up kinetic chain analysis (Ankle → Knee → Hip → Pelvis → Thorax → Cervical)</li>
-                  <li>Privacy-preserving features with background blur and face blur</li>
-                  <li>Deployed to production clinical workflow on Palantir Foundry</li>
-                  <li>German-language output for end users with detailed biomechanical feedback</li>
-                </ul>
-              </div>
-            )}
-
-            {/* Demo Preview - Always Visible */}
-            <div
-              className="border rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all cursor-pointer group relative h-[120px] flex items-center justify-center"
-              onClick={() => setOpenDemo('structure-viewer')}
-            >
-              <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-              <div className="flex items-center gap-3 z-10">
-                <Play className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
-                <div className="text-left">
-                  <p className="text-sm font-semibold">View Interactive Demo</p>
-                  <p className="text-xs text-muted-foreground">Biomechanical analysis pipeline</p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
         {/* Project 3: Customer Support Automation */}
         <Card className="flex flex-col">
           <CardHeader>
@@ -696,6 +623,79 @@ export default function ProjectsSection() {
         {/* Additional Right Column Projects - Hidden by default */}
         {showAllProjects && (
           <>
+        {/* Project 6: Biomechanical Structure Analysis */}
+        <Card className="flex flex-col">
+          <CardHeader>
+            <CardTitle>Biomechanical Structure Analysis</CardTitle>
+            <CardDescription>
+              Production-grade biomechanical posture analysis pipeline deployed to clinical workflow,
+              analyzing patient posture with privacy-preserving computer vision
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex-1 flex flex-col space-y-4">
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="outline">MediaPipe</Badge>
+              <Badge variant="outline">BiRefNet</Badge>
+              <Badge variant="outline">Gemini API</Badge>
+              <Badge variant="outline">Palantir Foundry</Badge>
+            </div>
+
+            {/* Results - Always Visible */}
+            <div className="text-sm text-muted-foreground space-y-2">
+              <p className="font-semibold">Results:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>✓ Deployed to production clinical workflow processing 40+ patient assessments daily</li>
+                <li>✓ Reduced biomechanical assessment time from 30 minutes to 5 minutes (80%+ reduction)</li>
+                <li>✓ Achieved 90%+ accuracy in posture deviation detection</li>
+                <li>✓ 100% GDPR compliance with privacy-preserving blur layers</li>
+              </ul>
+            </div>
+
+            {/* Expand/Collapse Button */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => toggleProject(6)}
+              className="w-full"
+            >
+              {expandedProjects.has(6) ? (
+                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
+              ) : (
+                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
+              )}
+            </Button>
+
+            {/* Collapsible Details */}
+            {expandedProjects.has(6) && (
+              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
+                <p className="font-semibold">Key Capabilities:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Multi-stage computer vision pipeline combining MediaPipe pose estimation, BiRefNet segmentation, and Gemini LLM analysis</li>
+                  <li>Bottom-up kinetic chain analysis (Ankle → Knee → Hip → Pelvis → Thorax → Cervical)</li>
+                  <li>Privacy-preserving features with background blur and face blur</li>
+                  <li>Deployed to production clinical workflow on Palantir Foundry</li>
+                  <li>German-language output for end users with detailed biomechanical feedback</li>
+                </ul>
+              </div>
+            )}
+
+            {/* Demo Preview - Always Visible */}
+            <div
+              className="border rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all cursor-pointer group relative h-[120px] flex items-center justify-center"
+              onClick={() => setOpenDemo('structure-viewer')}
+            >
+              <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+              <div className="flex items-center gap-3 z-10">
+                <Play className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
+                <div className="text-left">
+                  <p className="text-sm font-semibold">View Interactive Demo</p>
+                  <p className="text-xs text-muted-foreground">Biomechanical analysis pipeline</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Project 7: LLM Pipeline Orchestration System */}
         <Card className="flex flex-col">
           <CardHeader>
