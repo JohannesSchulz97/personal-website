@@ -26,7 +26,7 @@ export default function HomePage() {
             size="lg"
             className="border-2 border-teal bg-transparent hover:bg-teal/10 text-teal text-base px-8 py-6 rounded font-mono"
           >
-            <a href="mailto:contact@johannesschulz.dev">Get In Touch</a>
+            <a href="#contact">Get In Touch</a>
           </Button>
         </div>
       </section>
@@ -76,11 +76,10 @@ export default function HomePage() {
                     alt="Johannes Schulz"
                     width={300}
                     height={300}
-                    className="rounded grayscale mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal transition-all duration-300 object-cover object-[center_20%]"
+                    className="rounded transition-all duration-300 object-cover object-[center_20%]"
                     priority
                     quality={75}
                   />
-                  <div className="absolute inset-0 bg-teal/30 group-hover:bg-transparent transition-all duration-300 rounded"></div>
                 </div>
                 <div className="absolute -inset-0 border-2 border-teal rounded translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>
               </div>
