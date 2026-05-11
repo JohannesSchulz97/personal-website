@@ -8,6 +8,7 @@ const badgeVariants = cva("inline-flex items-center rounded-full border px-2.5 p
       secondary: "border-transparent bg-secondary text-secondary-foreground",
       destructive: "border-transparent bg-destructive text-destructive-foreground",
       outline: "text-foreground",
+      teal: "border-teal/30 bg-teal/5 text-teal",
     },
   },
   defaultVariants: { variant: "default" },

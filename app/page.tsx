@@ -103,7 +103,7 @@ export default function HomePage() {
       </section>
 
       {/* Two-Column Layout */}
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-4 md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
           {/* Left Column - Fixed */}
           <header className="hidden lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 lg:-translate-x-[10%]">
@@ -186,7 +186,7 @@ export default function HomePage() {
           </header>
 
           {/* Right Column - Scrollable */}
-          <main className="pt-24 lg:w-1/2 lg:py-24">
+          <main className="pt-8 lg:w-1/2 lg:py-24">
             {/* About Section */}
             <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
