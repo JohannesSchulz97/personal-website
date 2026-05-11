@@ -1,25 +1,39 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function CursorSpotlight() {
   const [isOverHero, setIsOverHero] = useState(false);
+  const mousePosRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    const checkHeroPosition = (clientX: number, clientY: number) => {
+      const heroSection = document.getElementById('hero-section');
+      if (heroSection) {
+        const rect = heroSection.getBoundingClientRect();
+        const isOver = clientX >= rect.left && clientX <= rect.right &&
+                       clientY >= rect.top && clientY <= rect.bottom;
+        setIsOverHero(isOver);
+      }
+    };
+
     const updateCursorPosition = (e: MouseEvent) => {
       document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
       document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
+      mousePosRef.current = { x: e.clientX, y: e.clientY };
+      checkHeroPosition(e.clientX, e.clientY);
+    };
 
-      // Check if cursor is over hero section
-      const target = e.target as HTMLElement;
-      const heroSection = target.closest('#hero-section');
-      setIsOverHero(!!heroSection);
+    const handleScroll = () => {
+      checkHeroPosition(mousePosRef.current.x, mousePosRef.current.y);
     };
 
     window.addEventListener("mousemove", updateCursorPosition);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("mousemove", updateCursorPosition);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

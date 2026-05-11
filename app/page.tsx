@@ -57,7 +57,7 @@ export default function HomePage() {
           <h1 className="font-mono text-teal mb-6 text-base md:text-lg mt-20 md:mt-0">Hi, my name is</h1>
           <h2 className="text-5xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes Schulz.</h2>
           <h3 className="text-2xl md:text-5xl font-bold text-slate-lighter mb-8">I build AI systems that scale.</h3>
-          <p className="hidden md:block text-slate-lighter max-w-lg mb-12 leading-relaxed text-lg md:text-xl">
+          <p className="hidden md:block text-slate-lighter max-w-2xl mb-12 leading-relaxed text-xl md:text-2xl">
             AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure,
             and multi-service orchestration. I build clean, minimal, and highly optimized systems with
             a focus on long-term maintainability and measurable impact.
