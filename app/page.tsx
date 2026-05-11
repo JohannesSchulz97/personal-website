@@ -43,27 +43,62 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section with Background */}
-      <section id="hero-section" className="relative min-h-screen flex flex-col justify-center py-0 overflow-hidden select-none">
+      <section id="hero-section" className="relative h-screen flex flex-col justify-center md:justify-center py-0 overflow-hidden select-none">
         <div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 bg-[length:auto_180%] md:bg-cover bg-no-repeat bg-[position:5%_top] md:bg-[position:left_top]"
           style={{
             backgroundImage: 'url(/contemplative.jpg)',
-            backgroundSize: '120%',
-            backgroundPosition: 'left top',
           }}
         >
           <div className="absolute inset-0 bg-navy/40"></div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-5xl relative z-10 translate-x-[22.5%]">
-          <h1 className="font-mono text-teal mb-6 text-base md:text-lg">Hi, my name is</h1>
+        <div className="w-full px-6 md:container md:mx-auto md:px-4 md:max-w-5xl relative z-10 lg:translate-x-[22.5%]">
+          <h1 className="font-mono text-teal mb-6 text-base md:text-lg mt-20 md:mt-0">Hi, my name is</h1>
           <h2 className="text-5xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes Schulz.</h2>
-          <h3 className="text-4xl md:text-6xl font-bold text-slate-lighter mb-8">I build AI systems that scale.</h3>
-          <p className="text-slate-lighter max-w-lg mb-12 leading-relaxed">
+          <h3 className="text-3xl md:text-6xl font-bold text-slate-lighter mb-8">I build AI systems that scale.</h3>
+          <p className="hidden md:block text-slate-lighter max-w-lg mb-12 leading-relaxed">
             AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure,
             and multi-service orchestration. I build clean, minimal, and highly optimized systems with
             a focus on long-term maintainability and measurable impact.
           </p>
+
+          {/* Social Icons - Mobile Only */}
+          <ul className="lg:hidden flex items-center gap-5 mt-56" aria-label="Social media">
+          <li className="text-xs">
+            <a
+              href="https://github.com/JohannesSchulz97"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-slate-lighter text-slate-lighter"
+              aria-label="GitHub"
+            >
+              <Github className="h-6 w-6" />
+            </a>
+          </li>
+          <li className="text-xs">
+            <a
+              href="https://www.linkedin.com/in/johannes-schulz-6b0396311/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-slate-lighter text-slate-lighter"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-6 w-6" />
+            </a>
+          </li>
+          <li className="text-xs">
+            <a
+              href="https://preply.com/en/tutor/3870616"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-slate-lighter text-slate-lighter"
+              aria-label="Preply"
+            >
+              <GraduationCap className="h-6 w-6" />
+            </a>
+          </li>
+        </ul>
         </div>
       </section>
 
@@ -71,7 +106,7 @@ export default function HomePage() {
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
           {/* Left Column - Fixed */}
-          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 lg:-translate-x-[10%]">
+          <header className="hidden lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 lg:-translate-x-[10%]">
             <div>
               <h1 className="text-4xl font-bold tracking-tight text-slate-lighter sm:text-5xl">
                 Johannes Schulz
