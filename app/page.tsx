@@ -56,8 +56,8 @@ export default function HomePage() {
         <div className="w-full px-6 md:container md:mx-auto md:px-4 md:max-w-5xl relative z-10 lg:translate-x-[22.5%]">
           <h1 className="font-mono text-teal mb-6 text-base md:text-lg mt-20 md:mt-0">Hi, my name is</h1>
           <h2 className="text-5xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes Schulz.</h2>
-          <h3 className="text-3xl md:text-6xl font-bold text-slate-lighter mb-8">I build AI systems that scale.</h3>
-          <p className="hidden md:block text-slate-lighter max-w-lg mb-12 leading-relaxed">
+          <h3 className="text-2xl md:text-5xl font-bold text-slate-lighter mb-8">I build AI systems that scale.</h3>
+          <p className="hidden md:block text-slate-lighter max-w-lg mb-12 leading-relaxed text-lg md:text-xl">
             AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure,
             and multi-service orchestration. I build clean, minimal, and highly optimized systems with
             a focus on long-term maintainability and measurable impact.
@@ -104,9 +104,9 @@ export default function HomePage() {
 
       {/* Two-Column Layout */}
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-4 md:px-12 md:py-20 lg:px-24 lg:py-0">
-        <div className="lg:flex lg:justify-between lg:gap-4">
+        <div className="lg:flex lg:justify-between lg:gap-24">
           {/* Left Column - Fixed */}
-          <header className="hidden lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 lg:-translate-x-[10%]">
+          <header className="hidden lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-24 lg:-translate-x-[10%]">
             <div>
               <h1 className="text-4xl font-bold tracking-tight text-slate-lighter sm:text-5xl">
                 Johannes Schulz
@@ -186,7 +186,7 @@ export default function HomePage() {
           </header>
 
           {/* Right Column - Scrollable */}
-          <main className="pt-8 lg:w-1/2 lg:py-24">
+          <main className="pt-8 lg:w-3/5 lg:py-24">
             {/* About Section */}
             <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">

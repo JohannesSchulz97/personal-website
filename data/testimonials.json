@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Phillipp Richter",
+    "role": "",
+    "company": "Spaxx",
+    "rating": 5,
+    "testimonial": "Johannes truly impressed me with his professionalism and attention to detail, exceeding all expectations in the realm of Data Science & ML. Working with him was a pleasure, thanks to his fluent communication, politeness, and top-notch cooperation. His documentation of the results and work steps was excellent. Highly recommended! 👍",
+    "project": "Screw Manufacturing Optimization",
+    "completionDate": "Oktober 2024",
+    "linkedIn": null
+  }
+]
