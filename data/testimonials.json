@@ -9,5 +9,16 @@
     "project": "Screw Manufacturing Optimization",
     "completionDate": "Oktober 2024",
     "linkedIn": null
+  },
+  {
+    "id": 2,
+    "name": "Armin Soyka",
+    "role": "CEO & Co-Founder",
+    "company": "The Original Body AG",
+    "rating": 5,
+    "testimonial": "Johannes was one of the most technically capable and reliable engineers I've worked with. What stood out wasn't just his skill, but his judgment — I found myself consulting him on architecture decisions, team situations, and engineering trade-offs well beyond his immediate scope. He has a rare ability to take on genuinely complex problems and return with solutions that are both elegant and practical. I'd work with him again without hesitation.",
+    "project": "Enterprise Platform Migration, Customer Support Automation, Biomechanical Analysis",
+    "completionDate": "April 2026",
+    "linkedIn": "https://www.linkedin.com/in/armin-soyka-15053616a/"
   }
 ]
