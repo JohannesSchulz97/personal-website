@@ -51,18 +51,18 @@ export default function HomePage() {
           }}
         >
           {/* Base overlay */}
-          <div className="absolute inset-0 bg-navy/40"></div>
+          <div className="absolute inset-0 bg-navy/30"></div>
           {/* Vignette - strong dark corners, minimal center spread */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_60%,rgba(10,25,47,0.5)_85%,rgba(10,25,47,0.9)_100%)]"></div>
-          {/* Left-to-right gradient - full brightness left, 35% brightness (65% dark) right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/65"></div>
+          {/* Left-to-right gradient - full brightness left, 25% brightness (75% dark) right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/75"></div>
         </div>
 
         <div className="w-full px-6 md:container md:mx-auto md:px-4 md:max-w-5xl relative z-10 lg:translate-x-[22.5%]">
-          <h1 className="font-mono text-teal mb-6 text-base md:text-lg mt-20 md:mt-0">Hi, my name is</h1>
+          <h1 className="font-mono text-teal mb-6 text-xl md:text-[22px] mt-20 md:mt-0">Hi, my name is</h1>
           <h2 className="text-5xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes.</h2>
           <h3 className="text-2xl md:text-5xl font-bold text-slate-lighter mb-8">I build AI systems that scale.</h3>
-          <p className="hidden md:block text-slate-lighter max-w-2xl mb-12 leading-relaxed text-xl md:text-2xl">
+          <p className="hidden md:block text-slate-lighter max-w-2xl mb-12 leading-relaxed text-xl md:text-[22px]">
             AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure,
             and multi-service orchestration. I build clean, minimal, and highly optimized systems with
             a focus on long-term maintainability and measurable impact.
