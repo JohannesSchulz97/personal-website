@@ -49,9 +49,10 @@
     font-size: 18px;
   }
 
-  /* Smooth scrolling */
+  /* Smooth scrolling + snap */
   html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
   }
 
   /* Custom scrollbar - Brittany's style */
