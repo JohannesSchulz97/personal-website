@@ -1,10 +1,7 @@
 "use client";
 
-import { Star, ChevronDown, ChevronUp, Linkedin } from "lucide-react";
+import { Star, Linkedin, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
 import Link from "next/link";
 import testimonialsData from "@/data/testimonials.json";
 
@@ -23,18 +20,6 @@ interface Testimonial {
 const testimonials = testimonialsData as Testimonial[];
 
 export default function TestimonialsPage() {
-  const [expandedTestimonials, setExpandedTestimonials] = useState<Set<number>>(new Set());
-
-  const toggleTestimonial = (index: number) => {
-    const newExpanded = new Set(expandedTestimonials);
-    if (newExpanded.has(index)) {
-      newExpanded.delete(index);
-    } else {
-      newExpanded.add(index);
-    }
-    setExpandedTestimonials(newExpanded);
-  };
-
   const renderStars = (rating: number) => {
     return (
       <div className="flex gap-1">
@@ -42,7 +27,7 @@ export default function TestimonialsPage() {
           <Star
             key={i}
             className={`h-5 w-5 ${
-              i < rating ? "fill-yellow-500 text-yellow-500" : "text-gray-400"
+              i < rating ? "fill-teal text-teal" : "fill-none text-slate-dark"
             }`}
           />
         ))}
@@ -52,108 +37,81 @@ export default function TestimonialsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="pb-12">
+      <div className="mx-auto max-w-4xl px-6 py-12 md:px-12 md:py-20">
+        {/* Header */}
+        <div className="mb-12">
+          <Button asChild variant="ghost" className="mb-8 -ml-4">
+            <Link href="/#testimonials">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Home
+            </Link>
+          </Button>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-lighter mb-4">
+            Testimonials
+          </h1>
+          <p className="text-slate leading-relaxed text-lg">
+            What people say about working with me on machine learning, data infrastructure,
+            and software development projects.
+          </p>
+        </div>
 
-        <div className="container mx-auto px-4 py-12 max-w-7xl relative z-10">
-          {/* Header Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Testimonials</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              What people say about working with me on machine learning, data infrastructure,
-              and software development projects.
-            </p>
-          </div>
-
-          {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {testimonials.map((testimonial, index) => (
-              <Card key={testimonial.id} className="flex flex-col">
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-2">
-                    <div>
-                      <CardTitle className="text-xl">{testimonial.name}</CardTitle>
-                      <CardDescription className="text-sm">
-                        {testimonial.role} at {testimonial.company}
-                      </CardDescription>
-                    </div>
+        {/* All Testimonials */}
+        <div className="space-y-12 mb-12">
+          {testimonials.map((testimonial, index) => (
+            <div key={testimonial.id} className="space-y-4">
+              <div className="flex items-start justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <h3 className="text-lg font-semibold text-slate-lighter">{testimonial.name}</h3>
                     {testimonial.linkedIn && (
                       <a
                         href={testimonial.linkedIn}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors shrink-0"
-                        aria-label={`${testimonial.name}'s LinkedIn profile`}
+                        className="text-slate hover:text-teal transition-colors"
+                        aria-label={`${testimonial.name} LinkedIn profile`}
                       >
-                        <Linkedin className="h-5 w-5" />
+                        <Linkedin className="h-4 w-4" />
                       </a>
                     )}
                   </div>
-                  {renderStars(testimonial.rating)}
-                </CardHeader>
-                <CardContent className="flex-1 flex flex-col space-y-4">
-                  <p className="text-muted-foreground italic">
-                    &ldquo;{testimonial.testimonial}&rdquo;
+                  <p className="text-sm text-slate">
+                    {testimonial.role}{testimonial.role && " at "}{testimonial.company}
                   </p>
+                </div>
+                {renderStars(testimonial.rating)}
+              </div>
 
-                  {/* Expand/Collapse Button */}
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => toggleTestimonial(index)}
-                    className="w-full"
-                  >
-                    {expandedTestimonials.has(index) ? (
-                      <>
-                        <ChevronUp className="h-4 w-4 mr-2" /> Hide Details
-                      </>
-                    ) : (
-                      <>
-                        <ChevronDown className="h-4 w-4 mr-2" /> Show Project Details
-                      </>
-                    )}
-                  </Button>
-
-                  {/* Collapsible Details */}
-                  {expandedTestimonials.has(index) && (
-                    <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
-                      <div>
-                        <span className="font-semibold">Project: </span>
-                        {testimonial.project}
-                      </div>
-                      <div>
-                        <span className="font-semibold">Completed: </span>
-                        {testimonial.completionDate}
-                      </div>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center space-y-4">
-            <div className="bg-card border rounded-lg p-8 max-w-2xl mx-auto">
-              <h2 className="text-2xl font-bold mb-3">Worked with me?</h2>
-              <p className="text-muted-foreground mb-6">
-                Share your experience to help others understand what it's like to work together.
+              <p className="text-slate leading-relaxed italic">
+                &ldquo;{testimonial.testimonial}&rdquo;
               </p>
-              <Button asChild size="lg">
-                <Link href="/submit-testimonial">
-                  Submit a Testimonial
-                </Link>
-              </Button>
-            </div>
 
-            <p className="text-sm text-muted-foreground">
-              Interested in working together?{" "}
-              <Link href="/contact" className="text-primary hover:underline">
-                Get in touch
-              </Link>
-            </p>
-          </div>
+              {/* Project Details */}
+              <div className="text-sm text-slate space-y-1">
+                <div>
+                  <span className="text-slate-dark">Projects: </span>
+                  <span>{testimonial.project}</span>
+                </div>
+                <div>
+                  <span className="text-slate-dark">Completed: </span>
+                  <span>{testimonial.completionDate}</span>
+                </div>
+              </div>
+
+              {index < testimonials.length - 1 && (
+                <hr className="border-t border-slate-dark/20 mt-8" />
+              )}
+            </div>
+          ))}
         </div>
-      </section>
+
+        {/* Call to Action */}
+        <div className="mt-16 space-y-4">
+          <p className="text-slate leading-relaxed">
+            Worked with me? <a href="/submit-testimonial" className="text-teal hover:text-teal/80 transition-colors">Share your experience</a> or <a href="/#contact" className="text-teal hover:text-teal/80 transition-colors">get in touch</a> if you're interested in working together.
+          </p>
+        </div>
+      </div>
 
       {/* Schema.org Review Markup for SEO */}
       <script
@@ -164,6 +122,7 @@ export default function TestimonialsPage() {
             "@type": "Person",
             name: "Johannes Schulz",
             jobTitle: "AI Systems Engineer",
+            url: "https://johannesschulz.dev",
             review: testimonials.map((t) => ({
               "@type": "Review",
               author: {
