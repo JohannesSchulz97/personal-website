@@ -1,14 +1,14 @@
 [
   {
-    "id": 1,
-    "name": "Phillipp Richter",
-    "role": "",
-    "company": "Spaxx",
+    "id": 3,
+    "name": "Yohann Doillon",
+    "role": "Partner & Chief Commercial Officer",
+    "company": "10x Partners Sàrl",
     "rating": 5,
-    "testimonial": "Johannes truly impressed me with his professionalism and attention to detail, exceeding all expectations in the realm of Data Science & ML. Working with him was a pleasure, thanks to his fluent communication, politeness, and top-notch cooperation. His documentation of the results and work steps was excellent. Highly recommended! 👍",
-    "project": "Screw Manufacturing Optimization",
-    "completionDate": "Oktober 2024",
-    "linkedIn": null
+    "testimonial": "Working together with Johannes has been a great pleasure from day 1. Johannes is a great professional who does not only finds creative ways of solving problems, he's also a great communicator AND listener. I would highly recommend Johannes to anyone who's looking for a dedicated, AI-first and forward-thinking engineer!",
+    "project": "ML-based Body Structure Analysis, Various Palantir Foundry & Claude Code initiatives",
+    "completionDate": "Jan 2026",
+    "linkedIn": "https://www.linkedin.com/in/yohann10x/"
   },
   {
     "id": 2,
@@ -22,14 +22,14 @@
     "linkedIn": "https://www.linkedin.com/in/armin-soyka-15053616a/"
   },
   {
-    "id": 3,
-    "name": "Yohann Doillon",
-    "role": "Partner & Chief Commercial Officer",
-    "company": "10x Partners Sàrl",
+    "id": 1,
+    "name": "Phillipp Richter",
+    "role": "",
+    "company": "Spaxx",
     "rating": 5,
-    "testimonial": "Working together with Johannes has been a great pleasure from day 1. Johannes is a great professional who does not only finds creative ways of solving problems, he's also a great communicator AND listener. I would highly recommend Johannes to anyone who's looking for a dedicated, AI-first and forward-thinking engineer!",
-    "project": "ML-based Body Structure Analysis, Various Palantir Foundry & Claude Code initiatives",
-    "completionDate": "Jan 2026",
-    "linkedIn": "https://www.linkedin.com/in/yohann10x/"
+    "testimonial": "Johannes truly impressed me with his professionalism and attention to detail, exceeding all expectations in the realm of Data Science & ML. Working with him was a pleasure, thanks to his fluent communication, politeness, and top-notch cooperation. His documentation of the results and work steps was excellent. Highly recommended! 👍",
+    "project": "Screw Manufacturing Optimization",
+    "completionDate": "Oktober 2024",
+    "linkedIn": null
   }
 ]
