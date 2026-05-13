@@ -1,7 +1,9 @@
 "use client";
 
 import { Star, Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/section-heading";
+import Link from "next/link";
 import testimonialsData from "@/data/testimonials.json";
 
 interface Testimonial {
@@ -27,9 +29,8 @@ export default function TestimonialsSection() {
           <Star
             key={i}
             className={`h-5 w-5 ${
-              i < rating ? "fill-teal" : "fill-none"
+              i < rating ? "fill-teal text-teal" : "fill-none text-slate-dark"
             }`}
-            style={{ stroke: '#fbbf24', strokeWidth: '1' }}
           />
         ))}
       </div>
@@ -53,7 +54,7 @@ export default function TestimonialsSection() {
 
       {/* Testimonials */}
       <div className="space-y-12 mb-12">
-        {testimonials.map((testimonial, index) => (
+        {testimonials.slice(0, 2).map((testimonial, index) => (
           <div key={testimonial.id} className="space-y-4">
             <div className="flex items-start justify-between">
               <div>
@@ -94,15 +95,24 @@ export default function TestimonialsSection() {
               </div>
             </div>
 
-            {index < testimonials.length - 1 && (
+            {index < 1 && (
               <hr className="border-t border-slate-dark/20 mt-8" />
             )}
           </div>
         ))}
       </div>
 
+      {/* View All Button */}
+      <div className="mb-12">
+        <Button asChild variant="outline">
+          <Link href="/testimonials">
+            View All Testimonials
+          </Link>
+        </Button>
+      </div>
+
       {/* Call to Action */}
-      <div className="mt-16 space-y-4">
+      <div className="mt-8 space-y-4">
         <p className="text-slate leading-relaxed">
           Worked with me? <a href="/submit-testimonial" className="text-teal hover:text-teal/80 transition-colors">Share your experience</a> or <a href="#contact" className="text-teal hover:text-teal/80 transition-colors">get in touch</a> if you're interested in working together.
         </p>
