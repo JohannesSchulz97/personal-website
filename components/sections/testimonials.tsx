@@ -1,10 +1,7 @@
 "use client";
 
-import { Star, ChevronDown, ChevronUp, Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState } from "react";
-import Link from "next/link";
+import { Star, Linkedin } from "lucide-react";
+import SectionHeading from "@/components/section-heading";
 import testimonialsData from "@/data/testimonials.json";
 
 interface Testimonial {
@@ -22,17 +19,6 @@ interface Testimonial {
 const testimonials = testimonialsData as Testimonial[];
 
 export default function TestimonialsSection() {
-  const [expandedTestimonials, setExpandedTestimonials] = useState<Set<number>>(new Set());
-
-  const toggleTestimonial = (index: number) => {
-    const newExpanded = new Set(expandedTestimonials);
-    if (newExpanded.has(index)) {
-      newExpanded.delete(index);
-    } else {
-      newExpanded.add(index);
-    }
-    setExpandedTestimonials(newExpanded);
-  };
 
   const renderStars = (rating: number) => {
     return (
@@ -41,8 +27,9 @@ export default function TestimonialsSection() {
           <Star
             key={i}
             className={`h-5 w-5 ${
-              i < rating ? "fill-yellow-500 text-yellow-500" : "text-gray-400"
+              i < rating ? "fill-teal" : "fill-none"
             }`}
+            style={{ stroke: '#fbbf24', strokeWidth: '1' }}
           />
         ))}
       </div>
@@ -50,105 +37,75 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="py-16">
-      <div className="container mx-auto px-4 max-w-7xl">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Testimonials</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            What people say about working with me on machine learning, data infrastructure,
-            and software development projects.
-          </p>
-        </div>
+    <section id="testimonials" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-[4.5rem] lg:scroll-mt-24">
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-lighter lg:sr-only">
+          Testimonials
+        </h2>
+      </div>
+      <div className="hidden lg:block mb-8">
+        <SectionHeading number="03">Testimonials</SectionHeading>
+      </div>
+      <p className="text-slate mb-12 leading-relaxed">
+        What people say about working with me on machine learning, data infrastructure,
+        and software development projects.
+      </p>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {testimonials.map((testimonial, index) => (
-            <Card key={testimonial.id} className="flex flex-col">
-              <CardHeader>
-                <div className="flex items-start justify-between mb-2">
-                  <div>
-                    <CardTitle className="text-xl">{testimonial.name}</CardTitle>
-                    <CardDescription className="text-sm">
-                      {testimonial.role} at {testimonial.company}
-                    </CardDescription>
-                  </div>
+      {/* Testimonials */}
+      <div className="space-y-12 mb-12">
+        {testimonials.map((testimonial, index) => (
+          <div key={testimonial.id} className="space-y-4">
+            <div className="flex items-start justify-between">
+              <div>
+                <div className="flex items-center gap-3 mb-2">
+                  <h3 className="text-lg font-semibold text-slate-lighter">{testimonial.name}</h3>
                   {testimonial.linkedIn && (
                     <a
                       href={testimonial.linkedIn}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors shrink-0"
+                      className="text-slate hover:text-teal transition-colors"
                       aria-label={`${testimonial.name}'s LinkedIn profile`}
                     >
-                      <Linkedin className="h-5 w-5" />
+                      <Linkedin className="h-4 w-4" />
                     </a>
                   )}
                 </div>
-                {renderStars(testimonial.rating)}
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col space-y-4">
-                <p className="text-muted-foreground italic">
-                  &ldquo;{testimonial.testimonial}&rdquo;
+                <p className="text-sm text-slate">
+                  {testimonial.role}{testimonial.role && " at "}{testimonial.company}
                 </p>
+              </div>
+              {renderStars(testimonial.rating)}
+            </div>
 
-                {/* Expand/Collapse Button */}
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => toggleTestimonial(index)}
-                  className="w-full"
-                >
-                  {expandedTestimonials.has(index) ? (
-                    <>
-                      <ChevronUp className="h-4 w-4 mr-2" /> Hide Details
-                    </>
-                  ) : (
-                    <>
-                      <ChevronDown className="h-4 w-4 mr-2" /> Show Project Details
-                    </>
-                  )}
-                </Button>
-
-                {/* Collapsible Details */}
-                {expandedTestimonials.has(index) && (
-                  <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
-                    <div>
-                      <span className="font-semibold">Project: </span>
-                      {testimonial.project}
-                    </div>
-                    <div>
-                      <span className="font-semibold">Completed: </span>
-                      {testimonial.completionDate}
-                    </div>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center space-y-4">
-          <div className="bg-card border rounded-lg p-8 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold mb-3">Worked with me?</h2>
-            <p className="text-muted-foreground mb-6">
-              Share your experience to help others understand what it's like to work together.
+            <p className="text-slate leading-relaxed italic">
+              &ldquo;{testimonial.testimonial}&rdquo;
             </p>
-            <Button asChild size="lg">
-              <Link href="/submit-testimonial">
-                Submit a Testimonial
-              </Link>
-            </Button>
-          </div>
 
-          <p className="text-sm text-muted-foreground">
-            Interested in working together?{" "}
-            <a href="#contact" className="text-primary hover:underline">
-              Get in touch
-            </a>
-          </p>
-        </div>
+            {/* Project Details */}
+            <div className="text-sm text-slate space-y-1">
+              <div>
+                <span className="text-slate-dark">Projects: </span>
+                <span>{testimonial.project}</span>
+              </div>
+              <div>
+                <span className="text-slate-dark">Completed: </span>
+                <span>{testimonial.completionDate}</span>
+              </div>
+            </div>
+
+            {index < testimonials.length - 1 && (
+              <hr className="border-t border-slate-dark/20 mt-8" />
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Call to Action */}
+      <div className="mt-16 space-y-4">
+        <p className="text-slate leading-relaxed">
+          Worked with me? <a href="/submit-testimonial" className="text-teal hover:text-teal/80 transition-colors">Share your experience</a> or <a href="#contact" className="text-teal hover:text-teal/80 transition-colors">get in touch</a> if you're interested in working together.
+        </p>
       </div>
 
       {/* Schema.org Review Markup for SEO */}
