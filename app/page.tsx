@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/section-heading';
 import ProjectsSection from '@/components/sections/projects';
+import TestimonialsSection from '@/components/sections/testimonials';
 import ContactSection from '@/components/sections/contact';
 import { Github, Linkedin, GraduationCap } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -142,6 +143,14 @@ export default function HomePage() {
                     </a>
                   </li>
                   <li>
+                    <a className="group flex items-center py-3" href="#testimonials">
+                      <span className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-lighter group-focus-visible:w-16 group-focus-visible:bg-slate-lighter motion-reduce:transition-none ${activeSection === 'testimonials' ? 'w-16 bg-slate-lighter' : 'w-8 bg-slate-dark'}`}></span>
+                      <span className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-slate-lighter group-focus-visible:text-slate-lighter ${activeSection === 'testimonials' ? 'text-slate-lighter' : 'text-slate'}`}>
+                        Testimonials
+                      </span>
+                    </a>
+                  </li>
+                  <li>
                     <a className="group flex items-center py-3" href="#contact">
                       <span className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-lighter group-focus-visible:w-16 group-focus-visible:bg-slate-lighter motion-reduce:transition-none ${activeSection === 'contact' ? 'w-16 bg-slate-lighter' : 'w-8 bg-slate-dark'}`}></span>
                       <span className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-slate-lighter group-focus-visible:text-slate-lighter ${activeSection === 'contact' ? 'text-slate-lighter' : 'text-slate'}`}>
@@ -191,13 +200,16 @@ export default function HomePage() {
           </header>
 
           {/* Right Column - Scrollable */}
-          <main className="pt-8 lg:w-3/5 lg:py-24">
+          <main className="pt-8 lg:w-3/5 lg:pt-12 lg:pb-24">
             {/* About Section */}
-            <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+            <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-[4.5rem] lg:scroll-mt-24">
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-lighter lg:sr-only">
                   About
                 </h2>
+              </div>
+              <div className="hidden lg:block mb-8">
+                <SectionHeading number="01">About</SectionHeading>
               </div>
               <div className="space-y-4 text-slate">
                 <p className="leading-relaxed">
@@ -231,6 +243,9 @@ export default function HomePage() {
 
             {/* Projects */}
             <ProjectsSection />
+
+            {/* Testimonials */}
+            <TestimonialsSection />
 
             {/* Contact */}
             <ContactSection />
