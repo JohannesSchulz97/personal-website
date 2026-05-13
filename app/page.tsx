@@ -44,7 +44,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section with Background */}
-      <section id="hero-section" className="relative h-screen h-[100dvh] flex flex-col justify-center md:justify-center py-0 overflow-hidden select-none snap-start snap-always">
+      <section id="hero-section" className="relative h-screen h-[100dvh] flex flex-col justify-center md:justify-center py-0 overflow-hidden select-none snap-start">
         <div
           className="absolute inset-0 z-0 bg-[length:auto_180%] md:bg-cover bg-no-repeat bg-[position:5%_top] md:bg-[position:left_top]"
           style={{
@@ -109,7 +109,7 @@ export default function HomePage() {
       </section>
 
       {/* Two-Column Layout */}
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-4 md:px-12 md:py-20 lg:px-24 lg:py-0 snap-start snap-always">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-4 md:px-12 md:py-20 lg:px-24 lg:py-0 snap-start">
         <div className="lg:flex lg:justify-between lg:gap-24">
           {/* Left Column - Fixed */}
           <header className="hidden lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-24 lg:-translate-x-[10%]">
@@ -200,7 +200,7 @@ export default function HomePage() {
           </header>
 
           {/* Right Column - Scrollable */}
-          <main className="pt-8 lg:w-3/5 lg:pt-12 lg:pb-24">
+          <main className="pt-0 lg:w-3/5 lg:pt-12 lg:pb-24">
             {/* About Section */}
             <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-[4.5rem] lg:scroll-mt-24">
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
