@@ -14,7 +14,7 @@ export default function HomePage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'projects', 'contact'];
+      const sections = ['about', 'projects', 'testimonials', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       // Check if scrolled to bottom
@@ -59,7 +59,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/75"></div>
         </div>
 
-        <div className="w-full px-6 md:container md:mx-auto md:px-4 md:max-w-5xl relative z-10 lg:translate-x-[22.5%]">
+        <div className="w-full px-6 md:container md:mx-auto md:px-4 md:max-w-5xl relative z-10 lg:translate-x-[33%]">
           <h1 className="font-mono text-teal mb-6 text-xl md:text-[22px] mt-20 md:mt-0">Hi, my name is</h1>
           <h2 className="text-5xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes.</h2>
           <h3 className="text-2xl md:text-5xl font-bold text-slate-lighter mb-8">I build AI systems that scale.</h3>
