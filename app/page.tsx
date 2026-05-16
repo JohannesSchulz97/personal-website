@@ -11,6 +11,39 @@ import { useState, useEffect } from 'react';
 
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState('about');
+  const [viewportHeight, setViewportHeight] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Set viewport height once on load
+    setViewportHeight(window.innerHeight);
+
+    // Detect mouse wheel usage and disable scroll snap
+    // deltaMode: 0 = pixels (trackpad), 1 = lines (mouse wheel)
+    let wheelTimeout: NodeJS.Timeout;
+    const handleWheel = (e: WheelEvent) => {
+      console.log('Wheel event:', {
+        deltaMode: e.deltaMode,
+        deltaY: e.deltaY,
+        timestamp: Date.now(),
+        classAdded: e.deltaMode === 1
+      });
+      if (e.deltaMode === 1) {
+        // Mouse wheel detected
+        document.documentElement.classList.add('using-mouse');
+        clearTimeout(wheelTimeout);
+        wheelTimeout = setTimeout(() => {
+          document.documentElement.classList.remove('using-mouse');
+        }, 1000);
+      }
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: true });
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      clearTimeout(wheelTimeout);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +77,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section with Background */}
-      <section id="hero-section" className="relative h-screen h-[100dvh] flex flex-col justify-center md:justify-center py-0 overflow-hidden select-none snap-start">
+      <section id="hero-section" className="relative flex flex-col justify-center md:justify-center py-0 overflow-hidden select-none snap-start snap-always" style={{ height: viewportHeight ? `${viewportHeight}px` : '100vh' }}>
         <div
           className="absolute inset-0 z-0 bg-[length:auto_180%] md:bg-cover bg-no-repeat bg-[position:5%_top] md:bg-[position:left_top]"
           style={{
@@ -60,9 +93,9 @@ export default function HomePage() {
         </div>
 
         <div className="w-full px-6 md:container md:mx-auto md:px-4 md:max-w-5xl relative z-10 lg:translate-x-[33%]">
-          <h1 className="font-mono text-teal mb-6 text-xl md:text-[22px] mt-20 md:mt-0">Hi, my name is</h1>
-          <h2 className="text-5xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes.</h2>
-          <h3 className="text-2xl md:text-5xl font-bold text-slate-lighter mb-8">I build AI systems that scale.</h3>
+          <h1 className="text-2xl md:text-[22px] font-bold text-teal mb-4">Hi, my name is</h1>
+          <h2 className="text-5xl md:text-5xl font-bold text-slate-lighter mb-4">Johannes.</h2>
+          <h3 className="text-2xl md:text-5xl font-bold text-slate-lighter mb-4">I build AI systems that scale.</h3>
           <p className="hidden md:block text-slate-lighter max-w-2xl mb-12 leading-relaxed text-xl md:text-[22px]">
             AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure,
             and multi-service orchestration. I build clean, minimal, and highly optimized systems with
@@ -70,7 +103,7 @@ export default function HomePage() {
           </p>
 
           {/* Social Icons - Mobile Only */}
-          <ul className="lg:hidden flex items-center gap-5 mt-56" aria-label="Social media">
+          <ul className="lg:hidden flex items-center gap-5 mt-8" aria-label="Social media">
           <li className="text-xs">
             <a
               href="https://github.com/JohannesSchulz97"
@@ -109,7 +142,7 @@ export default function HomePage() {
       </section>
 
       {/* Two-Column Layout */}
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-4 md:px-12 md:py-20 lg:px-24 lg:py-0 snap-start">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-4 md:px-12 md:py-20 lg:px-24 lg:py-0 snap-start snap-always">
         <div className="lg:flex lg:justify-between lg:gap-24">
           {/* Left Column - Fixed */}
           <header className="hidden lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-24 lg:-translate-x-[10%]">
