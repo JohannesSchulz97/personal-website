@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 
 export default function CursorSpotlight() {
   const [isOverHero, setIsOverHero] = useState(false);
+  const [hasMovedMouse, setHasMovedMouse] = useState(false);
   const mousePosRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function CursorSpotlight() {
     };
 
     const updateCursorPosition = (e: MouseEvent) => {
+      setHasMovedMouse(true);
       document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
       document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
       mousePosRef.current = { x: e.clientX, y: e.clientY };
@@ -39,7 +41,7 @@ export default function CursorSpotlight() {
 
   return (
     <div
-      className={`pointer-events-none fixed inset-0 z-30 transition duration-300 ${isOverHero ? 'opacity-0' : 'opacity-100'}`}
+      className={`pointer-events-none fixed inset-0 z-30 transition duration-300 ${!hasMovedMouse || isOverHero ? 'opacity-0' : 'opacity-100'}`}
       style={{
         background: `radial-gradient(600px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(29, 78, 216, 0.15), transparent 80%)`,
       }}
