@@ -69,7 +69,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ 99.8% cost reduction: €100,000/month → €200/month</li>
                 <li>✓ 9.5 TB migrated across 1,676 datasets with zero data loss</li>
                 <li>✓ 362 pipeline definitions captured, 204 repositories cloned with full Git history</li>
@@ -160,7 +160,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ ~5 developers deploying without SSH access via automated pipeline</li>
                 <li>✓ 10 production services running with automatic SSL renewal</li>
                 <li>✓ Daily automated backups with local + off-site redundancy</li>
@@ -250,7 +250,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ 19 autonomous dev agents with persistent memory across Germany and Georgia teams</li>
                 <li>✓ Manager agent auto-detects bottlenecks and reports team status</li>
                 <li>✓ Single-command provisioning for new agent deployment</li>
@@ -320,7 +320,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ 2 production pipelines extracted with zero Oracle imports</li>
                 <li>✓ LangSmith Studio visual debugging: prompt iteration from minutes to seconds</li>
                 <li>✓ Auto-MCP endpoint enabling n8n integration without custom per-pipeline work</li>
@@ -405,7 +405,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ Successfully maintained dual forks with zero upstream merge conflicts via stgit methodology</li>
                 <li>✓ Enabled enterprise-scale headless agent orchestration across distributed development teams</li>
                 <li>✓ Achieved single-command organizational rollout eliminating manual installation overhead</li>
@@ -472,7 +472,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ Handles 80+ daily tickets across 5 separate inboxes (WhatsApp, Email, Instagram, YouTube, Slack)</li>
                 <li>✓ Achieved 70% automation rate with human escalation for complex cases</li>
                 <li>✓ Saved 15+ hours/week of manual ticket routing and response drafting</li>
@@ -556,7 +556,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ 1 week framework setup → 2 months junior team expansion (13x growth in Action Handler)</li>
                 <li>✓ Zero AI hallucination incidents (hook system prevented configuration errors)</li>
                 <li>✓ Coach-level responses with customer biomechanics, training history, and expert knowledge</li>
@@ -646,7 +646,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ Deployed to production clinical workflow processing 40+ patient assessments daily</li>
                 <li>✓ Reduced biomechanical assessment time from 30 minutes to 5 minutes (80%+ reduction)</li>
                 <li>✓ Achieved 90%+ accuracy in posture deviation detection</li>
@@ -720,7 +720,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ Reduced report generation time from 2 hours to 10 minutes (90%+ reduction)</li>
                 <li>✓ Eliminated 95%+ of pipeline configuration errors with visual validation</li>
                 <li>✓ Enabled non-technical users to customize analysis workflows</li>
@@ -797,7 +797,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ Reduced diagnostic research time from 30+ minutes to &lt;3 minutes (90%+ reduction)</li>
                 <li>✓ Processed 8+ GB of veterinary textbooks with semantic search</li>
                 <li>✓ Achieved 80%+ accuracy in image-based disease identification</li>
@@ -873,7 +873,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ Processed 5000+ medical articles into structured ML datasets</li>
                 <li>✓ Automated daily monitoring eliminating 10+ hours/week of manual work</li>
                 <li>✓ Maintained 99%+ uptime with zero detection/blocking incidents</li>
@@ -944,7 +944,7 @@ export default function ProjectsSection() {
             {/* Results - Always Visible */}
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
-              <ul className="list-disc list-inside space-y-1">
+              <ul className="list-inside space-y-1">
                 <li>✓ Processed 4 years of production data for defect prediction</li>
                 <li>✓ Reduced 418 one-hot-encoded features via importance scoring</li>
                 <li>✓ Handled 90/10 class imbalance with undersampling strategy</li>
