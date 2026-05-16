@@ -49,10 +49,14 @@
     font-size: 18px;
   }
 
-  /* Smooth scrolling + snap */
-  html {
+  /* Smooth scrolling + snap for trackpad, disabled for mouse */
+  html:not(.using-mouse) {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+  }
+
+  html.using-mouse {
+    scroll-behavior: auto;
   }
 
   /* Custom scrollbar - Brittany's style */
