@@ -15,5 +15,19 @@ When user receives testimonial submission via email from Formspree:
 
 See `TESTIMONIALS.md` for full system documentation.
 
+## Projects Section Writing
+
+When writing or updating project technical details in `components/sections/projects.tsx`:
+
+**MUST follow workflow**: `docs/project-writing-workflow.md`
+
+Key requirements:
+- Research from both `../portfolio/projects/<name>.md` AND GitHub repo
+- Narrative paragraphs, not bullet lists
+- Technical terms woven into story (not required to understand, but valuable for experts)
+- Show technical finesse (precise details, architectural decisions, edge cases solved)
+- Increased spacing (space-y-6, leading-relaxed)
+- Remove Results section from tech details (already in card summary)
+
 # Project Overrides
 
