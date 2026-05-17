@@ -85,9 +85,9 @@ export default function HomePage() {
           }}
         >
           {/* Base overlay */}
-          <div className="absolute inset-0 bg-navy/30"></div>
+          <div className="absolute inset-0 bg-[#081220]/30"></div>
           {/* Vignette - strong dark corners, minimal center spread */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_60%,rgba(10,25,47,0.5)_85%,rgba(10,25,47,0.9)_100%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_60%,rgba(8,18,32,0.5)_85%,rgba(8,18,32,0.9)_100%)]"></div>
           {/* Left-to-right gradient - full brightness left, 25% brightness (75% dark) right */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/75"></div>
         </div>
@@ -236,7 +236,7 @@ export default function HomePage() {
           <main className="pt-0 lg:w-3/5 lg:pt-12 lg:pb-24">
             {/* About Section */}
             <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-[4.5rem] lg:scroll-mt-24">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-navy/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#081220]/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-slate-lighter lg:sr-only">
                   About
                 </h2>

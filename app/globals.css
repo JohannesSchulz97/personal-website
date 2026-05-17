@@ -24,23 +24,23 @@
     --radius: 0.5rem;
   }
   .dark {
-    /* Brittany's navy backgrounds */
-    --background: 209 100% 11%;  /* #0a192f navy */
+    /* Dark navy backgrounds */
+    --background: 209 100% 8%;   /* #081220 dark-navy */
     --foreground: 219 28% 88%;   /* #ccd6f6 lightest-slate */
     --card: 213 39% 15%;         /* #112240 light-navy */
     --card-foreground: 219 28% 88%;
     --primary: 167 100% 70%;     /* #64ffda teal */
-    --primary-foreground: 209 100% 11%;
-    --secondary: 213 39% 15%;
+    --primary-foreground: 209 100% 8%;
+    --secondary: 209 100% 11%;
     --secondary-foreground: 219 28% 88%;
-    --muted: 213 39% 21%;        /* #233554 lightest-navy */
+    --muted: 209 80% 15%;        /* #0f2338 navy-muted */
     --muted-foreground: 219 14% 71%; /* #a8b2d1 light-slate */
     --accent: 167 100% 70%;      /* #64ffda teal */
-    --accent-foreground: 209 100% 11%;
+    --accent-foreground: 209 100% 8%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 219 28% 88%;
-    --border: 213 39% 21%;
-    --input: 213 39% 21%;
+    --border: 209 80% 15%;
+    --input: 209 80% 15%;
     --ring: 167 100% 70%;        /* #64ffda teal */
   }
   * { @apply border-border; }
@@ -59,20 +59,20 @@
     scroll-behavior: auto;
   }
 
-  /* Custom scrollbar - Brittany's style */
+  /* Custom scrollbar */
   html {
     scrollbar-width: thin;
-    scrollbar-color: #495670 #0a192f;
+    scrollbar-color: #3a4e63 #081220;
   }
   ::-webkit-scrollbar {
     width: 12px;
   }
   ::-webkit-scrollbar-track {
-    background: #0a192f;
+    background: #081220;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #495670;
-    border: 3px solid #0a192f;
+    background-color: #3a4e63;
+    border: 3px solid #081220;
     border-radius: 10px;
   }
 
@@ -92,7 +92,7 @@
 
   /* Selection color */
   ::selection {
-    background-color: #233554;
-    color: #ccd6f6;
+    background-color: #0f2338;
+    color: #64ffda;
   }
 }
