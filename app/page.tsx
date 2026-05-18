@@ -8,6 +8,8 @@ import TestimonialsSection from '@/components/sections/testimonials';
 import ContactSection from '@/components/sections/contact';
 import { Github, Linkedin, GraduationCap } from 'lucide-react';
 import { useState, useEffect } from 'react';
+// @ts-ignore - CommonJS module
+const LethargyModule = require('lethargy');
 
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState('about');
@@ -17,23 +19,32 @@ export default function HomePage() {
     // Set viewport height once on load
     setViewportHeight(window.innerHeight);
 
-    // Detect mouse wheel usage and disable scroll snap
-    // deltaMode: 0 = pixels (trackpad), 1 = lines (mouse wheel)
+    // Detect mouse wheel using lethargy (momentum detection)
+    // Trackpad has inertial scrolling, mouse doesn't
+    // Tuned params: (stability, sensitivity, tolerance, delay)
+    // Higher sensitivity = fewer false positives from strong trackpad scrolls
+    const lethargy = new LethargyModule.Lethargy(10, 150, 1.2, 150);
     let wheelTimeout: NodeJS.Timeout;
+
     const handleWheel = (e: WheelEvent) => {
+      const check = lethargy.check(e);
+
       console.log('Wheel event:', {
         deltaMode: e.deltaMode,
         deltaY: e.deltaY,
-        timestamp: Date.now(),
-        classAdded: e.deltaMode === 1
+        lethargCheck: check,
+        isMouse: check !== false,
+        timestamp: Date.now()
       });
-      if (e.deltaMode === 1) {
-        // Mouse wheel detected
+
+      // check !== false means non-inertial scrolling (mouse wheel)
+      if (check !== false) {
+        // Disable snap + smooth while using mouse (recovers from false positives)
         document.documentElement.classList.add('using-mouse');
         clearTimeout(wheelTimeout);
         wheelTimeout = setTimeout(() => {
           document.documentElement.classList.remove('using-mouse');
-        }, 1000);
+        }, 500);
       }
     };
 
