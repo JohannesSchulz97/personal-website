@@ -38,7 +38,7 @@ export default function ProjectsSection() {
       <div className="hidden lg:block mb-8">
         <SectionHeading number="02">Projects</SectionHeading>
       </div>
-      <p className="text-slate mb-12 leading-relaxed">
+      <p className="text-slate mb-12 leading-relaxed lg:text-[16px]">
         A selection of my work spanning enterprise platform migrations, AI systems,
         and production infrastructure — from reverse-engineering Palantir Foundry to
         building self-hosted platforms and computer vision pipelines.
@@ -58,7 +58,7 @@ export default function ProjectsSection() {
                 with 8,435 resources to self-hosted infrastructure at €200/month — zero downtime, complete functionality preserved
               </CardDescription>
             </div>
-            <img src="/project-icons/palantir-foundry.jpg" alt="Palantir Foundry" className="w-12 h-12 rounded-lg flex-shrink-0 object-cover" />
+            <img src="/project-icons/palantir2.jpg" alt="Palantir Foundry" className="w-12 h-12 rounded-lg flex-shrink-0 object-cover" />
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">
@@ -280,7 +280,7 @@ export default function ProjectsSection() {
                       <span className="text-xs">Twenty CRM</span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-2 bg-navy-lighter rounded-lg">
-                      <img src="/project-icons/n8n.png" alt="n8n" className="w-6 h-6 rounded" />
+                      <img src="/project-icons/n8n-icon.webp" alt="n8n" className="w-6 h-6 rounded bg-white" />
                       <span className="text-xs">n8n</span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-2 bg-navy-lighter rounded-lg">
@@ -958,7 +958,7 @@ export default function ProjectsSection() {
                 and Palantir Foundry integration to deliver coach-level support with deep customer context and expert knowledge retrieval
               </CardDescription>
             </div>
-            <img src="/project-icons/n8n.png" alt="n8n" className="w-12 h-12 rounded-lg flex-shrink-0 object-cover" />
+            <img src="/project-icons/n8n-icon.webp" alt="n8n" className="w-12 h-12 rounded-lg flex-shrink-0 object-cover bg-white" />
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
             <div className="flex flex-wrap gap-2">

@@ -47,7 +47,7 @@ export default function TestimonialsSection() {
       <div className="hidden lg:block mb-8">
         <SectionHeading number="03">Testimonials</SectionHeading>
       </div>
-      <p className="text-slate mb-12 leading-relaxed">
+      <p className="text-slate mb-12 leading-relaxed lg:text-[16px]">
         What people say about working with me on machine learning, data infrastructure,
         and software development projects.
       </p>
@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
               {renderStars(testimonial.rating)}
             </div>
 
-            <p className="text-slate leading-relaxed italic">
+            <p className="text-slate leading-relaxed italic lg:text-[16px]">
               &ldquo;{testimonial.testimonial}&rdquo;
             </p>
 
@@ -113,7 +113,7 @@ export default function TestimonialsSection() {
 
       {/* Call to Action */}
       <div className="mt-8 space-y-4">
-        <p className="text-slate leading-relaxed">
+        <p className="text-slate leading-relaxed lg:text-[16px]">
           Worked with me? <a href="/submit-testimonial" className="text-teal hover:text-teal/80 transition-colors">Share your experience</a> or <a href="#contact" className="text-teal hover:text-teal/80 transition-colors">get in touch</a> if you're interested in working together.
         </p>
       </div>

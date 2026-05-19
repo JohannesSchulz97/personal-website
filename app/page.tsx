@@ -153,10 +153,10 @@ export default function HomePage() {
       </section>
 
       {/* Two-Column Layout */}
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-4 md:px-12 md:py-20 lg:px-24 lg:py-0 snap-start snap-always">
-        <div className="lg:flex lg:justify-between lg:gap-24">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-4 md:px-12 md:py-20 lg:px-0 lg:py-0 snap-start snap-always">
+        <div className="lg:flex lg:justify-between lg:gap-54">
           {/* Left Column - Fixed */}
-          <header className="hidden lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-2/5 lg:flex-col lg:justify-between lg:py-24 lg:-translate-x-[10%]">
+          <header className="hidden lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[37.3%] lg:flex-col lg:justify-between lg:py-24">
             <div>
               <h1 className="text-4xl font-bold tracking-tight text-slate-lighter sm:text-5xl">
                 Johannes Schulz
@@ -164,7 +164,7 @@ export default function HomePage() {
               <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-lighter sm:text-xl">
                 AI Systems Engineer
               </h2>
-              <p className="mt-4 max-w-xs leading-normal text-slate">
+              <p className="mt-4 max-w-xs leading-normal text-slate lg:text-[17px]">
                 I build accessible, production-grade AI systems that scale.
               </p>
 
@@ -244,7 +244,7 @@ export default function HomePage() {
           </header>
 
           {/* Right Column - Scrollable */}
-          <main className="pt-0 lg:w-3/5 lg:pt-12 lg:pb-24">
+          <main className="pt-0 lg:w-[48%] lg:pt-12 lg:pb-24">
             {/* About Section */}
             <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-[4.5rem] lg:scroll-mt-24">
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#081220]/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
@@ -255,7 +255,7 @@ export default function HomePage() {
               <div className="hidden lg:block mb-8">
                 <SectionHeading number="01">About</SectionHeading>
               </div>
-              <div className="space-y-4 text-slate">
+              <div className="space-y-4 text-slate lg:text-[16px]">
                 <p className="leading-relaxed">
                   I build clean, minimal, and highly optimized systems — no clutter, no unnecessary abstraction.
                   My work spans enterprise platform migrations, production ML pipelines, self-hosted infrastructure,

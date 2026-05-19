@@ -24,7 +24,7 @@ export default function ContactSection() {
       <div className="hidden lg:block mb-8">
         <SectionHeading number="04">Get In Touch</SectionHeading>
       </div>
-      <p className="text-slate mb-8 max-w-xl leading-relaxed">
+      <p className="text-slate mb-8 max-w-xl leading-relaxed lg:text-[16px]">
         I'm currently available for software engineering projects, system architecture consulting,
         and AI integration opportunities. Whether you have a project in mind or just want to chat
         about tech, my inbox is always open.
