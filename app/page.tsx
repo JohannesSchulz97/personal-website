@@ -153,10 +153,10 @@ export default function HomePage() {
       </section>
 
       {/* Two-Column Layout */}
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-4 md:px-12 md:py-20 lg:px-0 lg:py-0 snap-start snap-always">
-        <div className="lg:flex lg:justify-between lg:gap-54">
+      <div className="mx-auto min-h-screen max-w-7xl px-6 py-4 md:px-12 md:py-20 lg:px-12 lg:py-0 xl:px-16 snap-start snap-always">
+        <div className="lg:flex lg:justify-between lg:gap-12 xl:gap-16 2xl:gap-20">
           {/* Left Column - Fixed */}
-          <header className="hidden lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[37.3%] lg:flex-col lg:justify-between lg:py-24">
+          <header className="hidden lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[38%] lg:flex-col lg:justify-between lg:py-24">
             <div>
               <h1 className="text-4xl font-bold tracking-tight text-slate-lighter sm:text-5xl">
                 Johannes Schulz
@@ -244,7 +244,7 @@ export default function HomePage() {
           </header>
 
           {/* Right Column - Scrollable */}
-          <main className="pt-0 lg:w-[48%] lg:pt-12 lg:pb-24">
+          <main className="pt-0 lg:w-[62%] lg:pt-12 lg:pb-24">
             {/* About Section */}
             <section id="about" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-[4.5rem] lg:scroll-mt-24">
               <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#081220]/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
