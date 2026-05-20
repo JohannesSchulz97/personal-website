@@ -105,12 +105,9 @@ export default function HomePage() {
 
         <div className="w-full px-6 md:container md:mx-auto md:px-4 md:max-w-5xl relative z-10 lg:translate-x-[33%]">
           <h1 className="text-2xl md:text-[22px] font-bold text-teal mb-4">Hi, my name is</h1>
-          <h2 className="text-5xl md:text-5xl font-bold text-slate-lighter mb-4">Johannes.</h2>
-          <h3 className="text-2xl md:text-5xl font-bold text-slate-lighter mb-4">I build AI systems that scale.</h3>
+          <h2 className="text-6xl md:text-7xl font-bold text-slate-lighter mb-4">Johannes Schulz.</h2>
           <p className="hidden md:block text-slate-lighter max-w-2xl mb-12 leading-relaxed text-xl md:text-[22px]">
-            AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure,
-            and multi-service orchestration. I build clean, minimal, and highly optimized systems with
-            a focus on long-term maintainability and measurable impact.
+            Freelance Fullstack Engineer helping teams build and ship — frontend, backend, infrastructure, and AI integration.
           </p>
 
           {/* Social Icons - Mobile Only */}
@@ -162,10 +159,10 @@ export default function HomePage() {
                 Johannes Schulz
               </h1>
               <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-lighter sm:text-xl">
-                AI Systems Engineer
+                Fullstack Engineer
               </h2>
               <p className="mt-4 max-w-xs leading-normal text-slate lg:text-[17px]">
-                I build accessible, production-grade AI systems that scale.
+                I help teams build and ship fullstack products — frontend, backend, infrastructure, and AI integration.
               </p>
 
               <nav className="nav hidden lg:block mt-16" aria-label="In-page jump links">
@@ -257,31 +254,36 @@ export default function HomePage() {
               </div>
               <div className="space-y-4 text-slate lg:text-[16px]">
                 <p className="leading-relaxed">
-                  I build clean, minimal, and highly optimized systems — no clutter, no unnecessary abstraction.
-                  My work spans enterprise platform migrations, production ML pipelines, self-hosted infrastructure,
-                  and AI orchestration, always with a focus on elegant architectural solutions.
+                  I build and ship fullstack products — features, refactors, and embedded delivery across the entire stack.
+                  From React/Next.js frontends to Python/FastAPI backends, PostgreSQL databases, and AWS/Docker infrastructure.
+                  Clean architecture, no unnecessary abstractions, focused on systems that scale.
                 </p>
                 <p className="leading-relaxed">
-                  I have delivered a 99.8% cost reduction (€1.2M/year savings) through enterprise platform
-                  migration, built computer vision pipelines serving 40+ daily clinical assessments at 90%+
-                  accuracy, and architected multi-agent platforms for distributed engineering teams.
+                  I've built LLM-powered features, RAG pipelines, and custom agentic systems — backed by an M.Sc.
+                  in Machine Learning from the University of Tübingen. This includes production work with OpenCLAW
+                  infrastructure, structural analysis systems, and the CAPS framework (Claude Automated Programming System).
                 </p>
                 <p className="leading-relaxed">
-                  From reverse-engineering Palantir Foundry to deploying 10-service production stacks, I deliver
-                  systems that scale and drive measurable business impact. I hold an MSc in Machine Learning
-                  from the University of Tübingen.
+                  For early-stage products, I set up entire stacks: frontend, API, database, CI/CD, deployment, monitoring.
+                  I've also worked fractionally as tech lead and architect — system design, architectural decisions,
+                  code reviews, async technical leadership. Projects span enterprise platform migrations (€1.2M/year savings),
+                  computer vision pipelines (90%+ clinical accuracy), and multi-agent orchestration platforms.
                 </p>
 
-                <p className="leading-relaxed">Here are some technologies I work with:</p>
+                <p className="leading-relaxed">Technologies I work with daily:</p>
 
                 <ul className="grid grid-cols-2 gap-2 text-sm font-mono mt-4">
-                  {['Python', 'TypeScript', 'Next.js', 'FastAPI', 'Claude API', 'PostgreSQL', 'Docker', 'Cloudflare'].map((tech) => (
+                  {['Python', 'TypeScript', 'React', 'Next.js', 'FastAPI', 'PostgreSQL', 'Docker', 'AWS'].map((tech) => (
                     <li key={tech} className="flex items-center gap-2">
                       <span className="text-teal">▹</span>
                       <span>{tech}</span>
                     </li>
                   ))}
                 </ul>
+
+                <p className="leading-relaxed mt-6 text-slate-lighter">
+                  Currently available for contract work — ~25h/week, remote.
+                </p>
               </div>
             </section>
 

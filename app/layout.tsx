@@ -6,14 +6,14 @@ import CursorSpotlight from "@/components/cursor-spotlight";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Johannes Schulz - AI Systems Engineer",
-  description: "Portfolio of Johannes Schulz - AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure, and multi-service orchestration.",
+  title: "Johannes Schulz - Fullstack Engineer",
+  description: "Freelance Fullstack Engineer helping teams build and ship — from React/Next.js frontends to FastAPI/Postgres backends and infrastructure. Available for contracts ~25h/week. Remote, async-first.",
   icons: {
     icon: '/icon.svg',
   },
   openGraph: {
-    title: "Johannes Schulz - AI Systems Engineer",
-    description: "Portfolio of Johannes Schulz - AI Systems Engineer specializing in production-grade AI systems, enterprise infrastructure, and multi-service orchestration.",
+    title: "Johannes Schulz - Fullstack Engineer",
+    description: "Freelance Fullstack Engineer helping teams build and ship — from React/Next.js frontends to FastAPI/Postgres backends and infrastructure. Available for contracts ~25h/week. Remote, async-first.",
     type: "website",
   },
 };
