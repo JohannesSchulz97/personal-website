@@ -771,7 +771,7 @@ export default function ProjectsSection() {
                   </p>
                   <p className="mb-3">
                     Initial NPM binary resolution used <span className="font-mono text-xs bg-navy-lighter px-1 py-0.5 rounded">optionalDependencies</span>—unreliable on ARM Macs (downloaded wrong platform). Fixed with explicit
-                    platform detection in postinstall script: <span className="font-mono text-xs bg-navy-lighter px-1 py-0.5 rounded">const platform = `${os.platform()}-${os.arch()}`</span>, validate binary exists, throw if
+                    platform detection in postinstall script: <span className="font-mono text-xs bg-navy-lighter px-1 py-0.5 rounded">{'const platform = `${os.platform()}-${os.arch()}`'}</span>, validate binary exists, throw if
                     missing. Cross-compilation toolchain initially timed out on GitHub Actions—solved with cached toolchains (sccache), parallel matrix jobs,
                     platform-specific Docker containers, smoke tests per platform.
                   </p>
