@@ -123,7 +123,7 @@ export default function StructureAnalysisDemo() {
 
             {/* Text content */}
             <div className="flex-1 overflow-y-auto px-6 py-6">
-              <div className="prose prose-sm max-w-none dark:prose-invert">
+              <div className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-semibold prose-h1:text-2xl prose-h1:mb-4 prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-3 prose-p:leading-relaxed prose-strong:text-teal prose-strong:font-semibold">
                 {activeTab === "kunden" && <ReactMarkdown>{kundenText}</ReactMarkdown>}
                 {activeTab === "leads" && <ReactMarkdown>{leadsText}</ReactMarkdown>}
                 {activeTab === "full" && <ReactMarkdown>{fullText}</ReactMarkdown>}
