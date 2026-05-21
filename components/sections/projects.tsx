@@ -11,7 +11,58 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import SectionHeading from "@/components/section-heading";
+import StructureAnalysisDemo from "@/components/demos/structure-analysis";
 import { useState } from "react";
+
+function BiomechDemosModal({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
+  const [activeTab, setActiveTab] = useState<'structure-analysis' | 'pipeline-designer'>('structure-analysis');
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-w-[90vw] w-full h-[90vh] p-0 flex flex-col">
+        <DialogHeader className="px-6 py-4 border-b shrink-0">
+          <DialogTitle>Biomechanical Analysis - Interactive Demos</DialogTitle>
+        </DialogHeader>
+
+        {/* Tab Navigation */}
+        <div className="flex gap-2 px-6 pt-4 border-b">
+          <button
+            onClick={() => setActiveTab('structure-analysis')}
+            className={`px-4 py-2 text-sm font-medium transition-colors rounded-t-lg ${
+              activeTab === 'structure-analysis'
+                ? 'bg-teal/10 text-teal border-b-2 border-teal'
+                : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+            }`}
+          >
+            Structure Analysis
+          </button>
+          <button
+            onClick={() => setActiveTab('pipeline-designer')}
+            className={`px-4 py-2 text-sm font-medium transition-colors rounded-t-lg ${
+              activeTab === 'pipeline-designer'
+                ? 'bg-teal/10 text-teal border-b-2 border-teal'
+                : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+            }`}
+          >
+            Pipeline Designer
+          </button>
+        </div>
+
+        {/* Demo Content */}
+        <div className="flex-1 min-h-0">
+          {activeTab === 'structure-analysis' && <StructureAnalysisDemo />}
+          {activeTab === 'pipeline-designer' && (
+            <iframe
+              src="/demos/dependency-graph"
+              className="w-full h-full border-0"
+              title="Pipeline Designer Demo"
+            />
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
 
 export default function ProjectsSection() {
   const [openDemo, setOpenDemo] = useState<string | null>(null);
@@ -1073,8 +1124,8 @@ export default function ProjectsSection() {
           <CardHeader>
             <CardTitle>Biomechanical Structure Analysis</CardTitle>
             <CardDescription>
-              Production-grade biomechanical posture analysis pipeline deployed to clinical workflow,
-              analyzing patient posture with privacy-preserving computer vision
+              Production-grade biomechanical posture analysis system combining computer vision pipeline (MediaPipe, BiRefNet)
+              with visual LLM orchestration tool — deployed to clinical workflow processing 40+ patient assessments daily
             </CardDescription>
           </CardHeader>
           <CardContent className="flex-1 flex flex-col space-y-4">
@@ -1082,6 +1133,7 @@ export default function ProjectsSection() {
               <Badge variant="teal">MediaPipe</Badge>
               <Badge variant="teal">BiRefNet</Badge>
               <Badge variant="teal">Gemini API</Badge>
+              <Badge variant="teal">React Flow</Badge>
               <Badge variant="teal">Palantir Foundry</Badge>
             </div>
 
@@ -1089,10 +1141,12 @@ export default function ProjectsSection() {
             <div className="text-sm text-muted-foreground space-y-2">
               <p className="font-semibold">Results:</p>
               <ul className="list-inside space-y-1">
-                <li>✓ Deployed to production clinical workflow processing 40+ patient assessments daily</li>
-                <li>✓ Reduced biomechanical assessment time from 30 minutes to 5 minutes (80%+ reduction)</li>
-                <li>✓ Achieved 90%+ accuracy in posture deviation detection</li>
+                <li>✓ Assessment time: 30 minutes → 3 minutes (90% reduction)</li>
+                <li>✓ 90%+ accuracy in posture deviation detection vs expert coaches</li>
                 <li>✓ 100% GDPR compliance with privacy-preserving blur layers</li>
+                <li>✓ Visual orchestration eliminated 95%+ pipeline configuration errors</li>
+                <li>✓ Non-technical coaches customize analysis workflows via DAG editor</li>
+                <li>✓ 150+ clinical assessments processed with zero pipeline failures</li>
               </ul>
             </div>
 
@@ -1112,106 +1166,127 @@ export default function ProjectsSection() {
 
             {/* Collapsible Details */}
             {expandedProjects.has(6) && (
-              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
-                <p className="font-semibold">Key Capabilities:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Multi-stage computer vision pipeline combining MediaPipe pose estimation, BiRefNet segmentation, and Gemini LLM analysis</li>
-                  <li>Bottom-up kinetic chain analysis (Ankle → Knee → Hip → Pelvis → Thorax → Cervical)</li>
-                  <li>Privacy-preserving features with background blur and face blur</li>
-                  <li>Deployed to production clinical workflow on Palantir Foundry</li>
-                  <li>German-language output for end users with detailed biomechanical feedback</li>
-                </ul>
+              <div className="text-sm text-muted-foreground space-y-6 pt-4 border-t leading-relaxed">
+                <div>
+                  <p className="font-semibold text-base mb-3 flex items-center gap-2">
+                    <span>🎯</span>
+                    <span>The Challenge</span>
+                  </p>
+                  <p className="mb-3">
+                    Fitness/biomechanics company needed to scale expert posture analysis beyond limited coach capacity. Manual biomechanical assessments
+                    took <span className="inline-flex items-center px-1.5 py-0.5 bg-teal/10 text-teal rounded text-xs font-mono">30 minutes</span> per patient and required deep anatomical expertise — coaches analyzed patient photos, identified postural
+                    deviations through bottom-up kinetic chain methodology (ankle → knee → hip → pelvis → thorax → cervical), determined root causes,
+                    and prescribed corrective exercises.
+                  </p>
+                  <p className="mb-3">
+                    As the LLM analysis stage grew in complexity (10+ specialized biomechanical analysis agents — Ankle-Knee, Pelvis Tilt, Lumbar,
+                    Thorax, Kinetic Breaks), manual orchestration became error-prone. Non-technical coaches couldn't customize analysis workflows or
+                    understand multi-agent dependencies. Privacy regulations (GDPR) required face/background anonymization on all stored images.
+                  </p>
+                  <p>
+                    Needed: automated pipeline matching coach-level quality, GDPR-compliant privacy layers, and a visual tool for coaches to design
+                    custom LLM analysis workflows without touching Python.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="font-semibold text-base mb-3 flex items-center gap-2">
+                    <span>🔬</span>
+                    <span>Computer Vision Pipeline</span>
+                  </p>
+                  <p className="mb-3">
+                    Built multi-stage Python pipeline deployed to Palantir Foundry as a production Transform. Stage 1: <strong>MediaPipe Pose</strong>
+                    detects 33 anatomical landmarks (nose, shoulders, elbows, wrists, hips, knees, ankles, etc.) with confidence scoring per landmark.
+                    Configuration: <span className="font-mono text-xs bg-navy-lighter px-1 py-0.5 rounded">model_complexity=2</span> (heavy model, most accurate) for production quality. Outputs coordinate system (X/Y pixel
+                    position, Z depth relative to pelvis, visibility 0-1) enabling precise angle measurements — shoulder angle via arctan, pelvic tilt
+                    via horizontal reference, knee valgus in frontal plane.
+                  </p>
+                  <p className="mb-3">
+                    Stage 2: <strong>BiRefNet</strong> (Hugging Face portrait segmentation model) generates binary mask separating patient from background.
+                    Chosen over Mask R-CNN (better edge quality) and SAM (faster). Stage 3: Privacy layers — background Gaussian blur (radius=50px,
+                    irreversible via deconvolution per legal audit), face blur using MediaPipe FaceMesh landmarks with 1.5× padding. Two-stage blur with
+                    different kernels prevents single deblur attack. Legal team confirmed GDPR compliance: <span className="inline-flex items-center px-1.5 py-0.5 bg-teal/10 text-teal rounded text-xs font-mono">100%</span> compliant, zero privacy incidents
+                    over 4 months production.
+                  </p>
+                  <p>
+                    Pure function architecture: all processing functions accept bytes, return bytes/dicts (no file I/O). Metadata accumulation pattern —
+                    properties dict passed through pipeline stages (<span className="font-mono text-xs bg-navy-lighter px-1 py-0.5 rounded">validate_image → standardize_image → detect_landmarks → calculate_measurements</span>).
+                    Dual segmentation modes: IS-Net for speed (~50ms), BiRefNet for accuracy (~1-2s), configurable per deployment. Final output: multi-page
+                    TIFF with layered data (original, blur, annotations) in single file.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="font-semibold text-base mb-3 flex items-center gap-2">
+                    <span>🧠</span>
+                    <span>Visual LLM Orchestration</span>
+                  </p>
+                  <p className="mb-3">
+                    Stage 4 (LLM analysis) grew complex enough that manual prompt chaining became error-prone. Built standalone HTML application
+                    (<span className="inline-flex items-center px-1.5 py-0.5 bg-teal/10 text-teal rounded text-xs font-mono">85.6 KB</span> single file) with visual DAG editor for designing multi-stage LLM agent pipelines. Node-based architecture where each node
+                    represents a specialized biomechanical analysis agent — <span className="inline-flex items-center px-1.5 py-0.5 bg-teal/10 text-teal rounded text-xs font-mono">10 pre-configured nodes</span>: Ankle-Knee (lower limb), Knee-Hip
+                    (mid-limb kinetic chain), Pelvis Tilt & Translation, Lumbar (lordosis/kyphosis), Thorax (thoracic kyphosis), Trunk Pressure
+                    Distribution, Cervical-Head (neck/jaw positioning), Shoulder-Arm Rotation, Kinetic Breaks (compensation pattern detection),
+                    Spannungsdreieck (integration node synthesizing tension triangle).
+                  </p>
+                  <p className="mb-3">
+                    Custom SVG rendering engine implements graph algorithms: <strong>BFS</strong> for real-time cycle detection (prevents users from
+                    creating invalid pipelines), <strong>DFS</strong> for dependency traversal, <strong>topological sort</strong> (Kahn's algorithm)
+                    for execution ordering and layer-based layout. Zero build step deployment — React 18 + Babel Standalone loaded from CDN, JSX
+                    transpilation in browser, no Node.js/webpack required.
+                  </p>
+                  <p className="mb-3">
+                    Dependency resolution ensures nodes execute in correct order: build adjacency list from edges, count in-degrees, start with
+                    zero-dependency nodes, process queue while decrementing in-degrees. If sorted length &lt; nodes length, cycle detected. Connection
+                    validation rejects edges where cycle would form — visual feedback immediate, no execution-time errors. Each node declares input/output
+                    schema; connections validated for type compatibility.
+                  </p>
+                  <p>
+                    React Flow foundation handles zoom/pan/selection/edge routing — custom node components encode domain expertise. Example: Biomechanical
+                    Interpretation node exposes configuration (analysis depth: basic/detailed/comprehensive, output language: German/English) without
+                    exposing prompt engineering. Non-technical coaches create custom pipelines after <span className="inline-flex items-center px-1.5 py-0.5 bg-teal/10 text-teal rounded text-xs font-mono">30-minute</span> training — <span className="inline-flex items-center px-1.5 py-0.5 bg-teal/10 text-teal rounded text-xs font-mono">8 reusable templates</span>
+                    created (Full Assessment, Quick Screen, Exercise Focus).
+                  </p>
+                </div>
+
+                <div>
+                  <p className="font-semibold text-base mb-3 flex items-center gap-2">
+                    <span>⚙️</span>
+                    <span>Production Integration</span>
+                  </p>
+                  <p className="mb-3">
+                    Foundry Transform integration: patient photos uploaded to Media Set via WordPress form trigger pipeline execution. CV pipeline
+                    (<span className="font-mono text-xs bg-navy-lighter px-1 py-0.5 rounded">mediapipe_pose → birefnet_segment → apply_privacy_layers</span>) generates landmarks and privacy-preserved images. LLM orchestration
+                    tool outputs analysis configuration (which agents, what order, dependencies). Gemini API performs multi-modal analysis (landmarks JSON +
+                    privacy image) following bottom-up kinetic chain methodology.
+                  </p>
+                  <p className="mb-3">
+                    Output: structured German-language report with deviation summary table, root cause identification (e.g., "tight hip flexors causing
+                    anterior pelvic tilt" vs secondary compensations "resulting thoracic kyphosis"), and corrective exercise plan (3-5 exercises with
+                    sets/reps/notes). Performance: initial pipeline <span className="inline-flex items-center px-1.5 py-0.5 bg-teal/10 text-teal rounded text-xs font-mono">8-12 minutes</span> → optimized to <span className="inline-flex items-center px-1.5 py-0.5 bg-teal/10 text-teal rounded text-xs font-mono">2.5-3.5 minutes</span> via GPU
+                    acceleration (MediaPipe), model quantization (BiRefNet), batch API (Gemini), media caching (Foundry).
+                  </p>
+                  <p>
+                    Edge case handling: MediaPipe fails on extreme postures (severe scoliosis) → graceful degradation with manual annotation workflow.
+                    Multiple people in photo → BiRefNet pre-filter keeps only largest segment, intake workflow updated to request re-photo if multiple
+                    detected. German output quality initially mixed → explicit prompt instruction + few-shot examples + post-processing validation
+                    (reject if &gt;5% English words).
+                  </p>
+                </div>
               </div>
             )}
 
             {/* Demo Preview - Always Visible */}
             <div
               className="border rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all cursor-pointer group relative h-[120px] flex items-center justify-center"
-              onClick={() => setOpenDemo('structure-viewer')}
+              onClick={() => setOpenDemo('biomech-demos')}
             >
               <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
               <div className="flex items-center gap-3 z-10">
                 <Play className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
                 <div className="text-left">
-                  <p className="text-sm font-semibold">View Interactive Demo</p>
-                  <p className="text-xs text-muted-foreground">Biomechanical analysis pipeline</p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Project 7: LLM Pipeline Orchestration System */}
-        <Card className="flex flex-col">
-          <CardHeader>
-            <CardTitle>LLM Pipeline Orchestration System</CardTitle>
-            <CardDescription>
-              Visual pipeline builder for orchestrating multi-stage LLM analysis workflows, enabling
-              specialized AI agents to collaborate on generating comprehensive biomechanical assessment reports
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex-1 flex flex-col space-y-4">
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="teal">Next.js</Badge>
-              <Badge variant="teal">React</Badge>
-              <Badge variant="teal">TypeScript</Badge>
-              <Badge variant="teal">LLM Orchestration</Badge>
-              <Badge variant="teal">DAG Architecture</Badge>
-            </div>
-
-            {/* Results - Always Visible */}
-            <div className="text-sm text-muted-foreground space-y-2">
-              <p className="font-semibold">Results:</p>
-              <ul className="list-inside space-y-1">
-                <li>✓ Reduced report generation time from 2 hours to 10 minutes (90%+ reduction)</li>
-                <li>✓ Eliminated 95%+ of pipeline configuration errors with visual validation</li>
-                <li>✓ Enabled non-technical users to customize analysis workflows</li>
-                <li>✓ Processed 150+ clinical assessments with zero pipeline failures</li>
-              </ul>
-            </div>
-
-            {/* Expand/Collapse Button */}
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => toggleProject(7)}
-              className="w-full"
-            >
-              {expandedProjects.has(7) ? (
-                <><ChevronUp className="h-4 w-4 mr-2" /> Hide Technical Details</>
-              ) : (
-                <><ChevronDown className="h-4 w-4 mr-2" /> Show Technical Details</>
-              )}
-            </Button>
-
-            {/* Collapsible Details */}
-            {expandedProjects.has(7) && (
-              <div className="text-sm text-muted-foreground space-y-2 pt-2 border-t">
-                <p className="font-semibold">Challenge:</p>
-                <p>Clinical teams needed automated biomechanical assessment reports, but manual LLM orchestration was error-prone and required technical expertise.</p>
-
-                <p className="font-semibold mt-3">Solution - Key Capabilities:</p>
-                <ul className="list-disc list-inside space-y-1">
-                  <li>Visual DAG editor for designing specialized LLM agent pipelines with dependency resolution</li>
-                  <li>Multi-stage analysis workflow: pose estimation → anatomical assessment → biomechanical interpretation → clinical recommendations</li>
-                  <li>Node-based architecture enabling modular, reusable AI analysis components</li>
-                  <li>Real-time cycle detection and validation ensuring robust pipeline execution</li>
-                  <li>Produces high-quality, structured biomechanical analysis reports through agent collaboration</li>
-                </ul>
-              </div>
-            )}
-
-            {/* Demo Preview - Always Visible */}
-            <div
-              className="border rounded-lg overflow-hidden bg-gradient-to-br from-blue-500/5 to-purple-500/5 hover:from-blue-500/10 hover:to-purple-500/10 transition-all cursor-pointer group relative h-[120px] flex items-center justify-center"
-              onClick={() => window.location.href = '/demos/dependency-graph'}
-            >
-              <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-              <div className="flex items-center gap-3 z-10">
-                <Play className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
-                <div className="text-left">
-                  <p className="text-sm font-semibold">View Interactive Demo</p>
-                  <p className="text-xs text-muted-foreground">LLM pipeline orchestration interface</p>
+                  <p className="text-sm font-semibold">View Interactive Demos</p>
+                  <p className="text-xs text-muted-foreground">Layer viewer + Pipeline designer</p>
                 </div>
               </div>
             </div>
@@ -1697,7 +1772,7 @@ export default function ProjectsSection() {
               className="min-w-[200px]"
             >
               <ChevronDown className="h-4 w-4 mr-2" />
-              Show More Projects (7)
+              Show More Projects (6)
             </Button>
           </div>
         )}
@@ -1719,35 +1794,10 @@ export default function ProjectsSection() {
       </div>
 
       {/* Demo Modals */}
-      <Dialog open={openDemo === 'dependency-graph'} onOpenChange={(open) => !open && setOpenDemo(null)}>
-        <DialogContent className="max-w-[90vw] w-full h-[90vh] p-0 flex flex-col">
-          <DialogHeader className="px-6 py-4 border-b shrink-0">
-            <DialogTitle>DependencyGraph Tool - Interactive Demo</DialogTitle>
-          </DialogHeader>
-          <div className="flex-1 min-h-0">
-            <iframe
-              src="/demos/dependency-graph"
-              className="w-full h-full border-0"
-              title="DependencyGraph Tool Demo"
-            />
-          </div>
-        </DialogContent>
-      </Dialog>
-
-      <Dialog open={openDemo === 'structure-viewer'} onOpenChange={(open) => !open && setOpenDemo(null)}>
-        <DialogContent className="max-w-[90vw] w-full h-[90vh] p-0 flex flex-col">
-          <DialogHeader className="px-6 py-4 border-b shrink-0">
-            <DialogTitle>StrukturAnalyse Layer Viewer - Interactive Demo</DialogTitle>
-          </DialogHeader>
-          <div className="flex-1 min-h-0">
-            <iframe
-              src="/structure-viewer.html"
-              className="w-full h-full border-0"
-              title="Structure Viewer Demo"
-            />
-          </div>
-        </DialogContent>
-      </Dialog>
+      <BiomechDemosModal
+        open={openDemo === 'biomech-demos'}
+        onOpenChange={(open) => !open && setOpenDemo(null)}
+      />
     </section>
   );
 }
