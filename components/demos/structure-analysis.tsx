@@ -39,9 +39,9 @@ export default function StructureAnalysisDemo() {
   return (
     <div className="flex flex-col h-full bg-background">
       {state === "initial" && (
-        <div className="flex-1 flex items-center justify-center p-8">
-          <div className="max-w-2xl w-full space-y-6">
-            <div className="relative aspect-[9/16] max-h-[600px] mx-auto rounded-lg overflow-hidden border-2 border-border">
+        <div className="flex-1 flex items-center justify-center p-4 md:p-8 overflow-auto">
+          <div className="max-w-md w-full space-y-4 md:space-y-6">
+            <div className="relative aspect-[9/16] max-h-[400px] md:max-h-[500px] mx-auto rounded-lg overflow-hidden border-2 border-border">
               <img
                 src="/demos/structure-analysis/original.png"
                 alt="Patient original photo"
@@ -75,10 +75,10 @@ export default function StructureAnalysisDemo() {
       )}
 
       {state === "complete" && (
-        <div className="flex-1 flex overflow-hidden">
-          {/* Left: Image */}
-          <div className="w-1/2 flex items-center justify-center p-8 border-r">
-            <div className="relative aspect-[9/16] max-h-[700px] rounded-lg overflow-hidden border-2 border-border">
+        <div className="flex-1 flex flex-col lg:flex-row overflow-hidden">
+          {/* Image */}
+          <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 lg:p-8 lg:border-r">
+            <div className="relative aspect-[9/16] max-h-[350px] md:max-h-[500px] lg:max-h-[700px] rounded-lg overflow-hidden border-2 border-border">
               <img
                 src="/demos/structure-analysis/annotated_blurred.png"
                 alt="Analyzed structure with annotations"
@@ -87,33 +87,33 @@ export default function StructureAnalysisDemo() {
             </div>
           </div>
 
-          {/* Right: Tabbed text results */}
-          <div className="w-1/2 flex flex-col">
+          {/* Tabbed text results */}
+          <div className="w-full lg:w-1/2 flex flex-col min-h-0">
             {/* Tab navigation */}
-            <div className="flex gap-1 px-6 pt-6 border-b">
+            <div className="flex gap-1 px-4 md:px-6 pt-4 md:pt-6 border-b flex-wrap">
               <button
                 onClick={() => setActiveTab("kunden")}
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-t-lg ${
+                className={`px-3 md:px-4 py-2 text-xs md:text-sm font-medium transition-colors rounded-t-lg ${
                   activeTab === "kunden"
                     ? "bg-teal/10 text-teal border-b-2 border-teal"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent"
                 }`}
               >
-                Customer Version
+                Customer
               </button>
               <button
                 onClick={() => setActiveTab("leads")}
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-t-lg ${
+                className={`px-3 md:px-4 py-2 text-xs md:text-sm font-medium transition-colors rounded-t-lg ${
                   activeTab === "leads"
                     ? "bg-teal/10 text-teal border-b-2 border-teal"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent"
                 }`}
               >
-                Leads Version
+                Leads
               </button>
               <button
                 onClick={() => setActiveTab("full")}
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-t-lg ${
+                className={`px-3 md:px-4 py-2 text-xs md:text-sm font-medium transition-colors rounded-t-lg ${
                   activeTab === "full"
                     ? "bg-teal/10 text-teal border-b-2 border-teal"
                     : "text-muted-foreground hover:text-foreground hover:bg-accent"
@@ -124,8 +124,8 @@ export default function StructureAnalysisDemo() {
             </div>
 
             {/* Text content */}
-            <div className="flex-1 overflow-y-auto px-6 py-6">
-              <div className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h1:mb-6 prose-h1:mt-0 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:border-b prose-h3:border-slate-700 prose-h3:pb-2 prose-p:mb-4 prose-p:leading-relaxed prose-strong:text-teal-400 prose-strong:font-semibold">
+            <div className="flex-1 overflow-y-auto px-4 md:px-6 py-4 md:py-6 min-h-0">
+              <div className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-bold prose-h1:text-2xl md:prose-h1:text-3xl prose-h1:mb-4 md:prose-h1:mb-6 prose-h1:mt-0 prose-h3:text-lg md:prose-h3:text-xl prose-h3:mt-6 md:prose-h3:mt-8 prose-h3:mb-3 md:prose-h3:mb-4 prose-h3:border-b prose-h3:border-slate-700 prose-h3:pb-2 prose-p:mb-3 md:prose-p:mb-4 prose-p:leading-relaxed prose-strong:text-teal-400 prose-strong:font-semibold">
                 {activeTab === "kunden" && (
                   <ReactMarkdown remarkPlugins={[remarkGfm, remarkEmoji]}>{kundenText}</ReactMarkdown>
                 )}
