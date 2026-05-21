@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Loader2, Play } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type AnalysisState = "initial" | "analyzing" | "complete";
 type TextVersion = "leads" | "kunden" | "full";
@@ -124,9 +125,15 @@ export default function StructureAnalysisDemo() {
             {/* Text content */}
             <div className="flex-1 overflow-y-auto px-6 py-6">
               <div className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-semibold prose-h1:text-2xl prose-h1:mb-4 prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-3 prose-p:leading-relaxed prose-strong:text-teal prose-strong:font-semibold">
-                {activeTab === "kunden" && <ReactMarkdown>{kundenText}</ReactMarkdown>}
-                {activeTab === "leads" && <ReactMarkdown>{leadsText}</ReactMarkdown>}
-                {activeTab === "full" && <ReactMarkdown>{fullText}</ReactMarkdown>}
+                {activeTab === "kunden" && (
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{kundenText}</ReactMarkdown>
+                )}
+                {activeTab === "leads" && (
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{leadsText}</ReactMarkdown>
+                )}
+                {activeTab === "full" && (
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{fullText}</ReactMarkdown>
+                )}
               </div>
             </div>
           </div>
