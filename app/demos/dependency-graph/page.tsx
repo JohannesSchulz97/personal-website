@@ -831,13 +831,6 @@ export default function DependencyGraphPage() {
       <div className="mb-4 flex-shrink-0">
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-2xl font-bold text-foreground">Biomechanical Analysis</h2>
-          <button
-            onClick={() => window.history.back()}
-            className="p-2 hover:bg-muted rounded-lg transition-colors"
-            title="Close demo"
-          >
-            <X className="w-5 h-5 text-muted-foreground hover:text-foreground" />
-          </button>
         </div>
 
           <div className="flex items-start gap-2 text-sm text-muted-foreground bg-blue-50 dark:bg-blue-950/30 p-3 rounded mb-3">
