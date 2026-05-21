@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2, Play } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkEmoji from "remark-emoji";
 
 type AnalysisState = "initial" | "analyzing" | "complete";
 type TextVersion = "leads" | "kunden" | "full";
@@ -126,13 +127,13 @@ export default function StructureAnalysisDemo() {
             <div className="flex-1 overflow-y-auto px-6 py-6">
               <div className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h1:mb-6 prose-h1:mt-0 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:border-b prose-h3:border-slate-700 prose-h3:pb-2 prose-p:mb-4 prose-p:leading-relaxed prose-strong:text-teal-400 prose-strong:font-semibold">
                 {activeTab === "kunden" && (
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{kundenText}</ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm, remarkEmoji]}>{kundenText}</ReactMarkdown>
                 )}
                 {activeTab === "leads" && (
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{leadsText}</ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm, remarkEmoji]}>{leadsText}</ReactMarkdown>
                 )}
                 {activeTab === "full" && (
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{fullText}</ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm, remarkEmoji]}>{fullText}</ReactMarkdown>
                 )}
               </div>
             </div>
