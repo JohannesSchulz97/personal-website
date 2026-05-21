@@ -39,19 +39,24 @@ export default function StructureAnalysisDemo() {
   return (
     <div className="flex flex-col h-full bg-background">
       {state === "initial" && (
-        <div className="flex-1 flex items-center justify-center p-4 md:p-8 overflow-auto">
-          <div className="max-w-md w-full space-y-4 md:space-y-6">
-            <div className="relative aspect-[9/16] max-h-[400px] md:max-h-[500px] mx-auto rounded-lg overflow-hidden border-2 border-border">
+        <div className="flex-1 flex flex-col lg:flex-row overflow-hidden">
+          {/* Image */}
+          <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 lg:p-8 lg:border-r">
+            <div className="relative aspect-[9/16] max-h-[350px] md:max-h-[500px] lg:max-h-[700px] rounded-lg overflow-hidden border-2 border-border">
               <img
                 src="/demos/structure-analysis/original.png"
                 alt="Patient original photo"
                 className="w-full h-full object-contain"
               />
             </div>
+          </div>
+
+          {/* Button */}
+          <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 lg:p-8">
             <Button
               onClick={handleAnalyze}
               size="lg"
-              className="w-full"
+              className="w-full max-w-md"
             >
               <Play className="h-5 w-5 mr-2" />
               Conduct Structure Analysis
