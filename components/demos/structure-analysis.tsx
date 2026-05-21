@@ -124,7 +124,7 @@ export default function StructureAnalysisDemo() {
 
             {/* Text content */}
             <div className="flex-1 overflow-y-auto px-6 py-6">
-              <div className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-semibold prose-h1:text-2xl prose-h1:mb-4 prose-h3:text-lg prose-h3:mt-6 prose-h3:mb-3 prose-p:leading-relaxed prose-strong:text-teal prose-strong:font-semibold">
+              <div className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h1:mb-6 prose-h1:mt-0 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:border-b prose-h3:border-slate-700 prose-h3:pb-2 prose-p:mb-4 prose-p:leading-relaxed prose-strong:text-teal-400 prose-strong:font-semibold">
                 {activeTab === "kunden" && (
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>{kundenText}</ReactMarkdown>
                 )}
