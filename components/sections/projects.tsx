@@ -15,49 +15,16 @@ import StructureAnalysisDemo from "@/components/demos/structure-analysis";
 import { useState } from "react";
 
 function BiomechDemosModal({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
-  const [activeTab, setActiveTab] = useState<'structure-analysis' | 'pipeline-designer'>('structure-analysis');
-
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-[90vw] w-full h-[90vh] p-0 flex flex-col">
         <DialogHeader className="px-6 py-4 border-b shrink-0">
-          <DialogTitle>Biomechanical Analysis - Interactive Demos</DialogTitle>
+          <DialogTitle>Structure Analysis</DialogTitle>
         </DialogHeader>
-
-        {/* Tab Navigation */}
-        <div className="flex gap-2 px-6 pt-4 border-b">
-          <button
-            onClick={() => setActiveTab('structure-analysis')}
-            className={`px-4 py-2 text-sm font-medium transition-colors rounded-t-lg ${
-              activeTab === 'structure-analysis'
-                ? 'bg-teal/10 text-teal border-b-2 border-teal'
-                : 'text-muted-foreground hover:text-foreground hover:bg-accent'
-            }`}
-          >
-            Structure Analysis
-          </button>
-          <button
-            onClick={() => setActiveTab('pipeline-designer')}
-            className={`px-4 py-2 text-sm font-medium transition-colors rounded-t-lg ${
-              activeTab === 'pipeline-designer'
-                ? 'bg-teal/10 text-teal border-b-2 border-teal'
-                : 'text-muted-foreground hover:text-foreground hover:bg-accent'
-            }`}
-          >
-            Pipeline Designer
-          </button>
-        </div>
 
         {/* Demo Content */}
         <div className="flex-1 min-h-0">
-          {activeTab === 'structure-analysis' && <StructureAnalysisDemo />}
-          {activeTab === 'pipeline-designer' && (
-            <iframe
-              src="/demos/dependency-graph"
-              className="w-full h-full border-0"
-              title="Pipeline Designer Demo"
-            />
-          )}
+          <StructureAnalysisDemo />
         </div>
       </DialogContent>
     </Dialog>
@@ -1285,8 +1252,7 @@ export default function ProjectsSection() {
               <div className="flex items-center gap-3 z-10">
                 <Play className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
                 <div className="text-left">
-                  <p className="text-sm font-semibold">View Interactive Demos</p>
-                  <p className="text-xs text-muted-foreground">Layer viewer + Pipeline designer</p>
+                  <p className="text-sm font-semibold">View Interactive Demo</p>
                 </div>
               </div>
             </div>

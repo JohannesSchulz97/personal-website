@@ -68,7 +68,7 @@ export default function StructureAnalysisDemo() {
         <div className="flex-1 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden">
           {/* Image */}
           <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 lg:p-8 lg:border-r">
-            <div className="relative aspect-[9/16] max-h-[70vh] md:max-h-[75vh] lg:max-h-[700px] rounded-2xl overflow-hidden border-2 border-border">
+            <div className="relative aspect-[9/16] max-h-[70vh] md:max-h-[75vh] lg:max-h-[75vh] rounded-2xl overflow-hidden border-2 border-border">
               <img
                 src="/demos/structure-analysis/original.png"
                 alt="Patient original photo"
@@ -109,7 +109,7 @@ export default function StructureAnalysisDemo() {
         <div className="flex-1 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden">
           {/* Image */}
           <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 lg:p-8 lg:border-r">
-            <div className="relative aspect-[9/16] max-h-[70vh] md:max-h-[75vh] lg:max-h-[700px] rounded-2xl overflow-hidden border-2 border-border">
+            <div className="relative aspect-[9/16] max-h-[70vh] md:max-h-[75vh] lg:max-h-[75vh] rounded-2xl overflow-hidden border-2 border-border">
               <img
                 src="/demos/structure-analysis/annotated_blurred.png"
                 alt="Analyzed structure with annotations"
