@@ -18,16 +18,16 @@ export const projects: Project[] = [
   {
     id: 'foundry',
     title: 'Enterprise Platform Migration',
-    description: 'Decommissioned €100k/month Palantir Foundry enterprise platform and migrated 9.5 TB of production data with 8,435 resources to self-hosted infrastructure at €200/month — zero downtime, complete functionality preserved',
+    description: 'Decommissioned €100k/month Palantir Foundry enterprise platform and migrated 9.5 TB of production data with 8,435 resources to self-hosted infrastructure at €200/month — zero downtime, complete functionality preserved, full operational platform delivered',
     image: '/project-icons/palantir2.jpg',
-    badges: ['Playwright', 'PostgreSQL', 'Docker', 'Dagster', 'Cloudflare Zero Trust'],
+    badges: ['Playwright', 'PostgreSQL', 'Docker', 'Watchtower', 'Cloudflare Tunnel', 'BorgBackup', 'Beszel'],
     results: [
-      '99.8% cost reduction: €100,000/month → €200/month',
-      '9.5 TB migrated across 1,676 datasets with zero data loss',
-      '362 pipeline definitions captured, 204 repositories cloned with full Git history',
-      '6 production services running with zero downtime incidents over 6 months',
-      'Zero non-idiomatic code merged to production after blocking hooks introduced',
-      'Complete vendor de-risking from proprietary platform dependency',
+      '€1.2M/year saved: €100,000/month → €200/month (99.8% cost reduction)',
+      '9.5 TB migrated with zero data loss and zero downtime during live migration',
+      'Reverse-engineered proprietary platform with no documented export API',
+      '362 pipelines and 204 repositories rebuilt on self-hosted stack',
+      '9 production services with automated deployment, monitoring, and backups',
+      '~5 developers deploy without SSH via sub-7-minute automated pipeline',
     ],
     technicalDetails: {
       sections: [
@@ -35,35 +35,38 @@ export const projects: Project[] = [
           icon: '🎯',
           title: 'The Challenge',
           paragraphs: [
-            'The company ran its entire data infrastructure on Palantir Foundry at **€100k/month** — unsustainable for a mid-sized business. The closed, proprietary ecosystem had no documented bulk export capability but held **8,435 resources** across 341 custom object types, **9.5 TB** across 2,320 datasets, 362 transformation pipelines, and 204 code repositories.',
-            'The requirement: migrate everything to self-hosted infrastructure with zero downtime and complete data preservation. No official export API existed — the only way out was reverse engineering.',
+            'The company ran its entire data infrastructure on Palantir Foundry at **€100k/month** — unsustainable for a mid-sized business. The closed, proprietary ecosystem had no documented bulk export capability but held **8,435 resources** across 341 custom object types, **9.5 TB** across 2,320 datasets, 362 transformation pipelines, and 204 code repositories with real-time systems running 24/7.',
+            'The requirement: migrate everything to self-hosted infrastructure with **zero downtime** and complete data preservation, then build a production platform that developers could deploy to without DevOps expertise. No official export *API* existed — the only way out was reverse engineering. Beyond extraction, the company needed operational systems: automated deployment, backups, monitoring, and security hardening.',
           ],
         },
         {
           icon: '🔓',
-          title: 'Reverse Engineering the Platform',
+          title: 'Reverse Engineering & Extraction',
           paragraphs: [
-            'I built a 5,045-line *Python* framework using *Playwright* to reverse-engineer Foundry\'s internal APIs. The approach: maintain authenticated browser sessions, intercept network traffic to discover undocumented *GraphQL* and *REST* endpoints, extract Bearer tokens from the traffic, then use those tokens for programmatic *API* access that bypasses the UI entirely.',
-            'Twelve specialized scripts handled different extraction tasks — lineage discovery (building dependency graphs via *GraphQL* interception), pipeline extraction (*JSON* exports ranging from 43 KB to 4.2 MB per pipeline), dataset streaming with *PostgreSQL*, repository cloning with *Git* automation, and binary media downloads. Each script followed the same patterns: persistent browser sessions for auth, batched *API* calls to avoid rate limits, idempotent design for interruption recovery.',
-            'The extraction system included binary split error isolation 🔍: when a 1,000-row batch failed, it would automatically narrow down to the single problematic row without manual intervention. Primary key tracking enabled multi-day extractions to resume from checkpoint on failure. All 12 scripts ran on the target Hetzner server via tmux — multi-day extractions couldn\'t block a local terminal.',
+            'I built a 5,045-line *Python* framework using *Playwright* to reverse-engineer Foundry\'s internal APIs. The framework maintains authenticated browser sessions, intercepts network traffic to discover undocumented *GraphQL* and *REST* endpoints, extracts Bearer tokens from the traffic, then uses those tokens for programmatic *API* access that bypasses the UI entirely.',
+            'Twelve specialized scripts handle different extraction tasks — lineage discovery (building dependency graphs via *GraphQL* interception), pipeline extraction (*JSON* exports ranging from 43 KB to 4.2 MB per pipeline), dataset streaming with *PostgreSQL*, repository cloning with *Git* automation, and binary media downloads. Each script uses persistent browser sessions for auth, batched *API* calls to avoid rate limits, and idempotent design for interruption recovery.',
+            'The extraction system includes binary split error isolation: when a 1,000-row batch fails, the system automatically narrows down to the single problematic row without manual intervention. Primary key tracking enables multi-day extractions to resume from checkpoint on failure.',
+            'The system uses performance tuning for TB-scale extraction: `synchronous_commit = off` (*PostgreSQL* doesn\'t fsync on every commit), write throttling (50ms sleep between batches), 5 parallel workers, and watchdog monitoring that auto-stops on resource breaches (disk I/O >70%, available RAM <2GB).',
           ],
         },
         {
           icon: '🏗️',
-          title: 'Infrastructure Rebuild',
+          title: 'Infrastructure & Operations',
           paragraphs: [
-            'Replaced the €100k/month SaaS with a single Hetzner CCX63 server: 48-core AMD EPYC, 192 GB RAM, 960 GB NVMe, 1 Gbit/s network — **€200/month**. Deployed 6 production services from scratch: Dagster (pipeline orchestration), Twenty (CRM), Coder (remote dev workspaces), n8n (workflow automation), SurfSense (AI research), LangGraph (agent orchestration).',
-            'Each service got its own *PostgreSQL* instance — isolated resource limits, independent backup schedules, no connection pool contention. Security hardened 🔒: all database ports bound to localhost only, *SSH* key-only auth, UFW firewall (ports 22/80/443 only), automated *SSL* via Certbot. *Nginx* reverse proxy handled *SSL* termination and *WebSocket* support for Dagster UI.',
-            'Cloudflare Zero Trust provided email-based authentication for `*.tob.sh` wildcard — no client *VPN* setup required, complete audit logs included. *CI/CD* pipeline: GitHub Actions builds *Docker* images on push, Watchtower auto-deploys to server within **7 minutes** ⚡.',
+            'I deployed **9 production services** on a single Hetzner dedicated server (16-core AMD EPYC, 64 GB RAM, 338 GB SSD, 5 TB volume) at **€200/month**: Dagster (pipeline orchestration), Twenty CRM, n8n (workflow automation), Oracle (AI research), LangGraph (agent orchestration), Coder (remote dev workspaces), Listmonk (email campaigns), Beszel (monitoring), Watchtower (auto-deployment).',
+            'The zero-*SSH* deployment pipeline works as follows: developer pushes to *GitHub* `→` GitHub Actions builds *Docker* image `→` pushes to GHCR `→` Watchtower polls every 5 minutes, detects new digest, recreates container. Developers deploy without *SSH* access — just `git push`. The system achieves sub-7-minute push-to-live cycle.',
+            'Each service has its own *PostgreSQL* instance (6 total, Listmonk shares Twenty\'s) — isolated resource limits, independent backup schedules, no connection pool contention. Security hardening includes all database ports bound to `127.0.0.1` only, *SSH* key-only auth, automated *SSL* via Certbot. The *Nginx* reverse proxy handles *SSL* termination, *WebSocket* upgrades, and multi-location routing.',
+            'Cloudflare Tunnel routes all `*.tob.sh` services through an outbound-only connection — no open inbound ports needed. The Hetzner Firewall blocks inbound TCP 80/443 at network level. All traffic flows through Cloudflare\'s security layer (WAF, rate limiting, DDoS protection). I configured bypass rules for external webhooks.',
           ],
         },
         {
-          icon: '🧠',
-          title: 'Developer Platform',
+          icon: '💾',
+          title: 'Backup, Monitoring & Developer Platform',
           paragraphs: [
-            'Built a Dagster orchestration platform with blocking hook enforcement (same pattern as CS Automation project). PreToolUse hook intercepts file operations on the `pipelines/` directory — first access per session is blocked until `SKILL.md` is read, then every 5th access gets blocked for periodic reminder. Result: impossible to modify pipeline code without understanding Dagster conventions.',
-            'Created 40+ reference guides covering asset patterns, automation (schedules, sensors, declarative conditions), CLI operations, and 40+ tool integrations. Dual dev/prod environments: `main` branch deploys to production database, `dev` branch deploys to isolated dev database with no production credentials. Shared run queue (max 4 concurrent) prevents resource exhaustion.',
-            'The team autonomously rebuilt 362 pipelines using the extracted Foundry *JSON* references as rebuild specs. Schema translation: 341 Foundry object types → 305 production *PostgreSQL* tables with 291 foreign key relationships preserved. Generated 6,338 lines of *DDL*, 876 lines of *FK* constraints, 4,808 total columns. Automated type mapping handled `ARRAY`/`GEOHASH`/`MEDIA_REFERENCE`/`VECTOR` → *PostgreSQL* equivalents.',
+            'The auto-discovery backup system scans for running *PostgreSQL* containers and auto-initializes repositories on first use. Daily backups stream to Hetzner Storage Box (10 TB co-located) with compression and encryption. The off-site backup streams directly to Cloudflare R2 via S3 multipart upload — no temp files on disk (server SSD is 338 GB; 1 TB dataset can\'t be staged locally).',
+            'I configured monitoring with 6 production alerts (Slack webhook): system down, CPU >80%, Memory >85%, Disk >80%, Temperature >80°C, Load Average >13 (80% of 16 cores). Unified container logging via systemd-journald provides searchable logs with retention limited to 2 GB / 90 days. Weekly auto-prune prevents disk accumulation.',
+            'I implemented structural dev/prod isolation: production deployments sync to live systems with full credentials; development deployments use isolated databases with **no production credentials** (makes wrong thing impossible, not just discouraged). This prevents accidental production writes during development.',
+            'I set up Dagster as the pipeline orchestration platform for rebuilding business logic from extracted Foundry *JSON* exports. The rebuild process uses these JSON files as rebuild specs. Schema translation: 341 Foundry object types → 305 production *PostgreSQL* tables with 291 foreign key relationships preserved. This replicates complete functionality on the self-hosted stack.',
           ],
         },
       ],
@@ -119,62 +122,6 @@ export const projects: Project[] = [
             'Foundry Transform integration: patient photos uploaded to Media Set via WordPress form trigger pipeline execution. *CV* pipeline (`mediapipe_pose → birefnet_segment → apply_privacy_layers`) generates landmarks and privacy-preserved images. *LLM* orchestration tool outputs analysis configuration (which agents, what order, dependencies). *Gemini API* performs multi-modal analysis (landmarks *JSON* + privacy image) following bottom-up kinetic chain methodology.',
             'Output: structured German-language report with deviation summary table, root cause identification (e.g., "tight hip flexors causing anterior pelvic tilt" vs secondary compensations "resulting thoracic kyphosis"), and corrective exercise plan (3-5 exercises with sets/reps/notes). Performance: initial pipeline **8-12 minutes** → optimized to **2.5-3.5 minutes** via *GPU* acceleration (*MediaPipe*), model quantization (*BiRefNet*), batch *API* (*Gemini*), media caching (Foundry).',
             'Edge case handling: *MediaPipe* fails on extreme postures (severe scoliosis) → graceful degradation with manual annotation workflow. Multiple people in photo → *BiRefNet* pre-filter keeps only largest segment, intake workflow updated to request re-photo if multiple detected. German output quality initially mixed → explicit prompt instruction + few-shot examples + post-processing validation (reject if >5% English words).',
-          ],
-        },
-      ],
-    },
-  },
-  {
-    id: 'infrastructure',
-    title: 'Self-Hosted Production Infrastructure',
-    description: 'Git-driven deployment platform running ~10 production services for ~5 developers on a single Hetzner dedicated server — replacing enterprise SaaS with fully owned infrastructure featuring automated deployments, multi-service orchestration, and comprehensive backup strategy',
-    badges: ['Docker', 'GitHub Actions', 'Watchtower', 'PostgreSQL', 'Nginx', 'BorgBackup'],
-    results: [
-      '~5 developers deploying without SSH access via automated pipeline',
-      '10 production services running with automatic SSL renewal',
-      'Daily automated backups with local + off-site redundancy',
-      'Complete infrastructure reproducible from single Git repository',
-      'Zero manual deployment steps — sub-7-minute push-to-live cycle',
-    ],
-    technicalDetails: {
-      sections: [
-        {
-          icon: '🎯',
-          title: 'The Challenge',
-          paragraphs: [
-            'Post-Foundry migration, the company needed a production-grade platform to run everything: data orchestration, workflow automation, *CRM*, *AI* pipelines, development environments. Everything had to be secure, maintainable, cost-effective, and built from scratch — **no pre-existing infrastructure**.',
-          ],
-        },
-        {
-          icon: '🏗️',
-          title: 'Zero-SSH Deployment',
-          paragraphs: [
-            'Built a fully automated deployment pipeline: developer push → GitHub Actions → *GHCR* → Watchtower. Watchtower polls the GitHub Container Registry every 5 minutes, detects new image digests, pulls updated images, and recreates containers automatically. Developers deploy without *SSH* access — just `git push`.',
-            'The `tob-infra` repository is the **single source of truth**: *Docker Compose* stacks, nginx configs, systemd units, backup scripts, cron schedules, and a **470+ line** runbook documenting every infrastructure decision. **Complete infrastructure reproducibility** from one *Git* repository.',
-          ],
-        },
-        {
-          icon: '⚙️',
-          title: 'Production Stack',
-          paragraphs: [
-            'Single Hetzner dedicated server (16-core AMD EPYC, 64 GB RAM, 338 GB SSD, **€200/month**) running **10 services** for **~5 developers**. **Seven isolated** *PostgreSQL* instances (one per service) — independent backups, no connection pool contention. All database ports bound to `127.0.0.1` only 🔒.',
-            'Services: Dagster (data orchestration), Twenty *CRM*, n8n (workflow automation), Coder (remote dev workspaces), Oracle/SurfSense (*AI* research), Listmonk (email campaigns), Beszel (monitoring), plus LangGraph and other internal tools.',
-            '*Nginx* reverse proxy handles *SSL* termination with Let\'s Encrypt auto-renewal, *WebSocket* upgrades for Twenty/n8n/Coder, bearer token auth for LangGraph, and multi-location routing for Oracle (frontend/backend split). Cloudflare Zero Trust provides email-based authentication for `*.tob.sh` wildcard — no *VPN* client setup, complete audit logs.',
-          ],
-        },
-        {
-          icon: '💾',
-          title: 'Backup Architecture',
-          paragraphs: [
-            'Auto-discovery backup system: `pg_isready` scans for running *PostgreSQL* containers, auto-initializes Borg repositories. Daily 04:00 CET, `backup_pg.py` runs `pg_dump`/`pg_dumpall` per service, then BorgBackup streams to Hetzner Storage Box (**10 TB** co-located) with zstd,3 compression, encryption, and 10 MB/s rate limiting.',
-            'Off-site backup: `pg_dump` streams directly to Cloudflare R2 via *S3* multipart upload (64 MB parts) — **no temp files** on disk. All *Docker* containers log to systemd-journald (searchable, 2 GB / 90-day retention). Daily 04:30 CET, `backup_configs.py` collects all *Docker Compose* files, `.env` files, and configs from `/opt/` and backs them to the Storage Box.',
-          ],
-        },
-        {
-          icon: '✨',
-          title: 'Developer Experience',
-          paragraphs: [
-            'Dagster dual-environment: `main` branch deploys to production database, `dev` branch to isolated dev database with **no production credentials**. Coder provides remote workspaces at `*.coder.tob.sh` (browser/*SSH*-accessible, no local setup required). Cross-stack *Docker* networking via shared networks lets services communicate across separate Compose stacks. Beszel monitoring provides lightweight server metrics with *Docker* container visibility via *Unix socket*.',
           ],
         },
       ],

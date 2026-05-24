@@ -40,6 +40,25 @@ Replace bullet-point lists with **narrative flow** in 3-4 sections:
 - Technical finesse demonstrated
 
 ### 3. Writing Guidelines
+
+**CRITICAL PRINCIPLE: Document final state, not development journey**
+- Explain HOW the system works (final architecture), not how it evolved
+- No "I built X, then added Y, then improved Z" — describe final system only
+- No "Initial approach failed, so I..." — show final solution that works
+- No "We later migrated to..." — document current architecture
+- **Exception**: Portfolio docs (`../portfolio/projects/*.md`) include Challenges section for journey/evolution; website cards show only final state
+
+**VOICE & SENTENCE STRUCTURE** (based on Google/Microsoft/AWS style guides + portfolio best practices):
+- **Active voice with clear subjects**: "The system maintains sessions" not "Sessions are maintained"
+- **Complete sentences**: "The framework uses X" not "Uses X" (no missing subjects)
+- **Mix first person + active third person**:
+  - First person for ownership/design: "I built a framework that reverse-engineers..."
+  - Active third person for how it works: "The extraction system uses binary split isolation..."
+- **Why**: First person acceptable for personal portfolios (shows ownership). Active voice mandatory (Google/Microsoft/AWS all require it). Clear subjects prevent ambiguity.
+- **Avoid passive voice**: "A response is sent" → "The server sends a response"
+- **Avoid fragments**: "Maintains sessions, extracts tokens, bypasses UI" → "The system maintains sessions, extracts tokens, and bypasses the UI."
+
+**Other guidelines:**
 - **Remove Results section** from tech details (already in card summary)
 - **Narrative paragraphs**, not bullets
 - **Technical terms woven in** — for those who know them, not required to understand
@@ -48,6 +67,9 @@ Replace bullet-point lists with **narrative flow** in 3-4 sections:
 - **Explain as you go**: technical concepts explained inline when introduced
 - **Show technical finesse**: don't just say what, explain why/how when it shows depth
 - **Be precise**: use actual technology names, specific numbers, real constraints
+- **Avoid excessive implementation detail**: No script names (`backup_pg.py`), function names (`pg_dump`), exact times (04:00 CET) unless critical to understanding. Focus on architecture and capabilities, not tools.
+- **Split dense paragraphs**: If covering 3+ distinct topics in one paragraph, split it. Each paragraph should have clear focus.
+- **Avoid redundancy**: If results mention "362 pipelines rebuilt", don't repeat same metric in technical details. Choose most impactful placement.
 
 ### 4. Technical Details to Include
 - Infrastructure (where it runs, how it's deployed)
