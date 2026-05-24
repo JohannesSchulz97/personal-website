@@ -105,4 +105,14 @@
   .prose code::after {
     content: none;
   }
+
+  /* Technical terms (*term*) - bold, light color */
+  .prose em {
+    @apply font-bold not-italic text-slate-light;
+  }
+
+  /* Impressive facts (**fact**) - bold white */
+  .prose strong {
+    @apply font-bold text-white;
+  }
 }
