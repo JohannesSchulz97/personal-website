@@ -96,4 +96,13 @@
     background-color: #0f2338;
     color: #64ffda;
   }
+
+  /* Inline code styling for prose */
+  .prose code {
+    @apply bg-navy-light text-teal px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  .prose code::before,
+  .prose code::after {
+    content: none;
+  }
 }
