@@ -67,7 +67,15 @@ Replace bullet-point lists with **narrative flow** in 3-4 sections:
 - **Explain as you go**: technical concepts explained inline when introduced
 - **Show technical finesse**: don't just say what, explain why/how when it shows depth
 - **Be precise**: use actual technology names, specific numbers, real constraints
-- **Avoid excessive implementation detail**: No script names (`backup_pg.py`), function names (`pg_dump`), exact times (04:00 CET) unless critical to understanding. Focus on architecture and capabilities, not tools.
+- **Avoid excessive implementation detail**: Focus on architecture and capabilities, not implementation specifics. Avoid:
+  - Script/file names (`backup_pg.py`, `config.yaml`)
+  - Function/method names (`pg_dump`, `validateInput`)
+  - Exact times (04:00 CET, "runs at midnight")
+  - Config parameters (`model_complexity=2`, `batch_size=128`)
+  - Exact measurements (50-pixel radius, 1.5× padding)
+  - Specific thresholds (>5% English words, exactly 3-5 exercises)
+  - Performance timings (~50ms, ~1-2s) unless it's a key result metric
+  - **Exception**: Domain expertise numbers that show technical depth (e.g., "lumbar lordosis 20-40°" shows biomechanical knowledge, keep it)
 - **Split dense paragraphs**: If covering 3+ distinct topics in one paragraph, split it. Each paragraph should have clear focus.
 - **Avoid redundancy**: If results mention "362 pipelines rebuilt", don't repeat same metric in technical details. Choose most impactful placement.
 
