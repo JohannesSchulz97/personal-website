@@ -71,7 +71,22 @@ Replace bullet-point lists with **narrative flow** in 3-4 sections:
 - **Split dense paragraphs**: If covering 3+ distinct topics in one paragraph, split it. Each paragraph should have clear focus.
 - **Avoid redundancy**: If results mention "362 pipelines rebuilt", don't repeat same metric in technical details. Choose most impactful placement.
 
-### 4. Technical Details to Include
+### 4. Results Writing
+**Focus on achievements and outcomes, not just data:**
+- Bad: "362 pipeline definitions captured, 204 repositories cloned"
+- Good: "362 pipelines and 204 repositories rebuilt on self-hosted stack"
+- Emphasize what was DONE with the data, not just that it was captured
+
+**Avoid defensive phrasing:**
+- Bad: "Server IP no longer directly reachable" (highlights it WAS reachable - negative)
+- Good: "Zero-trust security via Cloudflare Tunnel" (positive architecture)
+- Frame security as proactive design, not fixing vulnerabilities
+
+**Provide context for specifics:**
+- If mentioning one service among many, explain why (otherwise appears arbitrary)
+- Technical details need enough context to be understood (e.g., "shared run queue" - shared between what?)
+
+### 5. Technical Details to Include
 - Infrastructure (where it runs, how it's deployed)
 - Dev/prod separation
 - CI/CD pipeline
@@ -82,7 +97,17 @@ Replace bullet-point lists with **narrative flow** in 3-4 sections:
 - Security/safety measures
 - Notable features (not in main summary)
 
-### 5. Styling & Formatting
+### 6. Section Scope & Organization
+**Section titles should match content breadth:**
+- Bad: "Backup, Monitoring & Developer Platform" covering 5 different topics
+- Good: Split into focused sections or rename to match actual scope
+
+**Each paragraph needs clear focus:**
+- If covering 3+ distinct topics, split into multiple paragraphs
+- Each paragraph = one main idea with supporting details
+- Dense paragraphs feel like bullet points
+
+### 7. Styling & Formatting
 **MUST follow**: `docs/styling-logic.md`
 
 Consistent styling rules:
@@ -99,14 +124,14 @@ Consistent styling rules:
 
 Key principle: **Less is more.** Style guides attention, doesn't decorate every term.
 
-### 6. What NOT to Include
+### 8. What NOT to Include
 - Generic "built using X" statements without context
 - Repetition of results (already in card)
 - Vague "implemented best practices"
 - Bullet lists (convert to narrative)
 - Overly academic explanations
 
-### 7. Tone
+### 9. Tone
 - Technical but accessible
 - Story-driven (problem → solution → outcome)
 - Confident, not defensive
@@ -148,7 +173,7 @@ actual work.
 - [ ] Accurate details from both portfolio and repo
 - [ ] Readable by non-expert, valuable for expert
 
-## 7. Final Review
+## 10. Final Review
 
 **REQUIRED LAST STEP** before completion:
 
