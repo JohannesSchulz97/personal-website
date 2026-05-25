@@ -85,60 +85,54 @@ export default function ProjectsSection() {
           }
         />
 
-        {/* 3. Self-Hosted Infrastructure */}
+        {/* 3. OpenClaw Agents */}
         <ProjectCard
           project={projects[2]}
-          onViewDetails={() => setSelectedProject('infrastructure')}
+          onViewDetails={() => setSelectedProject('openclaw')}
         />
 
         {/* 4. Customer Support Automation */}
         <ProjectCard
-          project={projects[4]}
+          project={projects[3]}
           onViewDetails={() => setSelectedProject('customer-support')}
         />
 
-        {/* Additional Projects - Hidden by default (7 more) */}
+        {/* Additional Projects - Hidden by default (6 more) */}
         {showAllProjects && (
           <>
-        {/* 5. OpenClaw Agents */}
+        {/* 5. CAPS */}
         <ProjectCard
-          project={projects[3]}
-          onViewDetails={() => setSelectedProject('openclaw')}
-        />
-
-        {/* 6. LLM Pipeline Framework */}
-        <ProjectCard
-          project={projects[8]}
-          onViewDetails={() => setSelectedProject('llm-pipeline')}
-        />
-
-        {/* 7. CAPS */}
-        <ProjectCard
-          project={projects[5]}
+          project={projects[4]}
           onViewDetails={() => setSelectedProject('caps')}
         />
 
-        {/* 8. TOB Vibe Kanban */}
+        {/* 6. Vet Assistant */}
         <ProjectCard
-          project={projects[9]}
-          onViewDetails={() => setSelectedProject('tob-vibe')}
-        />
-
-        {/* 9. Vet Assistant */}
-        <ProjectCard
-          project={projects[6]}
+          project={projects[5]}
           onViewDetails={() => setSelectedProject('vet-assistant')}
         />
 
-        {/* 10. Web Scraping */}
+        {/* 7. Web Scraping */}
         <ProjectCard
-          project={projects[7]}
+          project={projects[6]}
           onViewDetails={() => setSelectedProject('web-scraping')}
         />
 
-        {/* 11. Screw Manufacturing */}
+        {/* 8. LLM Pipeline Framework */}
         <ProjectCard
-          project={projects[10]}
+          project={projects[7]}
+          onViewDetails={() => setSelectedProject('llm-pipeline')}
+        />
+
+        {/* 9. TOB Vibe Kanban */}
+        <ProjectCard
+          project={projects[8]}
+          onViewDetails={() => setSelectedProject('tob-vibe')}
+        />
+
+        {/* 10. Screw Manufacturing */}
+        <ProjectCard
+          project={projects[9]}
           onViewDetails={() => setSelectedProject('screw-manufacturing')}
         />
           </>
@@ -155,7 +149,7 @@ export default function ProjectsSection() {
               className="min-w-[200px]"
             >
               <ChevronDown className="h-4 w-4 mr-2" />
-              Show More Projects (7)
+              Show More Projects (6)
             </Button>
           </div>
         )}
