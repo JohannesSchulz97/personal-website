@@ -20,7 +20,7 @@ import { useState } from "react";
 function BiomechDemosModal({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[90vw] w-full h-[90vh] p-0 flex flex-col">
+      <DialogContent className="max-w-[90vw] w-full h-[90vh] p-0 flex flex-col focus:outline-none">
         <DialogHeader className="px-6 py-4 border-b shrink-0">
           <DialogTitle>Structure Analysis</DialogTitle>
         </DialogHeader>
