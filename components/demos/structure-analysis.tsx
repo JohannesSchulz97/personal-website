@@ -70,7 +70,7 @@ export default function StructureAnalysisDemo() {
           <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 lg:p-8 lg:border-r">
             <div className="relative aspect-[9/16] max-h-[70vh] md:max-h-[75vh] lg:max-h-[75vh] rounded-2xl overflow-hidden border-2 border-border">
               <img
-                src="/demos/structure-analysis/original.png"
+                src="/demos/structure-analysis/original.webp"
                 alt="Patient original photo"
                 className="w-full h-full object-contain"
               />
@@ -111,7 +111,7 @@ export default function StructureAnalysisDemo() {
           <div className="w-full lg:w-1/2 flex items-center justify-center p-4 md:p-6 lg:p-8 lg:border-r">
             <div className="relative aspect-[9/16] max-h-[70vh] md:max-h-[75vh] lg:max-h-[75vh] rounded-2xl overflow-hidden border-2 border-border">
               <img
-                src="/demos/structure-analysis/annotated_blurred.png"
+                src="/demos/structure-analysis/annotated_blurred.webp"
                 alt="Analyzed structure with annotations"
                 className="w-full h-full object-contain"
               />
