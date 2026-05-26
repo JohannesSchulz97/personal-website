@@ -22,6 +22,17 @@
     "linkedIn": "https://www.linkedin.com/in/armin-soyka-15053616a/"
   },
   {
+    "id": 4,
+    "name": "Ofer Plesser",
+    "role": "Consultant",
+    "company": "",
+    "rating": 5,
+    "testimonial": "I brought Johannes on to help build materials for a cybersecurity training course. After a couple of quick rounds of feedback early on, I could basically hand him work and let him run with it. What came back was consistently good, with almost nothing to correct. Our calls were short, his pricing was fair, and a few times he didn't charge me for things that were small mistakes on his end. He's also just a genuinely interesting person... there's more to him than the technical side, and you feel it in how he thinks through things.",
+    "project": "Cybersecurity Training Course",
+    "completionDate": "May 2025",
+    "linkedIn": "https://www.linkedin.com/in/oferplesser/"
+  },
+  {
     "id": 1,
     "name": "Phillipp Richter",
     "role": "",
