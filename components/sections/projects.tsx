@@ -71,7 +71,7 @@ export default function ProjectsSection() {
           onViewDetails={() => setSelectedProject('biomech')}
           demoContent={
             <div
-              className="border rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all cursor-pointer group relative h-[120px] flex items-center justify-center"
+              className="border rounded-lg overflow-hidden bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all cursor-pointer group relative h-[120px] flex items-center justify-center outline-none"
               onClick={() => setOpenDemo('biomech-demos')}
             >
               <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
