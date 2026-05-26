@@ -1,6 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   devIndicators: false,
+  async redirects() {
+    return [
+      {
+        source: '/projects',
+        destination: '/#projects',
+        permanent: false,
+      },
+      {
+        source: '/contact',
+        destination: '/#contact',
+        permanent: false,
+      },
+    ];
+  },
   images: {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 31536000,

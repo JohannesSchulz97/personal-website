@@ -1,5 +1,6 @@
 "use client";
 
+import BackToHome from "@/components/layout/back-to-home";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -61,6 +62,7 @@ export default function SubmitTestimonialPage() {
       <section className="pb-12">
 
         <div className="container mx-auto px-4 py-12 max-w-3xl relative z-10">
+          <BackToHome />
           {/* Header Section */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-4">Submit a Testimonial</h1>

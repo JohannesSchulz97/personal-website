@@ -32,6 +32,18 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# test/temporary directories
+# archives and local-only tooling
+sa_results/
 SA-results/
+personal-pictures/
+project-icons/
+.claude/
+.claude-mpm/
+.playwright-mcp/
 components 2/
+
+# editor / temp
+*.bak
+*.bak[0-9]
+project-details-feedback.md
+cv_*.pdf

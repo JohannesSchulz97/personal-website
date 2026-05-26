@@ -1,1 +1,0 @@
-/Users/johannes/Projects/OriginalBody/tob-claude-setup/.claude/hooks/read-references-reminder.sh

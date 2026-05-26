@@ -108,7 +108,7 @@ export default function TestimonialsPage() {
         {/* Call to Action */}
         <div className="mt-16 space-y-4">
           <p className="text-slate leading-relaxed">
-            Worked with me? <a href="/submit-testimonial" className="text-teal hover:text-teal/80 transition-colors">Share your experience</a> or <a href="/#contact" className="text-teal hover:text-teal/80 transition-colors">get in touch</a> if you're interested in working together.
+            Worked with me? <Link href="/submit-testimonial" className="text-teal hover:text-teal/80 transition-colors">Share your experience</Link> or <Link href="/#contact" className="text-teal hover:text-teal/80 transition-colors">get in touch</Link> if you&apos;re interested in working together.
           </p>
         </div>
       </div>

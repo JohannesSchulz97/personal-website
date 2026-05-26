@@ -1,10 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Brain, Globe, Cloud, Zap, Database, GraduationCap } from "lucide-react";
+import BackToHome from "@/components/layout/back-to-home";
 
 export default function SkillsPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-navy">
       <section className="relative pb-12 overflow-hidden">
         {/* Background Image - Full Width */}
         <div
@@ -13,6 +14,7 @@ export default function SkillsPage() {
         />
 
         <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
+      <BackToHome />
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-4">Technical Skills</h1>
         <p className="text-lg text-muted-foreground max-w-3xl">

@@ -7,35 +7,35 @@ import ProjectsSection from '@/components/sections/projects';
 import TestimonialsSection from '@/components/sections/testimonials';
 import ContactSection from '@/components/sections/contact';
 import { Github, Linkedin, GraduationCap } from 'lucide-react';
-import { useState, useEffect } from 'react';
-// @ts-ignore - CommonJS module
-const LethargyModule = require('lethargy');
+import { useState, useEffect, useSyncExternalStore } from 'react';
+import { Lethargy } from 'lethargy';
+
+function subscribeToViewport() {
+  return () => {};
+}
+
+function getViewportHeight() {
+  return window.innerHeight;
+}
 
 export default function HomePage() {
   const [activeSection, setActiveSection] = useState('about');
-  const [viewportHeight, setViewportHeight] = useState<number | null>(null);
+  const viewportHeight = useSyncExternalStore(
+    subscribeToViewport,
+    getViewportHeight,
+    () => null
+  );
 
   useEffect(() => {
-    // Set viewport height once on load
-    setViewportHeight(window.innerHeight);
-
     // Detect mouse wheel using lethargy (momentum detection)
     // Trackpad has inertial scrolling, mouse doesn't
     // Tuned params: (stability, sensitivity, tolerance, delay)
     // Higher sensitivity = fewer false positives from strong trackpad scrolls
-    const lethargy = new LethargyModule.Lethargy(10, 150, 1.2, 150);
-    let wheelTimeout: NodeJS.Timeout;
+    const lethargy = new Lethargy(10, 150, 1.2, 150);
+    let wheelTimeout: ReturnType<typeof setTimeout>;
 
     const handleWheel = (e: WheelEvent) => {
       const check = lethargy.check(e);
-
-      console.log('Wheel event:', {
-        deltaMode: e.deltaMode,
-        deltaY: e.deltaY,
-        lethargCheck: check,
-        isMouse: check !== false,
-        timestamp: Date.now()
-      });
 
       // check !== false means non-inertial scrolling (mouse wheel)
       if (check !== false) {
