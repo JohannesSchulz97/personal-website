@@ -21,11 +21,11 @@ See `TESTIMONIALS.md` for full system documentation.
 
 ### Mixed Layout (Current)
 **Commit**: `5829373`  
-Full-width hero section with contemplative.jpg background at top, followed by Brittany Chiang's two-column layout below.
+Full-width hero section with contemplative.jpg background at top, followed by a sticky sidebar two-column layout below.
 
-### Pure Brittany Layout
+### Pure Two-Column Layout
 **Commit**: `74d5200`  
-Complete Brittany Chiang two-column implementation from the start. Left sidebar sticky with name, title, nav links, and social icons. Right column scrollable with About, Projects, and Contact sections.
+Two-column layout from the start. Left sidebar sticky with name, title, nav links, and social icons. Right column scrollable with About, Projects, and Contact sections.
 
 ### Single Column Layout
 **Commit**: `3cc1f97`  
@@ -37,7 +37,7 @@ Original one-column design with landscape background, About, Projects, and Conta
 # Switch to mixed layout (hero + two-column)
 git checkout 5829373
 
-# Switch to pure Brittany layout
+# Switch to pure two-column layout
 git checkout 74d5200
 
 # Switch to single column layout

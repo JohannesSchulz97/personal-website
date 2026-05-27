@@ -17,7 +17,7 @@ const config: Config = {
         muted: { DEFAULT: "hsl(var(--muted))", foreground: "hsl(var(--muted-foreground))" },
         accent: { DEFAULT: "hsl(var(--accent))", foreground: "hsl(var(--accent-foreground))" },
         card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
-        // Brittany's color palette
+        // Portfolio color palette (navy, slate, teal)
         navy: {
           DEFAULT: "#0a192f",
           dark: "#020c1b",
