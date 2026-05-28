@@ -47,5 +47,11 @@ git checkout 3cc1f97
 git checkout main
 ```
 
+# References
+
+## Interesting Portfolio Sites
+
+- [steventomlinson.dev](https://steventomlinson.dev/)
+
 # Project Overrides
 
